@@ -1,2 +1,8 @@
 # ProyectoPizza
-Integrantes:
+---
+**Integrantes:**
+- 
+- 
+-
+-
+---
