@@ -1,4 +1,4 @@
-# ProyectoPizza
+# Proyecto Pizza
 ---
 **Integrantes:**
 - Richard Francisco Vaca Garcia
