@@ -5,5 +5,14 @@ def create_database(db_file):
     conn.execute("CREATE TABLE ingredientes (codigoingrediente INTEGER PRIMARY KEY, nombreingrediente text))")
     conn.execute("CREATE TABLE pedido (numeropedido INTEGER PRIMARY KEY)")
     conn.execute("CREATE TABLE pizza (idpizza INTEGER PRIMARY KEY, precio INTEGER, nombre text, tamaño text)")
+
+    conn.execute("INSERT INTO cliente (nombre,direccion,n_telefono, c_postal) VALUES ('Pepe','Avenida Central',62367784,35014)")
+    conn.execute("INSERT INTO ingredientes (3450,'queso')")
+    conn.execute("INSERT INTO pedido (135)")
+    conn.execute("INSERT INTO pizza (34, 10, '4 estaciones', 'mediano')")
+    
+
+
+
     conn.commit()
 
