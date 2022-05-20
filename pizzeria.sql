@@ -1,17 +1,15 @@
 BEGIN TRANSACTION;
-CREATE TABLE IF NOT EXISTS "base" (
-	"codigobase"	INTEGER,
-	"nombrebase"	TEXT,
-	PRIMARY KEY("codigobase")
-);
 CREATE TABLE IF NOT EXISTS "cliente" (
 	"nombre"	TEXT,
-	"codigocliente"	INTEGER,
-	"apellido"	TEXT,
-	"correoelectronico"	TEXT,
-	PRIMARY KEY("codigocliente")
+	"direccion"	TEXT,
+	"n_telefono"	INTEGER,
+	"c_postal"	INTEGER,
+	PRIMARY KEY("n_telefono")
 );
 CREATE TABLE IF NOT EXISTS "pizza" (
+	"tamaño"	TEXT,
+	"nombre"	TEXT,
+	"precio"	INTEGER,
 	"idpizza"	INTEGER,
 	PRIMARY KEY("idpizza")
 );
