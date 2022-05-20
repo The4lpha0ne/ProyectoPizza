@@ -11,7 +11,7 @@ def create_database(db_file):
     conn.execute("INSERT INTO ingredientes VALUES(32424,'tomate')")
     conn.execute("INSERT INTO ingredientes VALUES (1343,'atun')")
     conn.execute("INSERT INTO ingredientes VALUES (3450,'queso')")
-    conn.execute("INSERT INTO ingredientes VALUES (3450,'jamon')")
+    conn.execute("INSERT INTO ingredientes VALUES (3255,'jamon')")
     conn.execute("INSERT INTO pedido  VALUES (135)")
 
 
