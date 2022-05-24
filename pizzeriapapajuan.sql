@@ -41,7 +41,6 @@ CREATE TABLE `pedido` (
   CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`nombre`) REFERENCES `pizza` (`nombre`),
   CONSTRAINT `pedido_ibfk_2` FOREIGN KEY (`telefono`) REFERENCES `cliente` (`telefono`)
   CONSTRAINT `pedido_ibfk_3` FOREIGN KEY (`dimension`) REFERENCES `pizza` (`dimension`)
-
 );
 
 
