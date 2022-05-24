@@ -14,15 +14,9 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` VALUES (67890755,'Pepe','Avenida 123',35678,1);
 
-UNLOCK TABLES;
-
---
--- Table structure for table `factura`
---
 
 DROP TABLE IF EXISTS `factura`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `factura` (
   `idfactura` int NOT NULL,
   `fecha` datetime DEFAULT NULL,
