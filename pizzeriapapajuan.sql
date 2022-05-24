@@ -1,5 +1,3 @@
-
-
 DROP TABLE IF EXISTS `cliente`;
 
 CREATE TABLE `cliente` (
@@ -14,8 +12,17 @@ CREATE TABLE `cliente` (
 );
 
 
-DROP TABLE IF EXISTS `factura`;
+INSERT INTO `cliente` VALUES (67890755,'Pepe','Avenida 123',35678,1);
 
+UNLOCK TABLES;
+
+--
+-- Table structure for table `factura`
+--
+
+DROP TABLE IF EXISTS `factura`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `factura` (
   `idfactura` int NOT NULL,
   `fecha` datetime DEFAULT NULL,
@@ -27,7 +34,6 @@ CREATE TABLE `factura` (
 );
 
 
-DROP TABLE IF EXISTS `pedido`;
 
 CREATE TABLE `pedido` (
   `numeropedido` int NOT NULL,
@@ -38,13 +44,13 @@ CREATE TABLE `pedido` (
   PRIMARY KEY (`numeropedido`),
   KEY `nombre` (`nombre`,`dimension`),
   KEY `telefono` (`telefono`),
-  CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`nombre`) REFERENCES `pizza` (`nombre`),
-  CONSTRAINT `pedido_ibfk_2` FOREIGN KEY (`telefono`) REFERENCES `cliente` (`telefono`),
-  CONSTRAINT `pedido_ibfk_3` FOREIGN KEY (`dimension`) REFERENCES `pizza` (`dimension`),
+  CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`nombre`, `dimension`) REFERENCES `pizza` (`nombre`, `dimension`),
+  CONSTRAINT `pedido_ibfk_2` FOREIGN KEY (`telefono`) REFERENCES `cliente` (`telefono`)
 );
 
 
-DROP TABLE IF EXISTS `pizza`;
+INSERT INTO `pedido` VALUES (1,1,'4 estaciones','Mediana',67890755);
+
 
 CREATE TABLE `pizza` (
   `nombre` varchar(25) NOT NULL,
