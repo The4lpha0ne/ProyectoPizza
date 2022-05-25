@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria</title>
+    <link rel="stylesheet" href="pizzeria.css">
+    <link rel='icon' type='image/x-icon' href='/pizza.ico' />
+</head>
+<header class="title">
+    <h1>Restaurante <span>Papá Juan</span></h1>
+    <h1>Restaurante <span>Papá Juan</span></h1>
+
+    <h2>Pedido de Pizza</h2>
+</header>
+<body>
+    <main>
+<form action="">
+    <fieldset class="menu_pizzas">
+        <legend class="pedido">Pizzas</legend>
+            <label for="pizza">Tipo de Pizza</label>
+            <select name="carta_pizzas" id="" class="carta_pizzas">
+                <option value="barbacoa">Barbacoa</option>
+                <option value="capricciosa">Capricciosa</option>
+                <option value="cuatro_estaciones">Cuatro Estaciones<option>
+                <option value="cuatro_quesos">Cuatro Quesos</option>
+                <option value="hawaiana">Hawaiana</option>
+                <option value="margarita">Margarita</option>
+                <option value="marinera">Marinera</option>
+                <option value="napolitana">Napolitana</option>
+                <option value="pepperoni">Pepperoni</option>
+                <option value="vegetariana">Vegetariana</option>
+            </select>
+
+            <ul class="carta">
+                <p><b>Barbacoa</b> - Bacon, Carne Picada, Cebolla, Pechuga de Pollo, Queso, Tomate</p>
+                <p><b>Capricciosa</b> - Aceitunas Negras, Anchoas, Champiñones, Queso, Tomate</p>
+                <p><b>Cuatro Estaciones</b> - Albahaca, Aceitunas, Alcachofa, Jamón, Setas, Tomate</p>
+                <p><b>Cuatro Quesos</b> - Albahaca, Aceitunas, Alcachofa, Jamón, Setas, Tomate</p>
+            </ul>
+    </fieldset>
+</form>
+    
+
+  <form action="">
+      <fieldset>
+          <legend class="pedido2">Tamaño</legend>
+          <ul class="tamaño"> 
+                <input type="radio" name="tamaño" id="pequena">
+                <label for="pequena">Pequeña</label>
+                <input type="radio" name="tamaño" id="mediana">
+                <label for="mediana">Mediana</label>
+                <input type="radio" name="tamaño" id="grande">
+                <label for="grande">Grande</label>
+        </ul>
+      </fieldset>
+  </form>
+
+  <form action="">
+      <fieldset>
+          <legend class="pedido3">Entrega</legend>
+          <ul class="clientito">
+              <li> 
+                <label for="cliente">Cliente</label>
+                <input type="text" name="" id="cliente" required minlength="3" maxlength="50">
+              </li>
+
+              <li>
+                <label for="dirección">Dirección</label>
+                <textarea name="direccion" id="direccion" cols="30" rows="10"></textarea>
+              </li>
+            
+              <li>
+                <label for="hora_de_entrega">Hora de entrega</label>
+                <input type="time" name="" id="hora_de_entrega" min="9:00" max="00:00" required>
+              </li>
+        </ul>
+      </fieldset>
+  </form>
+
+<form action="">
+    <label for="oferta">Escoger Oferta</label>
+     <select name="escoger_oferta" id="oferta" class="realizar_oferta">
+         <option value="2x1">2x1</option>
+         <option value="3x2">3x2</option>
+    </select>
+</form>
+
+<input type="submit" value="Realizar Pedido" class="realizar">
+</main>   
+</body>
+</html>

@@ -1,0 +1,359 @@
+*, * ::after, * ::before {
+    padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 300;
+    border: 5px solid wheat;
+    width:100%;
+    text-align: center;
+    margin: 0 auto;
+    background-image: url("Colours.png");
+    background-size: 100px;
+}
+
+main {
+    background-image: url("fondo pizza.jpeg");
+    background-size: 500px;
+}
+
+header {
+    background-color: gold;
+    padding:2em;
+}
+
+h1 {
+    color:red;
+    padding:0.5em;
+}
+
+h2 {
+    font-size: 3em;
+    margin-left: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+span {
+    color:green;
+    margin-bottom: 3em;
+}
+
+.pizzas {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding:5em;
+    margin-top:2em;
+    display:flex;
+    flex-wrap: wrap;
+    list-style: none;
+    display:block;
+    background-color: wheat;
+    border-radius: 15px;
+    font-size: 1.3em;
+}
+
+.pizzas_1, .pizzas_2 {
+    margin-left: 200px;
+    font-size: 1em;
+}
+
+.carta {
+    padding: 2em;
+    margin-top: 50px;
+    background-color: wheat;
+    border-radius: 10px;
+}
+
+
+.tamaño {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding:2em;
+    padding: 3em;
+    list-style: none;
+    display:block;
+    background-color: wheat;
+    border-radius: 15px;
+    font-size: 1.3em;
+}
+
+select, label {
+    margin-top: 20px;
+    background-color: wheat;
+    border-radius: 15px;
+}
+
+
+form {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right:20px;
+    grid-template-columns: repeat(auto-fit,200px, 1fr);
+}
+
+.pedido, .pedido2, .pedido3 {
+    border-radius: 15;
+    text-align: center;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+}
+
+.realizar {
+    margin-left: 700px;
+    padding:2em;
+    background-color: aqua;
+    border: 2px solid black;
+    margin-bottom: 2em;
+    font-size: large;
+    border-radius: 15px;
+}
+
+.realizar:hover {
+    color: red;
+    background-color: white;
+}
+
+li {
+    padding: 2em;
+    text-align: left;
+}
+
+label {
+    margin-bottom: 20px;
+    text-align: left;
+    padding:2em;
+}
+
+.clientito {
+    list-style: none;
+    background-color: wheat;
+    border-radius: 15px;
+    font-size: 1.3em;
+}
+
+.realizar_oferta {
+    size: 3em;
+}
+
+fieldset {
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+
+input [type="text"], textarea {
+    width:100%;
+}
+
+legend {
+    font-size: x-large;
+    color: white;
+}
+
+textarea[id="Otros"] {
+    resize:vertical;
+}
+
+textarea [id="Dirección"] {
+    resize:none;
+}
+
+
+@import url("file:///media/cfgs1/MANGEL/CGS%201/PRO/Trabajo%20Final%20CGS1/Pizzeria%20LND/Pizzas.html");
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    position: relative;
+    letter-spacing: 0.04em;
+}
+
+.section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg1 {
+    background-color: #ccc;
+}
+
+.bg2 {
+    background-color: #333;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 0;
+}
+.revealUp {
+    opacity: 0;
+    visibility: hidden;
+}
+.spacer {
+    height: 50vh;
+    background-color: #000;
+}
+
+header {
+    width: 100%;
+    height:100%;
+  }
+  
+  header {
+      background: linear-gradient(-45deg, lightyellow, wheat, grey);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+  }
+  
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+  @import url("file:///media/cfgs1/MANGEL/CGS%201/PRO/Trabajo%20Final%20CGS1/Pizzeria%20LND/Pizzas.html");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+  
+header {
+    display: flex;
+    min-height: 30vh;
+    align-items: center;
+    justify-content: center;
+}
+  
+.title {
+    position: relative;
+}
+
+.title h1 {
+    margin-left: 700px;
+    color: red;
+    font-size: 3em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+  
+.title h1:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px red;
+}
+  
+.title h1:nth-child(2) {
+    color: red;
+    animation: animate 4s ease-in-out infinite;
+}
+  
+@keyframes animate {
+    0%,
+    100% {
+    clip-path: polygon(
+        0% 45%,
+        16% 44%,
+        33% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+}
+  
+    50% {
+      clip-path: polygon (
+        0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%
+      );
+    }
+}
+
+.title h1 {
+    color: green;
+    font-size: 3em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+  
+.title span:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px green;
+}
+  
+.title span:nth-child(2) {
+    color: green;
+    animation: animate 4s ease-in-out infinite;
+}
+  
+@keyframes animate {
+    0%,
+    100% {
+      clip-path: polygon(
+        5% 45%,
+        16% 44%,
+        33% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+}
+  
+    50% {
+      clip-path: polygon(
+        0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%
+      );
+    }
+}
+
+@media (max-width: 768px) {
+
+    .pizzas label {
+        list-style: none;
+        display: flex;
+        font-size: 15px;
+    }
+    .pizzas_1 label {
+        flex: 1 1 0;
+    }
+}
