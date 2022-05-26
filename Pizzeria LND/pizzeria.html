@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizzeria</title>
+    <title>Pizzeria Papá Juan</title>
     <link rel="stylesheet" href="pizzeria.css">
-    <link rel='icon' type='image/x-icon' href='/pizza.ico' />
+    <link rel='icon' href='pizza.ico' type='image/x-icon'/>
 </head>
 <header class="titulo">
-    <h1>Restaurante <span>Papá Juan</span></h1>
-    <h1>Restaurante <span>Papá Juan</span></h1>
-    <img src="Papa_Juan.png" alt="papa_juan" class="papa_juan">
-    <h2>Pedido de Pizza</h2>
+    <div class="wrapper">
+        <h1>Pizzería <span>Papá Juan</span></h1>
+        <h1>Pizzería <span>Papá Juan</span></h1>
+        <h2>Pedido de Pizza</h2>
+        <img src="Papa_Juan.png" alt="papa_juan" class="papa_juan">
+    </div>
+           
 </header>
 <body>
     <main>
@@ -22,7 +25,7 @@
             <select name="escoger_pizzas" id="" class="escoger_pizzas">
                 <option value="barbacoa">Barbacoa</option>
                 <option value="capricciosa">Capricciosa</option>
-                <option value="cuatro_estaciones">Cuatro Estaciones<option>
+                <option value="cuatro_estaciones">Cuatro Estaciones</option>
                 <option value="cuatro_quesos">Cuatro Quesos</option>
                 <option value="hawaiana">Hawaiana</option>
                 <option value="margarita">Margarita</option>
@@ -34,16 +37,16 @@
 
             <ul class="carta">
                 <li class="carta_pizzas">  
-                    <p><b>Barbacoa</b> - Bacon, Carne Picada, Cebolla, Pechuga de Pollo, Queso, Tomate</p>
-                    <p><b>Capricciosa</b> - Aceitunas Negras, Anchoas, Champiñones, Queso, Tomate</p>
-                    <p><b>Cuatro Estaciones</b> - Albahaca, Aceitunas, Alcachofa, Jamón, Setas, Tomate</p>
-                    <p><b>Cuatro Quesos</b> - Queso cheddar, Queso crema, Queso mozzarella, Queso parmesano</p>
-                    <p><b>Hawaiana</b> - Jamón, Piña, Queso fundido, Tomate</p>
-                    <p><b>Margarita</b> - Jamón, Queso, Tomate</p>
-                    <p><b>Marinera</b> - Aceite, Ajo, Orégano, Tomate</p>
-                    <p><b>Napolitana</b> - Aceite, Alcaparras, Anchoas, Mozzarella, Orégano, Tomate</p>
-                    <p><b>Pepperoni</b> - Mozzarella, Pepperoni, Salami, Tomate</p>
-                    <p><b>Vegetariana</b> - Berenjena, Calabacín, Cebolla, Mozzarella, Pimiento verde, Tomate</p></li>
+                    <p><b>Barbacoa</b> - Bacon, Carne Picada, Cebolla, Pechuga de Pollo, Queso, Tomate -<b> 12,50€</b></p>
+                    <p><b>Capricciosa</b> - Aceitunas Negras, Anchoas, Champiñones, Queso, Tomate -<b> 11,50€</b></p>
+                    <p><b>Cuatro Estaciones</b> - Albahaca, Aceitunas, Alcachofa, Jamón, Setas, Tomate -<b> 15,00€</b></p>
+                    <p><b>Cuatro Quesos</b> - Queso cheddar, Queso crema, Queso mozzarella, Queso parmesano -<b> 13,00€</b></p>
+                    <p><b>Hawaiana</b> - Jamón, Piña, Queso fundido, Tomate -<b> 18,00€</b></p>
+                    <p><b>Margarita</b> - Jamón, Queso, Tomate -<b> 10,00€</b></p>
+                    <p><b>Marinera</b> - Aceite, Ajo, Orégano, Tomate -<b> 12,50€</b></p>
+                    <p><b>Napolitana</b> - Aceite, Alcaparras, Anchoas, Mozzarella, Orégano, Tomate -<b> 13,50€</b></p>
+                    <p><b>Pepperoni</b> - Mozzarella, Pepperoni, Salami, Tomate -<b> 11,50€</b></p>
+                    <p><b>Vegetariana</b> - Berenjena, Calabacín, Cebolla, Mozzarella, Pimiento verde, Tomate -<b> 13,00€</b></p></li>
                 <li class="imagen_pizzas">
                     <img src="pizza_carta.jpg" alt="pizza_carta" class="pizza_carta">
                 </li>
@@ -74,6 +77,8 @@
               <li> 
                 <label for="cliente">Cliente</label>
                 <input type="text" name="" id="cliente" required minlength="3" maxlength="50">
+                <label for="telefono">Teléfono</label>
+                <input type="text" name="" id="telefono" required minlength="9" maxlength="9">
               </li>
 
               <li>
@@ -85,19 +90,19 @@
                 <label for="hora_de_entrega">Hora de entrega</label>
                 <input type="time" name="" id="hora_de_entrega" min="9:00" max="00:00" required>
               </li>
-        </ul>
-      </fieldset>
-  </form>
-
-<form action="">
-    <label for="oferta">Escoger Oferta</label>
-     <select name="escoger_oferta" id="oferta" class="realizar_oferta">
-         <option value="2x1">2x1</option>
-         <option value="3x2">3x2</option>
+    <label for="bebida">Escoger Bebida</label>
+     <select name="escoger_bebida" id="bebida" class="escoger_bebida">
+         <option value="cocacola">Coca Cola</option>
+         <option value="sprite">Sprite</option>
+         <option value="Nestea_mango_pina">Nestea (Mango-Piña)</option>
+         <option value="Nesta_limon">Nestea (Limón)</option>
+         <option value="fanta_naranja">Fanta (Naranja)</option>
+         <option value="botella_agua">Botella de Agua</option>
+         <option value="ninguna">Ninguna</option>
     </select>
 </form>
 
-<input type="submit" value="realizar Pedido" class="realizar">
+<input type="submit" value="Realizar Pedido" class="realizar">
 </main>   
 </body>
 </html>
