@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="pizzeria.css">
     <link rel='icon' type='image/x-icon' href='/pizza.ico' />
 </head>
-<header class="title">
+<header class="titulo">
     <h1>Restaurante <span>Papá Juan</span></h1>
     <h1>Restaurante <span>Papá Juan</span></h1>
-
+    <img src="Papa_Juan.png" alt="papa_juan" class="papa_juan">
     <h2>Pedido de Pizza</h2>
 </header>
 <body>
@@ -19,7 +19,7 @@
     <fieldset class="menu_pizzas">
         <legend class="pedido">Pizzas</legend>
             <label for="pizza">Tipo de Pizza</label>
-            <select name="carta_pizzas" id="" class="carta_pizzas">
+            <select name="escoger_pizzas" id="" class="escoger_pizzas">
                 <option value="barbacoa">Barbacoa</option>
                 <option value="capricciosa">Capricciosa</option>
                 <option value="cuatro_estaciones">Cuatro Estaciones<option>
@@ -33,11 +33,22 @@
             </select>
 
             <ul class="carta">
-                <p><b>Barbacoa</b> - Bacon, Carne Picada, Cebolla, Pechuga de Pollo, Queso, Tomate</p>
-                <p><b>Capricciosa</b> - Aceitunas Negras, Anchoas, Champiñones, Queso, Tomate</p>
-                <p><b>Cuatro Estaciones</b> - Albahaca, Aceitunas, Alcachofa, Jamón, Setas, Tomate</p>
-                <p><b>Cuatro Quesos</b> - Albahaca, Aceitunas, Alcachofa, Jamón, Setas, Tomate</p>
+                <li class="carta_pizzas">  
+                    <p><b>Barbacoa</b> - Bacon, Carne Picada, Cebolla, Pechuga de Pollo, Queso, Tomate</p>
+                    <p><b>Capricciosa</b> - Aceitunas Negras, Anchoas, Champiñones, Queso, Tomate</p>
+                    <p><b>Cuatro Estaciones</b> - Albahaca, Aceitunas, Alcachofa, Jamón, Setas, Tomate</p>
+                    <p><b>Cuatro Quesos</b> - Queso cheddar, Queso crema, Queso mozzarella, Queso parmesano</p>
+                    <p><b>Hawaiana</b> - Jamón, Piña, Queso fundido, Tomate</p>
+                    <p><b>Margarita</b> - Jamón, Queso, Tomate</p>
+                    <p><b>Marinera</b> - Aceite, Ajo, Orégano, Tomate</p>
+                    <p><b>Napolitana</b> - Aceite, Alcaparras, Anchoas, Mozzarella, Orégano, Tomate</p>
+                    <p><b>Pepperoni</b> - Mozzarella, Pepperoni, Salami, Tomate</p>
+                    <p><b>Vegetariana</b> - Berenjena, Calabacín, Cebolla, Mozzarella, Pimiento verde, Tomate</p></li>
+                <li class="imagen_pizzas">
+                    <img src="pizza_carta.jpg" alt="pizza_carta" class="pizza_carta">
+                </li>
             </ul>
+            
     </fieldset>
 </form>
     
@@ -86,7 +97,7 @@
     </select>
 </form>
 
-<input type="submit" value="Realizar Pedido" class="realizar">
+<input type="submit" value="realizar Pedido" class="realizar">
 </main>   
 </body>
 </html>

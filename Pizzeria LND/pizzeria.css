@@ -4,6 +4,20 @@
     box-sizing: border-box;
 }
 
+.titulo {
+    display:flex;
+}
+
+.titulo_texto {
+    grid-column: 2 / 3;
+    grid-row: 1 / 1;
+}
+
+.titulo_imagen {
+    grid-column: 1 / 3;
+    grid-row: 1 / 1;
+}
+
 body {
     font-family: "Signika Negative", sans-serif;
     font-weight: 300;
@@ -37,6 +51,10 @@ h2 {
     text-align: center;
 }
 
+.papa_juan {
+    margin-right: 800px;
+}
+
 span {
     color:green;
     margin-bottom: 3em;
@@ -66,8 +84,27 @@ span {
     margin-top: 50px;
     background-color: wheat;
     border-radius: 10px;
+    font-size: 20px;
+    text-align: left;
+    display:grid;
+    list-style: none;
+    grid-template-columns: repeat(2);
 }
 
+.pizza_carta {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.carta_pizzas {
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+.imagen_pizzas {
+    grid-column: 2 / 2;
+    grid-row: 1;
+}
 
 .tamaño {
     margin-left: 20px;
@@ -245,11 +282,11 @@ header {
     justify-content: center;
 }
   
-.title {
+.titulo {
     position: relative;
 }
 
-.title h1 {
+.titulo h1 {
     margin-left: 700px;
     color: red;
     font-size: 3em;
@@ -257,12 +294,12 @@ header {
     transform: translate(-50%, -50%);
 }
   
-.title h1:nth-child(1) {
+.titulo h1:nth-child(1) {
     color: transparent;
     -webkit-text-stroke: 2px red;
 }
   
-.title h1:nth-child(2) {
+.titulo h1:nth-child(2) {
     color: red;
     animation: animate 4s ease-in-out infinite;
 }
@@ -298,19 +335,19 @@ header {
     }
 }
 
-.title h1 {
+.titulo h1 {
     color: green;
     font-size: 3em;
     position: absolute;
     transform: translate(-50%, -50%);
 }
   
-.title span:nth-child(1) {
+.titulo span:nth-child(1) {
     color: transparent;
     -webkit-text-stroke: 2px green;
 }
   
-.title span:nth-child(2) {
+.titulo:nth-child(2) {
     color: green;
     animation: animate 4s ease-in-out infinite;
 }
@@ -347,6 +384,9 @@ header {
 }
 
 @media (max-width: 768px) {
+    .titulo_texto {
+        display:flex;
+    }
 
     .pizzas label {
         list-style: none;
@@ -355,5 +395,9 @@ header {
     }
     .pizzas_1 label {
         flex: 1 1 0;
+    }
+
+    .carta {
+        font-size: 10px;
     }
 }
