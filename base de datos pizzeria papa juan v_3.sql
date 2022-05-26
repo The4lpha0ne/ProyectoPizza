@@ -37,9 +37,9 @@ Create table Pizza(
 
 );
 
-alter table Cliente add foreign key(NumeroPedido) references Pedido(NumeroPedido);
-alter table Pedido add foreign key(Nombre, Tamano) REFERENCES Pizza(Nombre, Tamano);
-alter table Factura add foreign key(NumeroPedido) REFERENCES Pedido(NumeroPedido);
+alter table Cliente add foreign key(NumeroPedido) references Pedido(NumeroPedido) ON DELETE CASCADE ON UPDATE CASCADE;
+alter table Pedido add foreign key(Nombre, Tamano) REFERENCES Pizza(Nombre, Tamano) ON DELETE CASCADE ON UPDATE CASCADE;
+alter table Factura add foreign key(NumeroPedido) REFERENCES Pedido(NumeroPedido) ON DELETE CASCADE ON UPDATE CASCADE ;
 
 insert into Pizza(Nombre,Tamano, Precio) values
 ("Margarita", "Mediana", 12.00),
