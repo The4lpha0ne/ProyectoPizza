@@ -66,9 +66,9 @@ insert into Cliente(Telefono,Nombre,Direccion,C_Postal,NumeroPedido) values
 (965342776, "Juan", "calle_de_la_pasa", 52789, 84212);
 
 insert into Factura(IdFactura, Fecha, NumeroPedido) values
-(7357865, 2022-02-01, 84212),
-(7345621, 2022-03-21, 54321),
-(9853470, 2022-01-12, 45673);
+(7357865, '2022-02-01', 84212),
+(7345621, '2022-03-21', 54321),
+(9853470, '2022-01-12', 45673);
 
 
 /*Consultas*/
