@@ -25,6 +25,7 @@ h2 {
 .papa_juan {
     grid-column: 1 / 3;
     grid-row: 1;
+    border-radius: 10px;
 }
 
 body {
@@ -104,6 +105,10 @@ span {
     grid-row: 1;
 }
 
+.carta_pizzas p {
+    padding: 2px;
+}
+
 .imagen_pizzas {
     grid-column: 2 / 2;
     grid-row: 1;
@@ -178,6 +183,10 @@ label {
 
 .realizar_oferta {
     size: 3em;
+}
+
+.escoger_bebida {
+    margin-right: 440px;
 }
 
 fieldset {
