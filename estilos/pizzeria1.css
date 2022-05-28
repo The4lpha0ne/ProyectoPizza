@@ -35,12 +35,12 @@ body {
     width:100%;
     text-align: center;
     margin: 0 auto;
-    background-image: url("Colours.png");
+    background-image: url("../imagenes/Colours.png");
     background-size: 100px;
 }
 
 main {
-    background-image: url("fondo pizza.jpeg");
+    background-image: url("../imagenes/fondo pizza.jpeg");
     background-size: 500px;
 }
 
