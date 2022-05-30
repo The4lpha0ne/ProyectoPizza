@@ -1,7 +1,24 @@
-*, * ::after, * ::before {
-    padding: 0px;
-    margin:0px;
+*, *::after, *::before {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: "Signika Negative", sans-serif;
+    font-weight: 300;
+    border: 5px solid wheat;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    background-image: url("../imagenes/Colours.png");
+    background-size: 100px;
+}
+
+.titulo {
+    padding-bottom: 1em;
+    padding-top: 1em;
 }
 
 .wrapper {
@@ -10,53 +27,15 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(50px, auto);
+    margin-top: 3.5em;
 }
 
 h1 {
     grid-column: 2 / 3;
     grid-row: 1;
-}
-
-h2 {
-    grid-column: 2 / 3;
-    grid-row: 2;
-}
-
-.papa_juan {
-    grid-column: 1 / 3;
-    grid-row: 1;
-    border-radius: 10px;
-}
-
-body {
-    font-family: "Signika Negative", sans-serif;
-    font-weight: 300;
-    border: 5px solid wheat;
-    width:100%;
-    text-align: center;
-    margin: 0 auto;
-    background-image: url("../imagenes/Colours.png");
-    background-size: 100px;
-}
-
-main {
-    background-image: url("../imagenes/fondo pizza.jpeg");
-    background-size: 500px;
-}
-
-header {
     background-color: gold;
-    padding:2em;
-}
-
-h1 {
-    color:red;
-    padding:0.5em;
-}
-
-h2 {
-    font-size: 3em;
-    text-align:center;
+    border-radius: 20%;
+    padding: 0.2em;
 }
 
 span {
@@ -64,7 +43,79 @@ span {
     margin-bottom: 3em;
 }
 
-.pizzas {
+.elpedido {
+    font-size: 3em;
+    text-shadow: 2px 4px aqua;    
+}
+
+h2 {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+
+
+/* h1 {
+    color: red;
+    padding: 0.5em;
+} */
+
+/* h2 {
+    font-size: 3em;
+    text-align:center;
+} */
+
+.papa_juan {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    border-radius: 10px;
+}
+
+main {
+    background-image: url("../imagenes/fondo pizza.jpeg");
+    background-size: 500px;
+    height: auto;
+    width: 100%;
+    padding-bottom: 1%;
+}
+
+/**************************************************/
+/**************************************************/
+/**************************************************/
+/**************************************************/
+
+/* width */
+::-webkit-scrollbar {
+    width: auto;
+}
+
+/* Track */
+::-webkit-scrollbar-track-piece {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: green;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: red;
+}
+
+html, body {
+    overflow-x: hidden;
+    scrollbar-color: green black;
+    scrollbar-width: auto;
+}
+
+/**************************************************/
+/**************************************************/
+/**************************************************/
+/**************************************************/
+
+/* .pizzas {
     margin-left: 10px;
     margin-right: 10px;
     padding:5em;
@@ -81,7 +132,7 @@ span {
 .pizzas_1, .pizzas_2 {
     margin-left: 200px;
     font-size: 1em;
-}
+} */
 
 .carta {
     padding: 2em;
