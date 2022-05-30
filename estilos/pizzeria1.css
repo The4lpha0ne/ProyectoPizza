@@ -151,7 +151,7 @@ html, body {
 
 .elpedido {
     font-size: 2em;
-    text-shadow: 2px 4px aqua;
+    text-shadow: 2px 3px aqua;
     text-align: center;
 }
 
@@ -162,6 +162,22 @@ main {
     width: 100%;
     padding-bottom: 1%;
     text-align: center;
+}
+
+fieldset {
+    border-radius: 2.7em;
+    margin-bottom: 50px;
+    border-color: gold;
+    border-width: 5px;
+}
+
+legend {
+    font-size: x-large;
+    color: red;
+    text-shadow: 2px 3px black;
+    background-color: gold;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /****************************************************************************************************/
@@ -275,18 +291,8 @@ label {
     margin-right: 440px;
 }
 
-fieldset {
-    border-radius: 2.7em;
-    margin-bottom: 50px;
-}
-
 input [type="text"], textarea {
     width:100%;
-}
-
-legend {
-    font-size: x-large;
-    color: white;
 }
 
 textarea[id="Otros"] {
@@ -296,7 +302,6 @@ textarea[id="Otros"] {
 textarea [id="Dirección"] {
     resize:none;
 }
-
 
 @import url("file:///media/cfgs1/MANGEL/CGS%201/PRO/Trabajo%20Final%20CGS1/Pizzeria%20LND/Pizzas.html");
 *,
