@@ -205,29 +205,8 @@ CALL obtenerNumeroTelefono(52789);
 | 965342776 |
 +-----------+
 
-/*Trigger*/
-CREATE OR REPLACE TRIGGER numero_pizzas
 
-BEFORE
-INSERT ON Pedido
-FOR EACH ROW
 
-DECLARE
-
-Numero INTEGER;
-
-BEGIN
-
-SELECT count(*) INTO Numero
-FROM Pedido WHERE Cantidad = :new.Cantidad;
-IF (Numero < 1)
-
-THEN raise_application_error
-(-20600,:new.mgr||'no se puede pedir menos de 1 pizza');
-
-END IF;
-
-END;
 
 
 
