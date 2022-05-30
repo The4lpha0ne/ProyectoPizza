@@ -254,7 +254,7 @@ label {
     padding: 1em;
     text-align: left;
     /* position: relative; */
-    width: 30%;
+    width: 25%;
     height: 10vh;
     border-radius: 1em;
     /* flex-grow: 1; */
@@ -264,7 +264,7 @@ label {
 .escoger_pizzas {
     padding: 0.5em;
     /* position: relative; */
-    width: 30%;
+    width: 25%;
     height: 10vh;
     /* max-width: 180px; */
     text-align: left;
