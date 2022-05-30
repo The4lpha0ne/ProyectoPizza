@@ -3,18 +3,22 @@
     margin: 0%;
     padding: 0%;
     border: 0%;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", 
+    sans-serif;
 }
 
 body {
-    font-family: "Signika Negative", sans-serif;
+    font-family: "Signika Negative", 
+    sans-serif;
     font-weight: 300;
     border: 5px solid gold;
     height: auto;
     width: 100%;
     margin: 0 auto;
     padding: 0%;
-    background-image: url("../imagenes/Colours.png");
+    background-image: url(
+        "../imagenes/Colours.png"
+    );
     background-size: 100px;
     z-index: -1;
 }
@@ -156,7 +160,9 @@ html, body {
 }
 
 main {
-    background-image: url("../imagenes/fondo_pizza.jpeg");
+    background-image: url(
+        "../imagenes/fondo_pizza.jpeg"
+    );
     background-size: 500px;
     height: auto;
     width: 100%;
@@ -191,7 +197,9 @@ fieldset {
     align-items: center;
 }
 
-.menu_pizzas, .menu_pizzas2, .menu_pizzas3 {
+.menu_pizzas, 
+.menu_pizzas2, 
+.menu_pizzas3 {
     border-radius: 2.7em;
     border-color: gold;
     border-width: 5px;
@@ -206,29 +214,62 @@ fieldset {
     border-radius: 2em;
     text-align: center;
     list-style: none;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, 
+    Helvetica, sans-serif;
     font-size: 2.5em;
 }
 
 select, label {
     margin-top: 10px;
     background-color: wheat;
-    border-radius: 2em;
+    /* border-radius: 2em; */
 }
 
 label {
     margin-bottom: 10px;
     text-align: left;
-    padding:2em;
+    padding: 0em;
+}
+
+.PrimeraParte {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    padding: 0%;
+    /* text-align: center; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: row;
+    /* align-items: center;     */
+}
+
+.thepizza {
+    padding: 1em;
+    text-align: left;
+    /* position: relative; */
+    width: 50%;
+    height: 10vh;
+    border-radius: 1em;
+    flex-grow: 1;
+    margin-right: 8px; 
 }
 
 .escoger_pizzas {
-
+    /* position: relative; */
+    width: 50%;
+    height: 10vh;
+    /* max-width: 180px; */
+    text-align: left;
+    border-radius: 1em;
+    flex-grow: 1;
+    margin-left: 8px;
 }
 
 .carta {
     padding: 2em;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background-color: wheat;
     border-radius: 2em;
     font-size: 20px;
@@ -325,80 +366,3 @@ textarea [id="Dirección"] {
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
-
-/* .pizzas {
-    margin-left: 10px;
-    margin-right: 10px;
-    padding:5em;
-    margin-top:2em;
-    display:flex;
-    flex-wrap: wrap;
-    list-style: none;
-    display:block;
-    background-color: wheat;
-    border-radius: 15px;
-    font-size: 1.3em;
-}
-
-.pizzas_1, .pizzas_2 {
-    margin-left: 200px;
-    font-size: 1em;
-} */
-
-/* @media (max-width: 768px) {
-    .titulo_texto {
-        display:flex;
-    }
-
-    .pizzas label {
-        list-style: none;
-        display: flex;
-        font-size: 15px;
-    }
-    .pizzas_1 label {
-        flex: 1 1 0;
-    }
-
-    .carta {
-        font-size: 10px;
-    }
-} */
-
-/* @import url("file:///media/cfgs1/MANGEL/CGS%201/PRO/Trabajo%20Final%20CGS1/Pizzeria%20LND/Pizzas.html");
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-    position: relative;
-    letter-spacing: 0.04em;
-} */
-
-/* .section {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    padding: 0;
-    text-align: center;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .bg1 {
-    background-color: #ccc;
-}
-
-.bg2 {
-    background-color: #333;
-} */
-
-/* .revealUp {
-    opacity: 0;
-    visibility: hidden;
-} */
-
-/* .spacer {
-    height: 50vh;
-    background-color: #000;
-} */
