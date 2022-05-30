@@ -164,21 +164,53 @@ main {
     text-align: center;
 }
 
-fieldset {
+.Formulario1 {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right:20px;
+    /* grid-template-columns: repeat(
+        auto-fit,200px, 1fr
+    ); */
+}
+
+.menu_pizzas, .menu_pizzas2, .menu_pizzas3 {
     border-radius: 2.7em;
-    margin-bottom: 50px;
     border-color: gold;
     border-width: 5px;
 }
 
-legend {
+fieldset {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 50px;
+    padding: 0%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.legend {
     font-size: x-large;
     color: red;
     text-shadow: 2px 3px black;
     background-color: gold;
     padding-left: 10px;
     padding-right: 10px;
+    border-radius: 2em;
+    text-align: center;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
 }
+
+
+/* legend {
+
+} */
 
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -232,22 +264,6 @@ select, label {
     margin-top: 20px;
     background-color: wheat;
     border-radius: 2em;
-}
-
-
-form {
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right:20px;
-    grid-template-columns: repeat(auto-fit,200px, 1fr);
-}
-
-.pedido, .pedido2, .pedido3 {
-    border-radius: 2em;
-    text-align: center;
-    list-style: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 3em;
 }
 
 .realizar {
