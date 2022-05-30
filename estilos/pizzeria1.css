@@ -169,15 +169,12 @@ main {
     margin-top: 20px;
     margin-left: 20px;
     margin-right:20px;
-    /* grid-template-columns: repeat(
-        auto-fit,200px, 1fr
-    ); */
-}
-
-.menu_pizzas, .menu_pizzas2, .menu_pizzas3 {
-    border-radius: 2.7em;
-    border-color: gold;
-    border-width: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 fieldset {
@@ -189,12 +186,18 @@ fieldset {
     text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     align-items: center;
 }
 
-.legend {
-    font-size: x-large;
+.menu_pizzas, .menu_pizzas2, .menu_pizzas3 {
+    border-radius: 2.7em;
+    border-color: gold;
+    border-width: 5px;
+}
+
+.pedido, .pedido2, .pedido3 {
     color: red;
     text-shadow: 2px 3px black;
     background-color: gold;
@@ -207,15 +210,21 @@ fieldset {
     font-size: 2.5em;
 }
 
+select, label {
+    margin-top: 10px;
+    background-color: wheat;
+    border-radius: 2em;
+}
 
-/* legend {
+label {
+    margin-bottom: 10px;
+    text-align: left;
+    padding:2em;
+}
 
-} */
+.escoger_pizzas {
 
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
+}
 
 .carta {
     padding: 2em;
@@ -227,20 +236,6 @@ fieldset {
     display:grid;
     list-style: none;
     grid-template-columns: repeat(2);
-}
-
-.pizza_carta {
-    width: 300px;
-    border-radius: 2em;
-}
-
-.carta_pizzas {
-    grid-column: 1 / 2;
-    grid-row: 1;
-}
-
-.carta_pizzas p {
-    padding: 2px;
 }
 
 .imagen_pizzas {
@@ -260,10 +255,35 @@ fieldset {
     font-size: 1.3em;
 }
 
-select, label {
-    margin-top: 20px;
+.clientito {
+    list-style: none;
     background-color: wheat;
     border-radius: 2em;
+    font-size: 1.3em;
+}
+
+li {
+    padding: 2em;
+    text-align: left;
+}
+
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+
+.pizza_carta {
+    width: 300px;
+    border-radius: 2em;
+}
+
+.carta_pizzas {
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+.carta_pizzas p {
+    padding: 2px;
 }
 
 .realizar {
@@ -279,24 +299,6 @@ select, label {
 .realizar:hover {
     color: red;
     background-color: white;
-}
-
-li {
-    padding: 2em;
-    text-align: left;
-}
-
-label {
-    margin-bottom: 20px;
-    text-align: left;
-    padding:2em;
-}
-
-.clientito {
-    list-style: none;
-    background-color: wheat;
-    border-radius: 2em;
-    font-size: 1.3em;
 }
 
 .realizar_oferta {
@@ -317,44 +319,6 @@ textarea[id="Otros"] {
 
 textarea [id="Dirección"] {
     resize:none;
-}
-
-@import url("file:///media/cfgs1/MANGEL/CGS%201/PRO/Trabajo%20Final%20CGS1/Pizzeria%20LND/Pizzas.html");
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-    position: relative;
-    letter-spacing: 0.04em;
-}
-
-.section {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    padding: 0;
-    text-align: center;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bg1 {
-    background-color: #ccc;
-}
-
-.bg2 {
-    background-color: #333;
-}
-
-.revealUp {
-    opacity: 0;
-    visibility: hidden;
-}
-.spacer {
-    height: 50vh;
-    background-color: #000;
 }
 
 /****************************************************************************************************/
@@ -398,4 +362,43 @@ textarea [id="Dirección"] {
     .carta {
         font-size: 10px;
     }
+} */
+
+/* @import url("file:///media/cfgs1/MANGEL/CGS%201/PRO/Trabajo%20Final%20CGS1/Pizzeria%20LND/Pizzas.html");
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    position: relative;
+    letter-spacing: 0.04em;
+} */
+
+/* .section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .bg1 {
+    background-color: #ccc;
+}
+
+.bg2 {
+    background-color: #333;
+} */
+
+/* .revealUp {
+    opacity: 0;
+    visibility: hidden;
+} */
+
+/* .spacer {
+    height: 50vh;
+    background-color: #000;
 } */
