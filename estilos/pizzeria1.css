@@ -14,28 +14,64 @@ body {
     margin: 0 auto;
     background-image: url("../imagenes/Colours.png");
     background-size: 100px;
+    z-index: -1;
 }
 
 .titulo {
-    padding-bottom: 1em;
-    padding-top: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 4em;
+    margin-bottom: 1em;
+    /* text-align: center;
+    position: fixed;
+    width: 100%; */
+    /* z-index: -1; */
+    display: inline-block;
+    width: 100%;
 }
 
+/* .titulo:not(.logo1, .logo2) {
+    text-align: center;
+} */
+
 .wrapper {
-    margin-left: 100px;
+    /* margin-left: 100px;
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    grid-auto-rows: minmax(50px, auto);
+    grid-auto-rows: minmax(50px, auto); */
     margin-top: 3.5em;
+    /* text-align: center;
+    position: sticky; */
+    width: 100%;
+    font-size: 1em;
+    display: inline-block;
 }
 
-h1 {
-    grid-column: 2 / 3;
-    grid-row: 1;
+.logo1 {
+    /* grid-column: 1 / 3;
+    grid-row: 1; */
+    border-radius: 20px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    width: 15%;
+    height: auto;
+    max-width: 65px;
+    margin-top: 0.5em;
+    margin-right: 0%;
+    z-index: 1; 
+}
+
+.LaPizzeria {
+    /* grid-column: 2 / 3;
+    grid-row: 1; */
     background-color: gold;
-    border-radius: 20%;
+    border-radius: 1em;
     padding: 0.2em;
+    display: inline-block;
+    width: 70%;    
+    text-align: center;
+    vertical-align: top;
 }
 
 span {
@@ -43,16 +79,21 @@ span {
     margin-bottom: 3em;
 }
 
-.elpedido {
-    font-size: 3em;
-    text-shadow: 2px 4px aqua;    
+.logo2 {
+    /* grid-column: 1 / 3;
+    grid-row: 1; */
+    border-radius: 20px;
+    visibility: hidden;
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;  
+    width: 15%;
+    height: auto;
+    max-width: 5px;
+    margin-top: 0.5em;
+    margin-left: 10%;
+    z-index: 1;
 }
-
-h2 {
-    grid-column: 2 / 3;
-    grid-row: 2;
-}
-
 
 /* h1 {
     color: red;
@@ -64,14 +105,18 @@ h2 {
     text-align:center;
 } */
 
-.papa_juan {
-    grid-column: 1 / 3;
-    grid-row: 1;
-    border-radius: 10px;
+/* h2 {
+    grid-column: 2 / 3;
+    grid-row: 2;
+} */
+
+.elpedido {
+    font-size: 3em;
+    text-shadow: 2px 4px aqua;    
 }
 
 main {
-    background-image: url("../imagenes/fondo pizza.jpeg");
+    background-image: url("../imagenes/fondo_pizza.jpeg");
     background-size: 500px;
     height: auto;
     width: 100%;
