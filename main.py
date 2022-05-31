@@ -4,7 +4,7 @@ from bottle import route, run, template, request, get, post, redirect, static_fi
 @get("/static/<filepath:path>")
 def html(filepath):
     return static_file(filepath, root = "static")
-
+    
 @get('/index')
 def about():
     return static_file('index.html', root='static') 
