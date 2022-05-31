@@ -319,7 +319,7 @@ label {
     .carta {
         padding: 0em;
         background-color: wheat;
-        border-radius: 2em;
+        border-radius: 2.35em;
         font-size: 1em;
         text-align: left;
         display: grid;
@@ -362,9 +362,9 @@ label {
     display: grid;
     list-style: none;
     background-color: wheat;
-    padding: 1em;
-    border-radius: 1.7em;
+    border-radius: 1.6em;
     font-size: 1.5em;
+    padding: 1em;
     grid-template-columns: repeat(3);
 }
 
@@ -424,7 +424,7 @@ label {
         list-style: none;
         background-color: wheat;
         padding: 1em;
-        border-radius: 1.7em;
+        border-radius: 1.6em;
         font-size: 1.5em;
     }
     
@@ -490,20 +490,80 @@ label {
     display: grid;
     list-style: none;
     background-color: wheat;
-    border-radius: 2em;
+    border-radius: 1.85em;
     font-size: 1.3em;
+    padding: 1em;
+    /* grid-template-columns: 1fr 1fr; */
 }
 
-input [type="text"], textarea {
+.clientito li {
+    padding: 0em;
+    margin: 0em;
+    text-align: center;    
+}
+
+/****************************************************************************************************/
+/****************************************************************************************************/
+
+/* .container2 {
+
+}
+
+.the_client {
+
+}
+
+#cliente {
+    width: 100%;
+}
+
+.phone {
+
+}
+
+#telefono {
+    width: 100%;
+} */
+
+/****************************************************************************************************/
+/****************************************************************************************************/
+
+/* .container3 {
+
+}
+
+.address {
+
+}
+
+#direccion {
     width:100%;
+} */
+
+/****************************************************************************************************/
+/****************************************************************************************************/
+
+/* .container4 {
+
 }
 
-textarea[id="Otros"] {
-    resize:vertical;
+.delivery_time {
+
 }
 
-textarea [id="Dirección"] {
-    resize:none;
+#hora_de_entrega {
+
+} */
+
+/****************************************************************************************************/
+/****************************************************************************************************/
+
+/* .ultima_parte {
+
+}
+
+.the_drink {
+
 }
 
 .escoger_bebida {
@@ -523,8 +583,7 @@ textarea [id="Dirección"] {
 .realizar:hover {
     color: red;
     background-color: white;
-}
-
+} */
 
 /****************************************************************************************************/
 /****************************************************************************************************/
