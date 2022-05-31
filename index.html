@@ -161,47 +161,65 @@
     
             <fieldset class="menu_pizzas2">
                 <legend class="pedido2">Tamaño</legend>
-                <ul class="tamaño"> 
-                    <input type="radio" name="tamaño" id="pequena">
-                    <label for="pequena" class="small">Pequeña</label>
+                <ul class="tamaño">
+                    <li>
+                        <input type="radio" name="tamaño" id="pequena">
+                        <label for="pequena" class="small">Pequeña</label>
 
-                    <input type="radio" name="tamaño" id="mediana">
-                    <label for="mediana" class="medium">Mediana</label>
-                    
-                    <input type="radio" name="tamaño" id="grande">
-                    <label for="grande" class="large">Grande</label>
+                        <input type="radio" name="tamaño" id="mediana">
+                        <label for="mediana" class="medium">Mediana</label>
+                        
+                        <input type="radio" name="tamaño" id="grande">
+                        <label for="grande" class="large">Grande</label>
+                    </li> 
                 </ul>
             </fieldset>
 
             <fieldset class="menu_pizzas3">
                 <legend class="pedido3">Entrega</legend>
+
                 <ul class="clientito">
                     <li> 
-                        <label for="cliente">Cliente</label>
-                        <input type="text" name="" id="cliente" 
+                        <label for="cliente" class="the_client">
+                            Cliente
+                        </label>
+                        <input type="text" name="client" id="cliente" 
                         required minlength="3" maxlength="50">
 
-                        <label for="telefono">Teléfono</label>
-                        <input type="text" name="" id="telefono" 
-                        required minlength="9" maxlength="9">
+                        <label for="telefono" class="phone">
+                            Teléfono
+                        </label>
+                        <input type="text" name="phone_number" 
+                        id="telefono" required minlength="9" 
+                        maxlength="9">
                     </li>
 
                     <li>
-                        <label for="dirección">Dirección</label>
-                        <textarea name="direccion" id="direccion" 
-                        cols="30" rows="10"></textarea>
+                        <label for="direccion" class="address">
+                            Dirección
+                        </label>
+
+                        <textarea name="the_address" 
+                        id="direccion" cols="30" 
+                        rows="10"></textarea>
                     </li>
                 
                     <li>
-                        <label for="hora_de_entrega">
+                        <label for="hora_de_entrega" 
+                        class="delivery_time">
                             Hora de entrega
                         </label>
-                        <input type="time" name="" id="hora_de_entrega" 
-                        min="" max="" required>
+
+                        <input type="time" name="la_delivery" 
+                        id="hora_de_entrega" min="" max="" 
+                        required>
                     </li>
 
-                    <li>
-                        <label for="bebida">Escoger Bebida</label>
+                    <li class="ultima_parte">
+                        <label for="bebida" class="the_drink">
+                            Escoger Bebida
+                        </label>
+
                         <select name="escoger_bebida" id="bebida" 
                         class="escoger_bebida">
                             <option value="cocacola">
