@@ -286,7 +286,6 @@ label {
 
 .carta {
     padding: 0em;
-    /* margin-top: 50px; */
     background-color: wheat;
     border-radius: 2em;
     font-size: 1em;
@@ -329,7 +328,6 @@ li {
         text-align: left;
         display: grid;
         list-style: none;
-        /* grid-template-columns: repeat(2); */
     }
     
     .carta_pizzas {
@@ -358,23 +356,85 @@ li {
     }
 }
 
-
-
-
-
-
-
 .tamaño {
-    margin-left: 20px;
-    margin-right: 20px;
-    padding:2em;
-    padding: 3em;
+    display: grid;
     list-style: none;
-    display: block;
     background-color: wheat;
-    border-radius: 2em;
-    font-size: 1.3em;
+    padding: 1em;
+    border-radius: 1.7em;
+    font-size: 1.5em;
+    grid-template-columns: repeat(3);
 }
+
+#pequena, .small {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    text-align: left;
+    margin-left: 35%;
+}
+
+#mediana, .medium {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    text-align: left;
+    margin-left: 52%;
+}
+
+#grande, .large {
+    grid-column: 3 / 3;
+    grid-row: 1;
+    text-align: left;
+    margin-left: 15%;
+}
+
+.small,
+.medium,
+.large {
+    margin-top: 0.5em;
+}
+
+@media screen and (max-width: 768px) {
+    .tamaño {
+        display: grid;
+        list-style: none;
+        background-color: wheat;
+        padding: 1em;
+        border-radius: 1.7em;
+        font-size: 1.5em;
+    }
+    
+    #pequena, .small {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: left;
+        margin-left: 15%;
+    }
+    
+    #mediana, .medium {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: left;
+        margin-left: 15%;
+    }
+    
+    #grande, .large {
+        grid-column: 3;
+        grid-row: 3;
+        text-align: left;
+        margin-left: 15%;
+    }
+    
+    .small,
+    .medium,
+    .large {
+        margin-top: 0.5em;
+    }
+}
+
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
 
 .clientito {
     list-style: none;
@@ -382,11 +442,6 @@ li {
     border-radius: 2em;
     font-size: 1.3em;
 }
-
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
 
 .realizar {
     margin-left: 700px;
