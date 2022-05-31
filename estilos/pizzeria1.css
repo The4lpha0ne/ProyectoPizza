@@ -280,7 +280,7 @@ label {
 /****************************************************************************************************/
 
 .carta {
-    padding: 0em;
+    padding: 1em;
     background-color: wheat;
     border-radius: 2em;
     font-size: 1em;
@@ -293,31 +293,36 @@ label {
 .carta_pizzas {
     grid-column: 1 / 2;
     grid-row: 1;
+    text-align: left;
 }
 
 .carta_pizzas p {
-    padding: 5px;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0.2em;
+    padding-right: 0.5em;
 }
 
 .pizza_carta {
     width: 300px;
     border-radius: 2em;
+    text-align: center;
 }
 
 .carta li {
-    padding: 1em;
+    padding: 0em;
     margin: 0em;
-    text-align: left;
 }
 
 .imagen_pizzas {
     grid-column: 2 / 2;
     grid-row: 1;
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {
     .carta {
-        padding: 0em;
+        padding: 1em;
         background-color: wheat;
         border-radius: 2.35em;
         font-size: 1em;
@@ -329,21 +334,22 @@ label {
     .carta_pizzas {
         grid-column: 1;
         grid-row: 2;
+        text-align: left;
     }
     
     .carta_pizzas p {
-        padding: 5px;
+        padding: 0.2em;
     }
     
     .pizza_carta {
         width: 300px;
         border-radius: 2em;
+        text-align: center;
     }
 
     .carta li {
-        padding: 1em;
+        padding: 0em;
         margin: 0em;
-        text-align: left;
     }
     
     .imagen_pizzas {
@@ -491,7 +497,7 @@ label {
     list-style: none;
     background-color: wheat;
     border-radius: 1.85em;
-    font-size: 1.3em;
+    font-size: 1.5em;
     padding: 1em;
     /* grid-template-columns: 1fr 1fr; */
 }
@@ -502,19 +508,13 @@ label {
     text-align: center;    
 }
 
-/****************************************************************************************************/
-/****************************************************************************************************/
-
-/* .container2 {
-
-}
-
 .the_client {
-
+    grid-column: 1;
+    grid-row: 1;
 }
 
 #cliente {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .phone {
@@ -522,8 +522,12 @@ label {
 }
 
 #telefono {
-    width: 100%;
-} */
+    /* width: 100%; */
+}
+
+@media screen and (max-width: 768px) {
+
+}
 
 /****************************************************************************************************/
 /****************************************************************************************************/
