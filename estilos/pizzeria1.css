@@ -178,10 +178,11 @@ main {
     margin-left: 20px;
     margin-right:20px;
     display: inline-block;
-    /* justify-content: center;
-    align-items: center;
-    align-items: center;
-    text-align: center; */
+    padding: 0%;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* align-items: center; */
+    /* text-align: center; */
 }
 
 fieldset {
@@ -189,14 +190,14 @@ fieldset {
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 40px;
-    margin-bottom: 50px;
-    padding: 0%;
-    text-align: center;
+    margin-bottom: 40px;
     display: inline-block;
-    /* justify-content: center;
-    align-items: center;
-    align-items: center;
-    text-align: center; */
+    padding: 0%;
+    /* text-align: center; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* align-items: center; */
+    /* text-align: center; */
 }
 
 .menu_pizzas, 
@@ -214,11 +215,12 @@ fieldset {
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 2em;
-    text-align: center;
-    list-style: none;
+    display: inline-block;
+    text-align: left;
     font-family: Arial, 
     Helvetica, sans-serif;
     font-size: 2.5em;
+    /* list-style: none; */
 }
 
 select, label {
@@ -230,8 +232,8 @@ select, label {
 
 label {
     margin-bottom: 10px;
-    text-align: left;
     padding: 0em;
+    /* text-align: left; */
 }
 
 .PrimeraParte {
@@ -242,50 +244,54 @@ label {
     padding: 0%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
     width: 100%;
+    /* justify-content: center; */
+    /* flex-direction: row; */
     /* text-align: center; */
     /* flex-grow: 1; */
-    /* align-items: center; */
     /* align-items: center; */
 }
 
 .thepizza {
     padding: 1em;
-    text-align: left;
-    width: 25%;
+    /* text-align: left; */
+    /* width: 25%; */
+    flex: 40%;
     height: 10vh;
     border-radius: 1em;
     margin-right: 8px;
-    /* flex-grow: 1; */ 
+    margin-left: 8px;
+    text-decoration: underline;
+    margin-bottom: 0px;
 }
 
 .escoger_pizzas {
     padding: 0.5em;
-    width: 25%;
+    /* text-align: left; */
+    /* width: 25%; */
+    flex: 40%;
     height: 10vh;
-    text-align: left;
     border-radius: 1em;
+    margin-right: 8px;
     margin-left: 8px;
-    margin-bottom: 10px;
-    /* max-width: 180px; */
-    /* flex-grow: 1; */
+    margin-bottom: 0px;
 }
 
-/* .menu_pizzas {
-    margin-left: 0em;
-    margin-right: 0em;
-} */
+@media screen and (max-width: 768px) {
+    .thepizza, 
+    .escoger_pizzas {
+      flex: 100%;
+    }
+}
 
 .carta {
-    padding: 2em;
+    padding: 0em;
     /* margin-top: 50px; */
     background-color: wheat;
     border-radius: 2em;
-    font-size: 20px;
+    font-size: 1em;
     text-align: left;
-    display:grid;
+    display: grid;
     list-style: none;
     grid-template-columns: repeat(2);
 }
@@ -296,7 +302,7 @@ label {
 }
 
 .carta_pizzas p {
-    padding: 2px;
+    padding: 5px;
 }
 
 .pizza_carta {
@@ -304,10 +310,59 @@ label {
     border-radius: 2em;
 }
 
+li {
+    padding: 1em;
+    text-align: left;
+}
+
 .imagen_pizzas {
     grid-column: 2 / 2;
     grid-row: 1;
 }
+
+@media screen and (max-width: 768px) {
+    .carta {
+        padding: 0em;
+        background-color: wheat;
+        border-radius: 2em;
+        font-size: 1em;
+        text-align: left;
+        display: grid;
+        list-style: none;
+        /* grid-template-columns: repeat(2); */
+    }
+    
+    .carta_pizzas {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .carta_pizzas p {
+        padding: 5px;
+    }
+    
+    .pizza_carta {
+        width: 300px;
+        border-radius: 2em;
+    }
+    
+    li {
+        padding: 1em;
+        text-align: left;
+    }
+    
+    .imagen_pizzas {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
 
 .tamaño {
     margin-left: 20px;
@@ -326,11 +381,6 @@ label {
     background-color: wheat;
     border-radius: 2em;
     font-size: 1.3em;
-}
-
-li {
-    padding: 2em;
-    text-align: left;
 }
 
 /****************************************************************************************************/
