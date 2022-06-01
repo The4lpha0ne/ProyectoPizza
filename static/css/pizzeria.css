@@ -191,9 +191,7 @@ fieldset {
     padding: 0%;
 }
 
-.menu_pizzas, 
-.menu_pizzas2, 
-.menu_pizzas3 {
+.menu_pizzas, .menu_pizzas3 {
     border-radius: 2.7em;
     border-color: gold;
     border-width: 5px;
@@ -363,6 +361,21 @@ label {
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
+
+.menu_pizzas2 {
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    display: inline-block;
+    padding: 0%;
+    text-align: left;
+}
+
+/* .pedido2 {
+    text-align: left;
+} */
 
 .tamanio {
     display: grid;
