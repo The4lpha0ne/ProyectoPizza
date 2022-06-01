@@ -1,15 +1,12 @@
 from bottle import route, run, template, request, get, post, redirect, static_file, error
 
-
-
-
 @get("/static/<filepath:path>")
 def html(filepath):
     return static_file(filepath, root = "static")
     
-@get('/index')
+@get('/')
 def index():
-    return static_file('index.html', root='static') 
+    return template('index')
 
 
 @get('/pizza.ico')
