@@ -1,4 +1,13 @@
+import sys 
+
 from bottle import route, run, template, request, get, post, redirect, static_file, error
+from models.pizzeria import *
+
+sys.path.append('models')
+from config.config import DATABASE
+
+
+pizzeriapapajuan = Pizzeria(DATABASE)
 
 @get("/static/<filepath:path>")
 def html(filepath):
@@ -6,11 +15,12 @@ def html(filepath):
     
 @get('/')
 def index():
-    return template('index')
+    rows=pizzeriapapajuan.select()
+    return template('index', rows = pizzeriapapajuan.select())
 
 
 @get('/pizza.ico')
-def index():
+def icon():
     return static_file('pizza.ico', root='static')
 
 if __name__ == '__main__':
