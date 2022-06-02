@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/static/imagenes/pizza.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/static/css/pizzeria.css">
+    <link rel="icon" href="./static/imagenes/pizza.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./static/css/pizzeria.css">
     <title>Pizzeria Papá Juan</title>
 </head>
 <body>
     <header class="titulo">
-        <img src="/static/imagenes/Papa_Juan.png" 
+        <img src="./static/imagenes/Papa_Juan.png" 
         alt="papa_juan1" class="logo1">
 
-        <h1 class="LaPizzeria">
+        <h1 class="la_pizzeria">
             <span class="span1">
                 Pizzería
             </span>
@@ -23,7 +23,7 @@
             </span>
         </h1>
 
-        <img src="/static/imagenes/Papa_Juan.png" 
+        <img src="./static/imagenes/Papa_Juan.png" 
         alt="papa_juan2" class="logo2">    
     </header>
 
@@ -32,16 +32,18 @@
     </div>
 
     <main>
-        <form class="Formulario1" 
+        <form class="formulario_uno" 
         action="http://www.iesanaluisabenitez.org/" 
         method="GET">
             <fieldset class="menu_pizzas">
-                <legend class="pedido">Pizzas</legend>
+                <div class="primera_parte">
+                    <div class="container_titulo1">
+                        <div class="pedido1">Pizzas</div>
 
-                <div class="PrimeraParte">
-                    <label for="pizza" class="thepizza">
-                        Tipo de Pizza
-                    </label>
+                        <label for="pizza" class="la_pizza">
+                            Tipo de Pizza
+                        </label>
+                    </div>
 
                     <select name="escoger_pizzas" id="" 
                     class="escoger_pizzas">
@@ -87,79 +89,119 @@
                     </select>
                 </div>
 
+                <div class="menu_pizzas2">
+                    <legend class="pedido2">Tamaño</legend>
+                    <ul class="tamanio">
+                        <li class="conatiner1">
+                            <input type="radio" name="el_tamanio" id="pequenia">
+                            <label for="pequenia" class="tamanio_pequenia">Pequeña: €6,99</label>
+    
+                            <input type="radio" name="el_tamanio" id="mediana">
+                            <label for="mediana" class="tamanio_mediana">Mediana: €11,99</label>
+                            
+                            <input type="radio" name="el_tamanio" id="grande">
+                            <label for="grande" class="tamanio_grande">Grande: €14,99</label>
+                        </li> 
+                    </ul>
+                </div>
+
+                <div class="boton_javascript">
+                    <button id="btn"class="ordenar_pizza">
+                        Ordenar Pizza
+                    </button>
+
+                    <div class="datos">
+                        <p class="n_pizzas">
+                            Número de Pizzas: <span id="display">0</span>
+                        </p>
+
+                        <p class="precio_total">
+                            Precio Total: <span id="precio">0€</span>
+                        </p>
+                    </div>
+                    
+                
+                    <script type="text/javascript">
+                        var count = 0;
+                        var btn = document.getElementById("btn");
+                        var disp = document.getElementById("display");
+                        var disp_2 = document.getElementById("precio");
+                
+                        btn.onclick = function () {
+                            count++;
+                            count
+                            disp_2.innerHTML = 7
+                            disp.innerHTML = count;
+                        }
+                    </script>
+                </div>
+
                 <ul class="carta">
                     <li class="carta_pizzas">  
                         <p>
                             <b>Barbacoa</b> - Bacon, Carne Picada, 
-                            Cebolla, Pechuga de Pollo, Queso, 
-                            Tomate -<b> 12,50€</b>
+                            Cebolla, Pechuga de Pollo, Queso y 
+                            Tomate.
                         </p>
 
                         <p>
                             <b>Capricciosa</b> - Aceitunas Negras, 
-                            Anchoas, Champiñones, Queso, Tomate 
-                            -<b> 11,50€</b>
+                            Anchoas, Champiñones, Queso y Tomate. 
                         </p>
 
                         <p>
                             <b>Cuatro Estaciones</b> - Albahaca, 
-                            Aceitunas, Alcachofa, Jamón, Setas, 
-                            Tomate -<b> 15,00€</b>
+                            Aceitunas, Alcachofa, Jamón, Setas 
+                            y Tomate.
                         </p>
 
                         <p>
                             <b>Cuatro Quesos</b> - Queso cheddar, 
-                            Queso crema, Queso mozzarella, 
-                            Queso parmesano -<b> 13,00€</b>
+                            Queso crema, Queso mozzarella y 
+                            Queso parmesano.
                         </p>
 
                         <p>
                             <b>Hawaiana</b> - Jamón, Piña, 
-                            Queso fundido, Tomate 
-                            -<b> 18,00€</b>
+                            Queso fundido y Tomate. 
                         </p>
 
                         <p>
-                            <b>Margarita</b> - Jamón, Queso, 
-                            Tomate -<b> 10,00€</b>
+                            <b>Margarita</b> - Jamón, Queso y 
+                            Tomate.
                         </p>
 
                         <p>
                             <b>Marinera</b> - Aceite, Ajo, 
-                            Orégano, Tomate -<b> 12,50€</b>
+                            Orégano, Tomate.
                         </p>
 
                         <p>
                             <b>Napolitana</b> - Aceite, 
                             Alcaparras, Anchoas, Mozzarella, 
-                            Orégano, Tomate -<b> 13,50€</b>
+                            Orégano y Tomate.
                         </p>
 
                         <p>
                             <b>Pepperoni</b> - Mozzarella, 
-                            Pepperoni, Salami, Tomate 
-                            -<b> 11,50€</b>
+                            Pepperoni, Salami y Tomate.
                         </p>
 
                         <p>
                             <b>Vegetariana</b> - Berenjena, 
                             Calabacín, Cebolla, Mozzarella, 
-                            Pimiento verde, Tomate 
-                            -<b> 13,00€</b>
+                            Pimiento verde y Tomate.
                         </p>
                     </li>
 
                     <li class="imagen_pizzas">
-                        <img src="/static/imagenes/Pizzaa_carta.jpg" 
+                        <img src="./static/imagenes/Pizzaa_carta.jpg" 
                         alt="pizza_carta" class="pizza_carta">
-
-                        <!-- <img src="./imagenes/AnotherPizza.jpg" 
-                        alt="pizza_carta2" class="pizza_carta2"> -->
                     </li>
                 </ul>
             </fieldset>
     
-            <fieldset class="menu_pizzas2">
+            <!-- <fieldset class="menu_pizzas2">
                 <legend class="pedido2">Tamaño</legend>
                 <ul class="tamanio">
                     <li class="conatiner1">
@@ -173,20 +215,20 @@
                         <label for="grande" class="large">Grande</label>
                     </li> 
                 </ul>
-            </fieldset>
+            </fieldset> -->
 
             <fieldset class="menu_pizzas3">
                 <legend class="pedido3">Entrega</legend>
 
                 <ul class="clientito">
                     <li class="conatiner2"> 
-                        <label for="cliente" class="the_client">
+                        <label for="cliente" class="el_cliente">
                             Cliente
                         </label>
                         <input type="text" name="client" id="cliente" 
                         required minlength="3" maxlength="50">
 
-                        <label for="telefono" class="phone">
+                        <label for="telefono" class="movil">
                             Teléfono
                         </label>
                         <input type="text" name="phone_number" 
@@ -203,20 +245,9 @@
                         id="direccion" cols="30" 
                         rows="10"></textarea>
                     </li>
-                
-                    <li class="conatiner4">
-                        <label for="hora_de_entrega" 
-                        class="delivery_time">
-                            Hora de entrega
-                        </label>
 
-                        <input type="time" name="la_delivery" 
-                        id="hora_de_entrega" min="" max="" 
-                        required>
-                    </li>
-
-                    <li class="ultima_parte">
-                        <label for="bebida" class="the_drink">
+                    <li class="elegir_bebida">
+                        <label for="bebida" class="la_bebida">
                             Escoger Bebida
                         </label>
 
