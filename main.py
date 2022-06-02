@@ -1,10 +1,9 @@
 import sys 
-
-from bottle import route, run, template, request, get, post, redirect, static_file, error
-from models.pizzeria import *
-
 sys.path.append('models')
-from config.config import DATABASE
+import bottle
+from bottle import route, run, template, request, get, post, redirect, static_file, error
+from config.config import DATABASE,pedido_definition,pizza_definition,factura_definition,cliente_definition
+from models.pizzeria import Pizzeria
 
 
 pizzeriapapajuan = Pizzeria(DATABASE)
