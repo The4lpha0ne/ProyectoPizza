@@ -3,40 +3,41 @@
     margin: 0%;
     padding: 0%;
     border: 0%;
-    font-family: "Poppins", 
+    font-family: "Signika Negative", 
     sans-serif;
 }
 
 body {
-    font-family: "Signika Negative", 
-    sans-serif;
-    font-weight: 300;
-    border: 5px solid gold;
-    height: auto;
     width: 100%;
+    height: auto;
     margin: 0 auto;
     padding: 0%;
+    border: 5px solid gold;
     background-image: url(
         "../imagenes/Colours.png"
     );
     background-size: 100px;
+    /* font-weight: 300; */
+    font-family: "Signika Negative", 
+    sans-serif;
     z-index: -1;
 }
 
 .titulo {
-    padding-top: 1em;
-    padding-bottom: 0.5em;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    min-height: 16vh;
+    max-height: auto;
     margin-top: 0em;
     margin-bottom: 0.7em;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    padding-right: 0em;
-    padding-left: 0em;
     margin-left: 0em;
     margin-right: 0em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    padding-right: 0em;
+    padding-left: 0em;
     font-size: 1.5em;
-    min-height: 26vh;
 }
 
 .titulo {
@@ -67,16 +68,15 @@ body {
 /****************************************************************************************************/
 
 .logo1 {
-    border-radius: 20px;
+    border-radius: 20px;    
     display: inline-block;
     text-align: left;
     vertical-align: top;
     width: 25%;
-    height: auto;
     max-width: 80px;
-    margin-top: 0em;
-    margin-right: 0em;
-    margin-left: 0em;
+    height: auto;
+    margin: 0em;
+    padding: 0em;
     z-index: 1; 
 }
 
@@ -84,13 +84,13 @@ body {
     background-color: gold;
     border: 6px solid goldenrod;
     border-radius: 1em;
-    padding: 10px;
     display: inline-block;
-    width: 70%;    
     text-align: center;
     vertical-align: top;
-    margin-left: 0em;
-    margin-right: 0em;
+    width: 70%;
+    height: auto;
+    margin: 0em;
+    padding: 10px;
     font-style: italic;
 }
 
@@ -103,14 +103,14 @@ body {
 }
 
 .logo2 {
-    border-radius: 20px;
     visibility: hidden;
+    border-radius: 20px;
     display: inline-block;
     text-align: right;
-    vertical-align: top;  
+    vertical-align: top;
     width: 5%;
-    height: auto;
     max-width: 5px;
+    height: auto;
     margin-top: 0.5em;
     margin-left: 10%;
     z-index: 1;
@@ -154,9 +154,9 @@ html, body {
 /****************************************************************************************************/
 
 .elpedido {
-    font-size: 2em;
-    text-shadow: 2px 3px aqua;
     text-align: center;
+    text-shadow: 2px 3px aqua;
+    font-size: 2em;
     margin-bottom: 0.8em;
 }
 
@@ -165,51 +165,58 @@ main {
         "../imagenes/fondo_pizza.jpeg"
     );
     background-size: 500px;
-    height: auto;
+    /* text-align: center; */
     width: 100%;
+    height: auto;
     padding-bottom: 1%;
-    text-align: center;
     padding-right: 2em;
 }
 
 .Formulario1 {
+    display: inline-block;
+    /* text-align: center; */
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 0px;
     margin-left: 20px;
     margin-right:20px;
-    display: inline-block;
     padding: 0%;
 }
 
 fieldset {
+    display: inline-block;
+    /* text-align: center; */
     width: 100%;
     margin-top: 0px;
+    margin-bottom: 40px;
     margin-left: 0px;
     margin-right: 40px;
-    margin-bottom: 40px;
-    display: inline-block;
-    padding: 0%;
+    padding: 0px;
 }
 
 .menu_pizzas, .menu_pizzas3 {
-    border-radius: 2.7em;
     border-color: gold;
     border-width: 5px;
+    border-radius: 2.7em;
 }
 
-.pedido, .pedido2, .pedido3 {
+.pedido2, .pedido3 {
     color: red;
-    text-shadow: 2px 3px black;
     background-color: gold;
-    padding-left: 10px;
-    padding-right: 10px;
     border-radius: 2em;
     display: inline-block;
     text-align: left;
+    width: fit-content;
+    height: auto;
+    margin: 0px;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 2.5em;
     font-family: Arial, 
     Helvetica, sans-serif;
-    font-size: 2.5em;
-    /* list-style: none; */
+    text-shadow: 2px 3px black;
 }
 
 /****************************************************************************************************/
@@ -235,34 +242,71 @@ label {
     margin-right: 0em;
     margin-bottom: 1em;
     padding: 0%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 
+    auto auto auto auto;
+    grid-template-rows: auto;
     width: 100%;
+}
+
+.container_titulo1 {
+    margin-top: 1em;
+    margin-left: 0em;
+    margin-right: 0em;
+    margin-bottom: 0em;
+    padding: 0%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    width: 30%;
+    grid-column: 1 / 4;
+    grid-row: 1;    
+}
+
+.pedido1 {
+    color: red;
+    text-shadow: 2px 3px black;
+    background-color: gold;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 2em;
+    text-align: left;
+    font-family: Arial, 
+    Helvetica, sans-serif;
+    font-size: 2.5em;
+    width: 135px;
+    grid-column: 1;
+    grid-row: 1 / 2;
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
 .thepizza {
     padding: 1em;
-    flex: 40%;
     height: 10vh;
     border-radius: 1em;
     margin-right: 8px;
     margin-left: 8px;
     text-decoration: underline;
     margin-bottom: 0px;
-    /* text-align: left; */
-    /* width: 25%; */
+    margin-top: 0px;
+    grid-column: 1;
+    grid-row: 2 / 2;
+    text-align: left;
+    width: 30%;
 }
 
 .escoger_pizzas {
     padding: 0.5em;
-    flex: 40%;
     height: 10vh;
     border-radius: 1em;
     margin-right: 8px;
     margin-left: 8px;
     margin-bottom: 0px;
-    /* text-align: left; */
-    /* width: 25%; */
+    grid-column: 2 / 4;
+    grid-row: 1;
+    text-align: left;
+    width: 30%;
 }
 
 @media screen and (max-width: 768px) {
@@ -372,10 +416,6 @@ label {
     padding: 0%;
     text-align: left;
 }
-
-/* .pedido2 {
-    text-align: left;
-} */
 
 .tamanio {
     display: grid;
@@ -672,3 +712,17 @@ label {
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
+
+.datos {
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: wheat;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 20px;
+    margin-bottom: 2%;
+}
+
+.n_pizzas, .precio_total {
+    margin-top: 15px;
+}

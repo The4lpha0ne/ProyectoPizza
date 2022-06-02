@@ -36,12 +36,14 @@
         action="http://www.iesanaluisabenitez.org/" 
         method="GET">
             <fieldset class="menu_pizzas">
-                <legend class="pedido">Pizzas</legend>
-
                 <div class="PrimeraParte">
-                    <label for="pizza" class="thepizza">
-                        Tipo de Pizza
-                    </label>
+                    <div class="container_titulo1">
+                        <div class="pedido1">Pizzas</div>
+
+                        <label for="pizza" class="thepizza">
+                            Tipo de Pizza
+                        </label>
+                    </div>
 
                     <select name="escoger_pizzas" id="" 
                     class="escoger_pizzas">
@@ -101,6 +103,37 @@
                             <label for="grande" class="large">Grande</label>
                         </li> 
                     </ul>
+                </div>
+
+                <div class="boton_javascript">
+                    <button id="btn"class="ordenar_pizza">
+                        Ordenar Pizza
+                    </button>
+
+                    <div class="datos">
+                        <p class="n_pizzas">
+                            Número de Pizzas: <span id="display">0</span>
+                        </p>
+
+                        <p class="precio_total">
+                            Precio Total: <span id="precio">0€</span>
+                        </p>
+                    </div>
+                    
+                
+                    <script type="text/javascript">
+                        var count = 0;
+                        var btn = document.getElementById("btn");
+                        var disp = document.getElementById("display");
+                        var disp_2 = document.getElementById("precio");
+                
+                        btn.onclick = function () {
+                            count++;
+                            count
+                            disp_2.innerHTML = 7
+                            disp.innerHTML = count;
+                        }
+                    </script>
                 </div>
 
                 <ul class="carta">
