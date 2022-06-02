@@ -240,20 +240,26 @@ fieldset {
 }
 
 select {
-    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
     background-color: wheat;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.4em;
     text-align: center;
 }
 
 label {
+    /* display: inline-block; */
     background-color: wheat;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 0px;
     margin-right: 0px;
-    padding: 0em;
+    padding: 0px;
     font-weight: bold;
     font-size: 1em;
 }
@@ -274,8 +280,8 @@ label {
 
 .pedido1 {
     color: red;
-    text-shadow: 2px 3px black;
     background-color: gold;
+    text-shadow: 2px 3px black;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 2em;
