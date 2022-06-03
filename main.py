@@ -121,6 +121,17 @@ def delete_item(no):
     return redirect('/clientes')
 
 
+@get('/pedidos')
+def ver_pizzas():
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute("SELECT * from Pedido;")
+    result = c.fetchall()
+    c.close()
+    output = template('ver_pedidos', rows=result)
+    return output
+
+
 if __name__ == '__main__':
     run(host='localhost', port=8080, debug=True, reloader=True)
 
