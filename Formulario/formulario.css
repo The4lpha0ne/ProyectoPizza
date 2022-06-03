@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("fondo_pizza.jpg");
+    background-size: cover;
+}
+
+.formulario {
+    height: 500px;
+    width: 500px;
+    background: red;
+    padding:30px;
+    margin:auto;
+    margin-top: 250px;
+    border-radius: 4px;
+    font-family: "calibri";
+    color: white;
+    box-shadow: 7px 13px 37px black;
+    opacity: 90%;
+}
+
+.formulario h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.datos {
+    width: 100%;
+    background:coral;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+    font-size: 18px;
+}
+
+.registrar {
+    width: 100%;
+    background: wheat;
+    border: none;
+    padding: 12px;
+    color: chocolate;
+    margin: 16px 0;
+    font-size: 20px;
+    font-family:"Arial Black";
+}
+
+.registrar:hover {
+    background-color: burlywood;
+    color: white;
+    text-decoration: underline;
+}
+
+HTML CSSResult Skip Results Iframe
+EDIT ON
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, white 50%, green 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
