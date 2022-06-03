@@ -27,11 +27,10 @@ def new_item_form():
 
 @post('/add_pizza')
 def new_item_save():
-    if request.POST.save:  # the user clicked the `save` button
+    if request.POST.save:
         nombre = request.POST.nombre.strip()
         tamano = request.POST.tamano.strip()
         precio = request.POST.precio.strip()
-            # get the task from the form
         conn = sqlite3.connect(DATABASE)
         c = conn.cursor()
 
@@ -39,7 +38,6 @@ def new_item_save():
        
         conn.commit()
         c.close()
-        # se muestra el resultado de la operación
         return redirect('/pizzas')
 
 @get('/pizzas')
@@ -52,5 +50,23 @@ def ver_pizzas():
     output = template('ver_pizzas', rows=result)
     return output
 
+@get('/delete')
+def delete_pizza_form():
+    return template('delete_pizza')
+
+@post('/delete')
+def delete_pizza():
+        nombre = request.POST.nombre.strip()
+        conn = sqlite3.connect(DATABASE)
+        c = conn.cursor()
+        c.execute("DELETE FROM Pizza WHERE Nombre LIKE ?", (nombre,))
+        conn.commit()
+        c.close()
+        return redirect('/pizzas')
+
 if __name__ == '__main__':
     run(host='localhost', port=8080, debug=True, reloader=True)
+
+
+
+
