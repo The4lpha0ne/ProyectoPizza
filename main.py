@@ -97,20 +97,28 @@ def nuevo_cliente_save():
         return redirect('/clientes')
 
 
+@get('/delete/<no:int>')
+def delete_item_form(no):
+    conn = sqlite3.connect('pizzeriapapajuan.db')
+    c = conn.cursor()
+    c.execute("SELECT Nombre FROM Cliente WHERE Telefono LIKE ?", (no,))
+    cur_data = c.fetchone()
+    c.close()
 
-@get('/delete')
-def delete_cliente_form():
-    return template('delete_cliente')
+    return template('delete_cliente', old=cur_data, no=no)
 
-@post('/delete')
-def delete_cliente_save():
-        telefono = request.POST.nombre.strip()
+
+
+@post('/delete/<no:int>')
+def delete_item(no):
+    if request.POST.delete:
         conn = sqlite3.connect(DATABASE)
         c = conn.cursor()
-        c.execute("DELETE FROM Cliente WHERE Telefono LIKE ?", (telefono,))
+        c.execute("DELETE FROM Cliente WHERE Telefono LIKE ?", (no,))
         conn.commit()
         c.close()
-        return redirect('/cliente')
+
+    return redirect('/clientes')
 
 
 if __name__ == '__main__':
