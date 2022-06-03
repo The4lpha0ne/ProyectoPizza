@@ -98,7 +98,7 @@ def nuevo_cliente_save():
 
 
 @get('/delete/<no:int>')
-def delete_item_form(no):
+def delete_cliente_form(no):
     conn = sqlite3.connect('pizzeriapapajuan.db')
     c = conn.cursor()
     c.execute("SELECT Nombre FROM Cliente WHERE Telefono LIKE ?", (no,))
@@ -110,7 +110,7 @@ def delete_item_form(no):
 
 
 @post('/delete/<no:int>')
-def delete_item(no):
+def delete_cliente_item(no):
     if request.POST.delete:
         conn = sqlite3.connect(DATABASE)
         c = conn.cursor()
@@ -130,6 +130,33 @@ def ver_pizzas():
     c.close()
     output = template('ver_pedidos', rows=result)
     return output
+
+
+
+
+@get('/delete/<no:int>')
+def delete_pedido_form(no):
+    conn = sqlite3.connect('pizzeriapapajuan.db')
+    c = conn.cursor()
+    c.execute("SELECT NumeroPedido FROM Pedido WHERE NumeroPedido LIKE ?", (no,))
+    cur_data = c.fetchone()
+    c.close()
+
+    return template('delete_pedido', old=cur_data, no=no)
+
+
+
+@post('/delete/<no:int>')
+def delete_pedido_item(no):
+    if request.POST.delete:
+        conn = sqlite3.connect(DATABASE)
+        c = conn.cursor()
+        c.execute("DELETE FROM Pedido WHERE NumeroPedido LIKE ?", (no,))
+        conn.commit()
+        c.close()
+
+    return redirect('/pedidos')
+
 
 
 if __name__ == '__main__':
