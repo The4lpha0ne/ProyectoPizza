@@ -1,4 +1,4 @@
-%#template to generate a HTML table from a list of tuples (or list of lists, or tuple of tuples or ...)
+% include('header.tpl', title = "Ver pizzas")
 <p>Las pizzas disponibles son las siguientes:</p>
 <table border="1">
 %for row in rows:

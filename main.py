@@ -34,7 +34,7 @@ def nueva_pizza_save():
         conn = sqlite3.connect(DATABASE)
         c = conn.cursor()
 
-        c.execute("INSERT INTO Pizza (Nombre, Tamano, Precio) VALUES (?,?,?)", (nombre,tamano,precio))
+        c.execute("INSERT OR IGNORE INTO Pizza (Nombre, Tamano, Precio) VALUES (?,?,?)", (nombre,tamano,precio))
        
         conn.commit()
         c.close()

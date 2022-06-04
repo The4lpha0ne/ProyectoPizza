@@ -1,10 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <link rel="stylesheet" href="./static/css/formularios.css">
-</head>
-<body>
+% include('header_add_delete.tpl', title = "Añadir cliente")
 
 <form action="/add_cliente" method="POST">
 
