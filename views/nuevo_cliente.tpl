@@ -1,5 +1,5 @@
 
-% include('header_add_delete.tpl', title = "Añadir cliente")
+% include('header.tpl', title = "Añadir cliente")
 
 <form action="/add_cliente" method="POST">
 
