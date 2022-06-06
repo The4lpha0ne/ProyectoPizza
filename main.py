@@ -252,31 +252,31 @@ def edit_factura(no):
 
         return redirect('/facturas')
 
-# @get('/edit_cliente/<no:int>')
-# def edit_cliente_form(no):
-#     conn = sqlite3.connect(DATABASE)
-#     c = conn.cursor()
-#     c.execute("SELECT * FROM Cliente WHERE  Telefono= ?", (no,))
-#     cur_data = c.fetchone()
-#     c.close()
-#     return template('edit_cliente', old=cur_data, no=no)
+@get('/edit_cliente/<no:int>')
+def edit_cliente_form(no):
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute("SELECT * FROM Cliente WHERE  NumeroPedido= ?", (no,))
+    cur_data = c.fetchone()
+    c.close()
+    return template('edit_cliente', old=cur_data, no=no)
 
-# @post('/edit_cliente/<no:int>')
-# def edit_cliente(no):
+@post('/edit_cliente/<no:int>')
+def edit_cliente(no):
 
-#     if request.POST.save:
-#         nombre = request.POST.nombre.strip()
-#         direccion = request.POST.direccion.strip()
-#         c_postal = request.POST.c_postal.strip()
-#         numeropedido = request.POST.numeropedido.strip()
+    if request.POST.save:
+        telefono = request.POST.telefono.strip()
+        nombre = request.POST.nombre.strip()
+        direccion = request.POST.direccion.strip()
+        c_postal = request.POST.c_postal.strip()
 
-#         conn = sqlite3.connect(DATABASE)
-#         c = conn.cursor()
-#         c.execute("UPDATE Cliente SET nombre= ?, direccion = ?, c_postal = ?, numeropedido = ? WHERE Telefono LIKE ?", (nombre,direccion, c_postal, no))
-#         conn.commit()
-#         c.close()
+        conn = sqlite3.connect(DATABASE)
+        c = conn.cursor()
+        c.execute("UPDATE Cliente SET Telefono = ?, Nombre= ?, Direccion = ?, C_Postal = ? WHERE NumeroPedido LIKE ?", (telefono, nombre, direccion, c_postal, no))
+        conn.commit()
+        c.close()
 
-#         return redirect('/clientes')
+        return redirect('/clientes')
 
 
 
