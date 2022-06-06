@@ -1,5 +1,4 @@
 import sys 
-sys.path.append('models')
 import bottle
 import sqlite3
 from bottle import route, run, template, request, get, post, redirect, static_file, error
@@ -122,7 +121,7 @@ def delete_cliente_item(no):
 
 
 @get('/pedidos')
-def ver_pizzas():
+def ver_pedidos():
     conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
     c.execute("SELECT * from Pedido;")
@@ -157,6 +156,25 @@ def delete_pedido_item(no):
 
     return redirect('/pedidos')
 
+@get('/add_pedido')
+def nuevo_pedido_form():
+    return template('nuevo_pedido')
+
+@post('/add_pedido')
+def nuevo_pedido_save():
+    if request.POST.save:
+        numeropedido = request.POST.numeropedido.strip()
+        cantidad = request.POST.cantidad.strip()
+        nombre = request.POST.nombre.strip()
+        tamano = request.POST.tamano.strip()
+
+        conn = sqlite3.connect(DATABASE)
+        c = conn.cursor()
+
+        c.execute("INSERT INTO Pedido (NumeroPedido, Cantidad, Nombre, Tamano) VALUES (?,?,?,?)", (numeropedido,cantidad,nombre,tamano))
+        conn.commit()
+        c.close()
+        return redirect('/pedidos')
 
 
 if __name__ == '__main__':
