@@ -355,6 +355,131 @@ label {
     padding: 0em;
 }
 
+@media screen and (max-width: 768px) {
+    .primera_parte {
+        display: grid;
+        width: 100%;
+        height: auto;
+        margin-top: 0em;
+        margin-left: 0em;
+        margin-right: 0em;
+        margin-bottom: 1em;
+        padding: 0%;
+        
+    }
+    
+    .container_titulo1 {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        text-align: left;
+        grid-column: 1;
+        grid-row: 1;
+        width: fit-content;
+        height: fit-content;
+        margin-top: 1em;
+        margin-left: 0em;
+        margin-right: 0em;
+        margin-bottom: 0em;
+        padding-top: 0em;
+        padding-bottom: 0em;
+        padding-left: 0em;
+        padding-right: 0em;
+        
+    }
+    
+    .pedido1 {
+        color: red;
+        background-color: gold;
+        border-radius: 2em;
+        display: inline-block;
+        text-align: left;
+        grid-column: 1;
+        grid-row: 1;
+        width: fit-content;
+        height: fit-content;
+        margin-top: 0px;
+        margin-bottom: 0em;
+        margin-left: 0.4em;
+        margin-right: 0em;
+        padding-top: 0em;
+        padding-bottom: 0em;
+        padding-left: 0.2em;
+        padding-right: 0.2em;
+        font-size: 2.5em;
+        font-family: Arial, 
+        Helvetica, sans-serif;
+        text-shadow: 2px 3px black;
+    }
+    
+    .pedido2, .pedido3 {
+        color: red;
+        background-color: gold;
+        border-radius: 2em;
+        display: inline-block;
+        text-align: left;
+        width: fit-content;
+        height: fit-content;
+        margin: 0em;
+        padding-top: 0em;
+        padding-bottom: 0em;
+        padding-left: 0.2em;
+        padding-right: 0.2em;
+        font-size: 2.5em;
+        font-family: Arial, 
+        Helvetica, sans-serif;
+        text-shadow: 2px 3px black;
+    }
+    
+    .la_pizza {
+        border-radius: 1em;
+        display: inline-block;
+        text-align: left;
+        grid-column: 1;
+        grid-row: 2;
+        width: auto;
+        height: fit-content;  
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 1em;
+        margin-right: 0em;
+        padding: 0.5em;
+        text-decoration: underline;
+    }
+    
+    .escoger_pizzas {
+        border-radius: 1em;
+        display: inline-block;
+        text-align: left;
+        grid-column: 2;
+        grid-row: 1; 
+        width: auto;
+        height: fit-content;
+        margin-top: 3.5em;
+        margin-bottom: 0em;
+        margin-left: 0.6em;
+        margin-right: 0.8em;
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        padding-left: 0.4em;
+        padding-right: 0.4em; 
+    }
+    
+    .menu_pizzas2 {
+        display: inline-block;
+        text-align: center;
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        width: 93%;
+        height: auto;
+        margin-top: 1em;
+        margin-bottom: 0em;
+        margin-left: 6%;
+        margin-right: 0em;
+        padding: 0em;
+    }    
+}
+
 /****************************************************************************************************/
 /****************************************************************************************************/
 
@@ -365,8 +490,6 @@ label {
     border-radius: 1.6em;
     font-size: 1.1em;
     padding: 0.5em;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
     text-align: center;
     margin-right: 0.5em;
 }
@@ -381,32 +504,36 @@ label {
     grid-column: 1;
     grid-row: 1;
     text-align: left;
-    margin-right: 5%;
+    border-right: 4px solid black;
+    padding-right: 6px;
 }
 
 #mediana {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: 2;
     text-align: left;
 }
 
 .tamanio_mediana {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: 2;
     text-align: left;
-    margin-right: 5%;
+    border-right: 4px solid black;
+    padding-right: 6px;
 }
 
 #grande {
     grid-column: 3;
-    grid-row: 1;
+    grid-row: 3;
     text-align: left;
 }
 
 .tamanio_grande {
     grid-column: 3;
-    grid-row: 1;
+    grid-row: 3;
     text-align: left;
+    border-right: 4px solid black;
+    padding-right: 6px;
 }
 
 .tamanio_pequenia,
@@ -444,14 +571,16 @@ label {
         grid-column: 1;
         grid-row: 1;
         text-align: left;
-        margin-right: 42%;
+        margin-right: 44%;
+        border-right: 4px solid black;
+        padding-right: 6px;
     }
     
     #mediana {
         grid-column: 2;
         grid-row: 2;
         text-align: left;
-        margin-left: 14%;
+        margin-left: 24%;
     }
 
     .tamanio_mediana {
@@ -459,6 +588,8 @@ label {
         grid-row: 2;
         text-align: left;
         margin-right: 25%;
+        border-right: 4px solid black;
+        padding-right: 6px;
     }
     
     #grande {
@@ -472,6 +603,8 @@ label {
         grid-column: 3;
         grid-row: 3;
         text-align: left;
+        border-right: 4px solid black;
+        padding-right: 6px;
     }
     
     .tamanio_pequenia,
