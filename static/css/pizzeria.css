@@ -40,6 +40,25 @@ body {
     font-size: 1.5em;
 }
 
+@media screen and (max-width: 768px) {
+    .titulo {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        min-height: 20vh;
+        max-height: auto;
+        margin-top: 0em;
+        margin-bottom: 0.7em;
+        margin-left: 0em;
+        margin-right: 0em;
+        padding-top: 1em;
+        padding-bottom: 0.5em;
+        padding-right: 0em;
+        padding-left: 0em;
+        font-size: 1.5em;
+    }    
+}
+
 .titulo {
     background: linear-gradient(
         -45deg, green, wheat, red
@@ -210,7 +229,7 @@ select {
     margin-right: 0em;
     padding: 0em;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.5em;
 }
 
 label {
@@ -221,7 +240,31 @@ label {
     margin-right: 0px;
     padding: 0px;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.5em;
+}
+
+@media screen and (max-width: 768px) {
+    select {
+        background-color: wheat;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0em;
+        margin-right: 0em;
+        padding: 0em;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    
+    label {
+        background-color: wheat;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px;
+        font-weight: bold;
+        font-size: 1em;
+    }    
 }
 
 /****************************************************************************************************/
@@ -276,7 +319,7 @@ label {
     height: fit-content;
     margin-top: 0px;
     margin-bottom: 0em;
-    margin-left: 0.4em;
+    margin-left: 0.6em;
     margin-right: 0em;
     padding-top: 0em;
     padding-bottom: 0em;
@@ -352,7 +395,7 @@ label {
     grid-row: 1; 
     width: auto;
     height: fit-content;
-    margin-top: 3.5em;
+    margin-top: 2.6em;
     margin-bottom: 0em;
     margin-left: 0.6em;
     margin-right: 0em;
@@ -526,13 +569,18 @@ label {
 /****************************************************************************************************/
 /****************************************************************************************************/
 
+/* @media only screen and (max-width: 1920px) 
+and (min-width: 961px) {
+   
+} */
+
 .tamanio {
     border: 2px solid red;
     display: grid;
     list-style: none;
     background-color: wheat;
     border-radius: 1.6em;
-    font-size: 1.1em;
+    font-size: 1em;
     padding: 0.5em;
     text-align: center;
     margin-right: 0.5em;
@@ -550,6 +598,7 @@ label {
     text-align: left;
     border-right: 4px solid black;
     padding-right: 6px;
+    /* margin-right: 32%; */
 }
 
 #mediana {
@@ -570,6 +619,7 @@ label {
     grid-column: 3;
     grid-row: 3;
     text-align: left;
+    /* margin-left: 30%; */
 }
 
 .tamanio_grande {
@@ -671,23 +721,18 @@ label {
 /****************************************************************************************************/
 /****************************************************************************************************/
 
-@media screen and (max-width: 768px) {
-    .la_pizza, 
-    .escoger_pizzas {
-      flex: 100%;
-    }
-}
-
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
-/****************************************************************************************************/
-
 .carta {
-    padding: 1em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
     background-color: wheat;
-    border-radius: 2em;
-    font-size: 1em;
+    border-radius: 1.6em;
+    font-size: 1.5em;
     text-align: left;
     display: grid;
     list-style: none;
@@ -708,7 +753,10 @@ label {
 }
 
 .pizza_carta {
-    width: 300px;
+    /* width: 300px; */
+    max-width: 45%;
+    min-width: 22em;
+    height: auto;
     border-radius: 2em;
     text-align: center;
 }
@@ -719,6 +767,8 @@ label {
 }
 
 .imagen_pizzas {
+    max-width: 100%;
+    height: auto;
     grid-column: 2 / 2;
     grid-row: 1;
     text-align: center;
@@ -726,7 +776,14 @@ label {
 
 @media screen and (max-width: 768px) {
     .carta {
-        padding: 1em;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0em;
+        margin-right: 0em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
         background-color: wheat;
         border-radius: 2.35em;
         font-size: 1em;
@@ -746,7 +803,10 @@ label {
     }
     
     .pizza_carta {
-        width: 300px;
+        /* width: 300px; */
+        max-width: 45%;
+        min-width: 22em;
+        height: auto;
         border-radius: 2em;
         text-align: center;
     }
@@ -757,6 +817,8 @@ label {
     }
     
     .imagen_pizzas {
+        max-width: 100%;
+        height: auto;
         grid-column: 1;
         grid-row: 1;
         text-align: center;
