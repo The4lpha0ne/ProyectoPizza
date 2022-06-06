@@ -278,6 +278,32 @@ def edit_cliente(no):
 
         return redirect('/clientes')
 
+@get('/edit_pedido/<no:int>')
+def edit_pedido_form(no):
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute("SELECT * FROM Pedido WHERE  NumeroPedido= ?", (no,))
+    cur_data = c.fetchone()
+    c.close()
+    return template('edit_pedido', old=cur_data, no=no)
+
+@post('/edit_pedido/<no:int>')
+def edit_pedido(no):
+
+    if request.POST.save:
+        cantidad = request.POST.cantidad.strip()
+        nombre = request.POST.nombre.strip()
+        tamano = request.POST.tamano.strip()
+
+        conn = sqlite3.connect(DATABASE)
+        c = conn.cursor()
+        c.execute("UPDATE OR REPLACE Pedido SET Cantidad = ?, Nombre= ?, Tamano = ? WHERE NumeroPedido LIKE ?", (cantidad, nombre, tamano, no))
+        conn.commit()
+        c.close()
+
+        return redirect('/pedidos')
+
+
 
 
 
