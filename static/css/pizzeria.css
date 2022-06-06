@@ -327,7 +327,7 @@ label {
 }
 
 .la_pizza {
-    /* border: 2px solid red; */
+    border: 2px solid red;
     border-radius: 1em;
     display: inline-block;
     text-align: left;
@@ -344,7 +344,7 @@ label {
 }
 
 .escoger_pizzas {
-    /* border: 2px solid red; */
+    border: 2px solid red;
     border-radius: 1em;
     display: inline-block;
     text-align: left;
@@ -490,6 +490,7 @@ label {
     
     .escoger_pizzas {
         border: 2px solid red;
+        border-color: red;
         border-radius: 1em;
         display: inline-block;
         text-align: left;
