@@ -40,6 +40,25 @@ body {
     font-size: 1.5em;
 }
 
+@media screen and (max-width: 768px) {
+    .titulo {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        min-height: 20vh;
+        max-height: auto;
+        margin-top: 0em;
+        margin-bottom: 0.7em;
+        margin-left: 0em;
+        margin-right: 0em;
+        padding-top: 1em;
+        padding-bottom: 0.5em;
+        padding-right: 0em;
+        padding-left: 0em;
+        font-size: 1.5em;
+    }    
+}
+
 .titulo {
     background: linear-gradient(
         -45deg, green, wheat, red
