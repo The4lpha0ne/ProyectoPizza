@@ -228,6 +228,59 @@ def delete_factura_item(no):
 
     return redirect('/facturas')
 
+@get('/edit_factura/<no:int>')
+def edit_factura_form(no):
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute("SELECT * FROM Factura WHERE  IdFactura= ?", (no,))
+    cur_data = c.fetchone()
+    c.close()
+    return template('edit_factura', old=cur_data, no=no)
+
+@post('/edit_factura/<no:int>')
+def edit_factura(no):
+
+    if request.POST.save:
+        numeropedido = request.POST.numeropedido.strip()
+        fecha = request.POST.fecha.strip()
+
+        conn = sqlite3.connect(DATABASE)
+        c = conn.cursor()
+        c.execute("UPDATE Factura SET numeropedido = ?,  fecha= ? WHERE IdFactura LIKE ?", (numeropedido, fecha, no))
+        conn.commit()
+        c.close()
+
+        return redirect('/facturas')
+
+@get('/edit_cliente/<no:int>')
+def edit_cliente_form(no):
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute("SELECT * FROM Cliente WHERE  NumeroPedido= ?", (no,))
+    cur_data = c.fetchone()
+    c.close()
+    return template('edit_cliente', old=cur_data, no=no)
+
+@post('/edit_cliente/<no:int>')
+def edit_cliente(no):
+
+    if request.POST.save:
+        telefono = request.POST.telefono.strip()
+        nombre = request.POST.nombre.strip()
+        direccion = request.POST.direccion.strip()
+        c_postal = request.POST.c_postal.strip()
+
+        conn = sqlite3.connect(DATABASE)
+        c = conn.cursor()
+        c.execute("UPDATE Cliente SET Telefono = ?, Nombre= ?, Direccion = ?, C_Postal = ? WHERE NumeroPedido LIKE ?", (telefono, nombre, direccion, c_postal, no))
+        conn.commit()
+        c.close()
+
+        return redirect('/clientes')
+
+
+
+
 if __name__ == '__main__':
     run(host='localhost', port=8080, debug=True, reloader=True)
 
