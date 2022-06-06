@@ -228,6 +228,31 @@ def delete_factura_item(no):
 
     return redirect('/facturas')
 
+@get('/edit/<no:int>')
+def edit_factura_form(no):
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute("SELECT * FROM Factura WHERE  IdFactura= ?", (no,))
+    cur_data = c.fetchone()
+    c.close()
+    return template('edit_factura', old=cur_data, no=no)
+
+@post('/edit/<no:int>')
+def edit_factura(no):
+
+    if request.POST.save:
+        numeropedido = request.POST.numeropedido.strip()
+        fecha = request.POST.fecha.strip()
+        idfactura = request.POST.idfactura.strip()
+
+        conn = sqlite3.connect(DATABASE)
+        c = conn.cursor()
+        c.execute("UPDATE Factura SET NumeroPedido = ?,  Fecha= ? WHERE IdFactura LIKE ?", (numeropedido, fecha, no))
+        conn.commit()
+        c.close()
+
+        return redirect('/facturas')
+
 if __name__ == '__main__':
     run(host='localhost', port=8080, debug=True, reloader=True)
 
