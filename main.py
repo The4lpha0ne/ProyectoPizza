@@ -176,6 +176,57 @@ def nuevo_pedido_save():
         c.close()
         return redirect('/pedidos')
 
+@get('/facturas')
+def ver_facturas():
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute("SELECT * from Factura;")
+    result = c.fetchall()
+    c.close()
+    output = template('ver_facturas', rows=result)
+    return output
+
+@get('/add_factura')
+def nueva_factura_form():
+    return template('nueva_factura')
+
+@post('/add_factura')
+def nueva_factura_save():
+    if request.POST.save:
+        idfactura = request.POST.idfactura.strip()
+        fecha = request.POST.fecha.strip()
+        numeropedido = request.POST.numeropedido.strip()
+
+        conn = sqlite3.connect(DATABASE)
+        c = conn.cursor()
+
+        c.execute("INSERT INTO Factura (IdFactura, Fecha, NumeroPedido) VALUES (?,?,?)", (idfactura, fecha, numeropedido))
+        conn.commit()
+        c.close()
+        return redirect('/facturas')
+
+@get('/delete/<no:int>')
+def delete_factura_form(no):
+    conn = sqlite3.connect('pizzeriapapajuan.db')
+    c = conn.cursor()
+    c.execute("SELECT NumeroPedido FROM Factura WHERE IdFactura LIKE ?", (no,))
+    cur_data = c.fetchone()
+    c.close()
+
+    return template('delete_factura', old=cur_data, no=no)
+
+
+
+@post('/delete/<no:int>')
+def delete_factura_item(no):
+    if request.POST.delete:
+        conn = sqlite3.connect(DATABASE)
+        c = conn.cursor()
+        c.execute("DELETE FROM Factura WHERE IdFactura LIKE ?", (no,))
+        conn.commit()
+        c.close()
+
+    return redirect('/facturas')
 
 if __name__ == '__main__':
     run(host='localhost', port=8080, debug=True, reloader=True)
