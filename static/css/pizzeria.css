@@ -239,7 +239,7 @@ label {
     margin-top: 0em;
     margin-left: 0em;
     margin-right: 0em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     padding: 0%;
     
 }
@@ -327,6 +327,7 @@ label {
 }
 
 .la_pizza {
+    /* border: 2px solid red; */
     border-radius: 1em;
     display: inline-block;
     text-align: left;
@@ -343,6 +344,7 @@ label {
 }
 
 .escoger_pizzas {
+    /* border: 2px solid red; */
     border-radius: 1em;
     display: inline-block;
     text-align: left;
@@ -382,7 +384,7 @@ label {
         margin-top: 0em;
         margin-left: 0em;
         margin-right: 0em;
-        margin-bottom: 1em;
+        margin-bottom: 0.5em;
         padding: 0%;
         
     }
@@ -470,6 +472,7 @@ label {
     }
     
     .la_pizza {
+        border: 2px solid red;
         border-radius: 1em;
         display: inline-block;
         text-align: left;
@@ -486,6 +489,7 @@ label {
     }
     
     .escoger_pizzas {
+        border: 2px solid red;
         border-radius: 1em;
         display: inline-block;
         text-align: left;
@@ -508,11 +512,11 @@ label {
         text-align: center;
         grid-column: 1 / span 2;
         grid-row: 2;
-        width: 93%;
+        width: 96%;
         height: auto;
         margin-top: 1em;
         margin-bottom: 0em;
-        margin-left: 6%;
+        margin-left: 1em;
         margin-right: 0em;
         padding: 0em;
     }    
@@ -522,6 +526,7 @@ label {
 /****************************************************************************************************/
 
 .tamanio {
+    border: 2px solid red;
     display: grid;
     list-style: none;
     background-color: wheat;
@@ -587,16 +592,18 @@ label {
 }
 
 @media screen and (max-width: 768px) {
-    .tamaño {
+    .tamanio {
+        border: 2px solid red;
         display: grid;
         list-style: none;
         background-color: wheat;
-        padding: 0.5em;
         border-radius: 1.6em;
         font-size: 1.1em;
+        padding: 0.5em;
         text-align: center;
-        grid-template-columns: auto auto auto;
-        grid-template-rows: auto auto auto;
+        margin-right: 0.5em;
+        /* grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto; */
     }
     
     #pequena {
