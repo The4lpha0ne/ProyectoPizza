@@ -388,7 +388,7 @@ label {
 
 .menu_pizzas2 {
     display: inline-block;
-    text-align: center;
+    text-align: left;
     grid-column: 3;
     grid-row: 1;
     width: 93%;
@@ -502,13 +502,16 @@ label {
         text-align: left;
         grid-column: 1;
         grid-row: 2;
-        width: auto;
+        width: 90%;
         height: fit-content;  
         margin-top: 0em;
         margin-bottom: 0em;
         margin-left: 1em;
         margin-right: 0em;
-        padding: 0.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
         text-decoration: underline;
     }
     
@@ -534,7 +537,7 @@ label {
     
     .menu_pizzas2 {
         display: inline-block;
-        text-align: center;
+        text-align: left;
         grid-column: 1 / span 2;
         grid-row: 2;
         width: fit-content;
@@ -825,7 +828,7 @@ and (min-width: 961px) {
         grid-row: 1;
         text-align: center;
         border-top: none;
-        border-bottom: 6px solid black;
+        border-bottom: 6px solid gold;
         border-left: none;
         border-right: none;
     }
