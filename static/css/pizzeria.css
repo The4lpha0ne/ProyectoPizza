@@ -715,9 +715,9 @@ and (min-width: 961px) {
     /* border-radius: 1.6em; */
     border-top-left-radius: 2em;
     border-top-right-radius: 2em;
-    border-bottom-left-radius: 3em;
-    border-bottom-right-radius: 3em;
-    font-size: 80%;
+    border-bottom-left-radius: 2.7em;
+    border-bottom-right-radius: 2.7em;
+    font-size: 90%;
     text-align: left;
     display: grid;
     list-style: none;
@@ -734,7 +734,7 @@ and (min-width: 961px) {
     padding-top: 0.2em;
     padding-bottom: 0.2em;
     padding-left: 0.2em;
-    padding-right: 5em;
+    padding-right: 10em;
 }
 
 .pizza_carta {
@@ -757,7 +757,7 @@ and (min-width: 961px) {
     grid-column: 2 / 2;
     grid-row: 1;
     text-align: center;
-    border-left: 8px solid black;
+    border-left: 8px solid gold;
 }
 
 @media screen and (max-width: 768px) {
