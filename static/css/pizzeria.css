@@ -712,8 +712,12 @@ and (min-width: 961px) {
     padding-left: 1.5em;
     padding-right: 1.5em;
     background-color: wheat;
-    border-radius: 1.6em;
-    font-size: 1em;
+    /* border-radius: 1.6em; */
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    border-bottom-left-radius: 3em;
+    border-bottom-right-radius: 3em;
+    font-size: 80%;
     text-align: left;
     display: grid;
     list-style: none;
@@ -730,7 +734,7 @@ and (min-width: 961px) {
     padding-top: 0.2em;
     padding-bottom: 0.2em;
     padding-left: 0.2em;
-    padding-right: 0.5em;
+    padding-right: 5em;
 }
 
 .pizza_carta {
