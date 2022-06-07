@@ -233,7 +233,7 @@ label {
         margin-right: 0em;
         padding: 0em;
         font-weight: bold;
-        font-size: 1.1em;
+        font-size: 80%;
     }
     
     label {
@@ -520,12 +520,12 @@ label {
         text-align: left;
         grid-column: 2;
         grid-row: 1; 
-        width: auto;
+        width: 83%;
         height: fit-content;
-        margin-top: 3.5em;
+        margin-top: 4.9em;
         margin-bottom: 0em;
-        margin-left: 0.6em;
-        margin-right: 1em;
+        margin-left: 0.5em;
+        margin-right: 5em;
         padding-top: 0.4em;
         padding-bottom: 0.4em;
         padding-left: 0.4em;
@@ -537,7 +537,7 @@ label {
         text-align: center;
         grid-column: 1 / span 2;
         grid-row: 2;
-        width: 96%;
+        width: fit-content;
         height: auto;
         margin-top: 1em;
         margin-bottom: 0em;
@@ -630,10 +630,12 @@ and (min-width: 961px) {
         list-style: none;
         background-color: wheat;
         border-radius: 1.6em;
-        font-size: 1.1em;
+        font-size: 80%;
         padding: 0.5em;
         text-align: center;
-        margin-right: 1em;
+        width: 96%;
+        height: auto;
+        margin-right: 10em;
         /* grid-template-columns: auto auto auto;
         grid-template-rows: auto auto auto; */
     }
@@ -776,6 +778,8 @@ and (min-width: 961px) {
         text-align: left;
         display: grid;
         list-style: none;
+        width: 100%;
+        height: auto;
     }
     
     .carta_pizzas {
@@ -787,14 +791,17 @@ and (min-width: 961px) {
     }
     
     .carta_pizzas p {
-        padding: 0.2em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        padding-left: 0.2em;
+        padding-right: 0.2em;
         margin: 0em;
     }
     
     .pizza_carta {
         /* width: 300px; */
         max-width: 45%;
-        min-width: 15em;
+        min-width: 12em;
         height: auto;
         border-top-left-radius: 2em;
         border-top-right-radius: 2em;
