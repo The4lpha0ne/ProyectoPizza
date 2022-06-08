@@ -105,6 +105,21 @@
                     </div>
                 </div>
 
+                <form class="segunda_parte" 
+                action="http://www.iesanaluisabenitez.org/" 
+                method="GET">
+                    <label for="cantidad" class="la_cantidad">
+                        Cantidad:
+                    </label>
+
+                    <input type="number" id="cantidad" 
+                    name="input_cantidad" min="1" max="5" 
+                    required>
+
+                    <input type="submit" value="Confirmar" 
+                    class="confirmacion">
+                </form>
+
                 <!-- <div class="menu_pizzas2">
                     <legend class="pedido2">Tamaño</legend>
                     <ul class="tamanio">
@@ -228,14 +243,14 @@
                             Cliente
                         </label>
                         <input type="text" name="client" id="cliente" 
-                        required minlength="3" maxlength="50">
+                        minlength="3" maxlength="50" required>
 
                         <label for="telefono" class="movil">
                             Teléfono
                         </label>
                         <input type="text" name="phone_number" 
-                        id="telefono" required minlength="9" 
-                        maxlength="9">
+                        id="telefono" minlength="9" 
+                        maxlength="9" required>
                     </li>
 
                     <li class="conatiner3">
@@ -245,7 +260,7 @@
 
                         <textarea name="the_address" 
                         id="direccion" cols="30" 
-                        rows="5"></textarea>
+                        rows="5" required></textarea>
                     </li>
 
                     <!-- <li class="elegir_bebida">
