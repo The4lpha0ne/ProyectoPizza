@@ -72,6 +72,33 @@ def delete_pizza_item(no):
 
     return redirect('/pizzas')
 
+
+@get('/edit_pizza/<no:int>')
+def edit_factura_form(no):
+    conn = sqlite3.connect(DATABASE)
+    c = conn.cursor()
+    c.execute("SELECT * FROM Pizza WHERE  IdPizza= ?", (no,))
+    cur_data = c.fetchone()
+    c.close()
+    return template('edit_pizza', old=cur_data, no=no)
+
+@post('/edit_pizza/<no:int>')
+def edit_pizza(no):
+
+    if request.POST.save:
+
+        nombre = request.POST.nombre.strip()
+        tamano = request.POST.tamano.strip()
+        precio = request.POST.precio.strip()
+
+        conn = sqlite3.connect(DATABASE)
+        c = conn.cursor()
+        c.execute("UPDATE Pizza SET Nombre = ?,  Tamano= ?, Precio = ? WHERE IdPizza LIKE ?", (nombre,tamano,precio, no))
+        conn.commit()
+        c.close()
+
+        return redirect('/pizzas')
+
 @get('/clientes')
 def ver_clientes():
     conn = sqlite3.connect(DATABASE)
