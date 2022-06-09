@@ -2,7 +2,7 @@
 
 <body>
     <p>Borrar cliente con telefono = {{no}}</p>
-    <form action="/delete/{{no}}" method="POST">
+    <form action="/delete_cliente/{{no}}" method="POST">
       <p>Hac click para confirmar que deseas eliminar al cliente: </p>
       <p><b>{{old[0]}}</b></p>
 

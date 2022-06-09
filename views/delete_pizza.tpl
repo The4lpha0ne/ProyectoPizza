@@ -1,10 +1,11 @@
+% include('header.tpl', title = "Quitar pizza")
 
-
-% include('header.tpl', title = "Quitar pizzas")
-
-
-<p>Introduce el nombre de la pizza que quieres eliminar</p>
-<form action="/delete" method="POST">
-<input type="text" size="100" maxlength="100" name="nombre">
-<input type="submit" name="save" value="save">
-</form>
+<body>
+    <p>Borrar pizza con ID = {{no}}</p>
+    <form action="/delete_pizza/{{no}}" method="POST">
+      <p>Hac click para confirmar que deseas eliminar la pizza: </p>
+      <input type="submit" name="delete" value="Borrar">
+      <input type="submit" name="cancel" value="Cancelar">
+    </form>   
+</body>
+</html>

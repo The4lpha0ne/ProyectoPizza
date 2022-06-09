@@ -2,8 +2,7 @@ import sys
 import bottle
 import sqlite3
 from bottle import route, run, template, request, get, post, redirect, static_file, error
-from config.config import DATABASE,pedido_definition,pizza_definition,factura_definition,cliente_definition
-
+from config.config import DATABASE
 
 @get("/static/<filepath:path>")
 def html(filepath):
@@ -27,13 +26,14 @@ def nueva_pizza_form():
 @post('/add_pizza')
 def nueva_pizza_save():
     if request.POST.save:
+        idpizza = request.POST.idpizza.strip()
         nombre = request.POST.nombre.strip()
         tamano = request.POST.tamano.strip()
         precio = request.POST.precio.strip()
         conn = sqlite3.connect(DATABASE)
         c = conn.cursor()
 
-        c.execute("INSERT OR IGNORE INTO Pizza (Nombre, Tamano, Precio) VALUES (?,?,?)", (nombre,tamano,precio))
+        c.execute("INSERT OR IGNORE INTO Pizza (IdPizza, Nombre, Tamano, Precio) VALUES (?,?,?,?)", (idpizza,nombre,tamano,precio))
        
         conn.commit()
         c.close()
@@ -49,20 +49,28 @@ def ver_pizzas():
     output = template('ver_pizzas', rows=result)
     return output
 
-@get('/delete')
-def delete_pizza_form():
-    return template('delete_pizza')
+@get('/delete_pizza/<no:int>')
+def delete_pizza_form(no):
+    conn = sqlite3.connect('pizzeriapapajuan.db')
+    c = conn.cursor()
+    c.execute("SELECT IdPizza FROM Pizza WHERE IdPizza LIKE ?", (no,))
+    cur_data = c.fetchone()
+    c.close()
 
-@post('/delete')
-def delete_pizza():
-        nombre = request.POST.nombre.strip()
+    return template('delete_pizza', old=cur_data, no=no)
+
+
+
+@post('/delete_pizza/<no:int>')
+def delete_pizza_item(no):
+    if request.POST.delete:
         conn = sqlite3.connect(DATABASE)
         c = conn.cursor()
-        c.execute("DELETE FROM Pizza WHERE Nombre LIKE ?", (nombre,))
+        c.execute("DELETE FROM Pizza WHERE IdPizza LIKE ?", (no,))
         conn.commit()
         c.close()
-        return redirect('/pizzas')
 
+    return redirect('/pizzas')
 
 @get('/clientes')
 def ver_clientes():
@@ -96,7 +104,7 @@ def nuevo_cliente_save():
         return redirect('/clientes')
 
 
-@get('/delete/<no:int>')
+@get('/delete_cliente/<no:int>')
 def delete_cliente_form(no):
     conn = sqlite3.connect('pizzeriapapajuan.db')
     c = conn.cursor()
@@ -108,7 +116,7 @@ def delete_cliente_form(no):
 
 
 
-@post('/delete/<no:int>')
+@post('/delete_cliente/<no:int>')
 def delete_cliente_item(no):
     if request.POST.delete:
         conn = sqlite3.connect(DATABASE)
@@ -133,7 +141,7 @@ def ver_pedidos():
 
 
 
-@get('/delete/<no:int>')
+@get('/delete_pedido/<no:int>')
 def delete_pedido_form(no):
     conn = sqlite3.connect('pizzeriapapajuan.db')
     c = conn.cursor()
@@ -145,7 +153,7 @@ def delete_pedido_form(no):
 
 
 
-@post('/delete/<no:int>')
+@post('/delete_pedido/<no:int>')
 def delete_pedido_item(no):
     if request.POST.delete:
         conn = sqlite3.connect(DATABASE)
@@ -205,7 +213,7 @@ def nueva_factura_save():
         c.close()
         return redirect('/facturas')
 
-@get('/delete/<no:int>')
+@get('/delete_factura/<no:int>')
 def delete_factura_form(no):
     conn = sqlite3.connect('pizzeriapapajuan.db')
     c = conn.cursor()
@@ -217,7 +225,7 @@ def delete_factura_form(no):
 
 
 
-@post('/delete/<no:int>')
+@post('/delete_factura/<no:int>')
 def delete_factura_item(no):
     if request.POST.delete:
         conn = sqlite3.connect(DATABASE)
