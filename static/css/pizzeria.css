@@ -1160,7 +1160,9 @@ and (min-width: 961px) {
 /****************************************************************************************************/
 
 .redes_sociales {
-    display: grid
+    display: grid;
+    text-align: center;
+
 }
 
 .foto1 {
@@ -1168,14 +1170,26 @@ and (min-width: 961px) {
     grid-row: 1;
 }
 
+.twitter {
+    border-radius: 2.5em;
+}
+
 .foto2 {
     grid-column: 2;
     grid-row: 1;
 }
 
+.instagram {
+    border-radius: 2.5em;
+}
+
 .foto3 {
     grid-column: 3;
     grid-row: 1;
+}
+
+.facebook {
+    border-radius: 2.5em;
 }
 
 /****************************************************************************************************/
