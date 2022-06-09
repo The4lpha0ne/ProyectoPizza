@@ -203,7 +203,8 @@ fieldset {
 }
 
 .menu_pizzas3 {
-    margin-left: 20px;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
 }
 
 select {
@@ -230,7 +231,8 @@ label {
 
 @media screen and (max-width: 768px) {
     .menu_pizzas3 {
-        margin-left: 20px;
+        margin-left: 0.2em;
+        margin-right: 0.2em;
     }
 
     select {
