@@ -2,7 +2,7 @@
 
 <body>
     <p>Borrar pedido con numero = {{no}}</p>
-    <form action="/delete/{{no}}" method="POST">
+    <form action="/delete_pedido/{{no}}" method="POST">
       <p>Hac click para confirmar que deseas eliminar el pedido: </p>
       <p><b>{{old[0]}}</b></p>
 

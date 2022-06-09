@@ -1,5 +1,1 @@
 DATABASE = 'pizzeriapapajuan.db'
-pizza_definition = ['CREATE TABLE Pizza (Nombre varchar(25) not null, Tamano varchar(10) NOT NULL, Precio FLOAT DEFAULT NULL, PRIMARY KEY(Nombre,Tamano)']
-cliente_definition = ['Telefono INT NOT NULL, nombre varchar(25) NOT NULL, Direccion varchar(40) not null, C_Postal INT NOT NULL, NumeroPedido INT NOT NULL, PRIMARY KEY(Telefono),CONSTRAINT cliente_ibfk_1 FOREIGN KEY (NumeroPedido) REFERENCES Pedido (NumeroPedido)']
-pedido_definition = ['NumeroPedido INT NOT NULL, Cantidad int NOT NULL, Nombre varchar(25) NOT NULL, Tamano varchar(10) NOT NULL, PRIMARY KEY (NumeroPedido,Nombre,Tamano), CONSTRAINT pedido_ibfk_1 FOREIGN KEY (Nombre,Tamano) REFERENCES Pizza(Nombre, Tamano)']
-factura_definition = ['IdFactura INT NOT NULL, Fecha date default null, NumeroPedido int default null, PRIMARY KEY(IdFactura),CONSTRAINT factura_ibfk_1 FOREIGN KEY (NumeroPedido) REFERENCES Pedido(NumeroPedido)']
