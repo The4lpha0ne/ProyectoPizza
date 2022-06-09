@@ -1,8 +1,30 @@
+from pydoc import cli
 import sys 
 import bottle
 import sqlite3
+
+sys.path.append('models')
+
+from models.cliente import Cliente
+from models.factura import Factura
+from models.pedido import Pedido
+
+
+
+
+from models.pizza import Pizza
 from bottle import route, run, template, request, get, post, redirect, static_file, error
-from config.config import DATABASE
+from config.config import DATABASE,PEDIDO_DEFINITION,PIZZA_DEFINITION,FACTURA_DEFINITION,CLIENTE_DEFINITION
+
+
+pizza = Pizza(DATABASE)
+
+pedido = Pedido(DATABASE)
+
+factura = Factura(DATABASE)
+
+cliente = Cliente(DATABASE)
+
 
 @get("/static/<filepath:path>")
 def html(filepath):
@@ -26,88 +48,70 @@ def nueva_pizza_form():
 @post('/add_pizza')
 def nueva_pizza_save():
     if request.POST.save:
-        idpizza = request.POST.idpizza.strip()
-        nombre = request.POST.nombre.strip()
-        tamano = request.POST.tamano.strip()
-        precio = request.POST.precio.strip()
-        conn = sqlite3.connect(DATABASE)
-        c = conn.cursor()
+        data = {
 
-        c.execute("INSERT OR IGNORE INTO Pizza (IdPizza, Nombre, Tamano, Precio) VALUES (?,?,?,?)", (idpizza,nombre,tamano,precio))
-       
-        conn.commit()
-        c.close()
+            'idpizza' :request.POST.idpizza.strip(),
+            'nombre' : request.POST.nombre.strip(),
+            'tamano' :request.POST.tamano.strip(),
+            'precio' : request.POST.precio.strip()
+
+        }
+
+        
+        pizza.insert(data)
+     
         return redirect('/pizzas')
 
 @get('/pizzas')
 def ver_pizzas():
-    conn = sqlite3.connect(DATABASE)
-    c = conn.cursor()
-    c.execute("SELECT * from Pizza;")
-    result = c.fetchall()
-    c.close()
-    output = template('ver_pizzas', rows=result)
-    return output
+    
+    return template ('ver_pizzas', rows = pizza.select())
 
 @get('/delete_pizza/<no:int>')
 def delete_pizza_form(no):
-    conn = sqlite3.connect('pizzeriapapajuan.db')
-    c = conn.cursor()
-    c.execute("SELECT IdPizza FROM Pizza WHERE IdPizza LIKE ?", (no,))
-    cur_data = c.fetchone()
-    c.close()
-
-    return template('delete_pizza', old=cur_data, no=no)
-
+    fields = ['Nombre','Tamano', 'Precio']
+    where = {'IdPizza': no}
+    cur_data = pizza.get(fields,where)
+    return template('delete_pizza', old= cur_data, no = no)
 
 
 @post('/delete_pizza/<no:int>')
 def delete_pizza_item(no):
     if request.POST.delete:
-        conn = sqlite3.connect(DATABASE)
-        c = conn.cursor()
-        c.execute("DELETE FROM Pizza WHERE IdPizza LIKE ?", (no,))
-        conn.commit()
-        c.close()
+        where = {'IdPizza': no}
+        pizza.delete(where)
 
     return redirect('/pizzas')
 
+    
 
 @get('/edit_pizza/<no:int>')
-def edit_factura_form(no):
-    conn = sqlite3.connect(DATABASE)
-    c = conn.cursor()
-    c.execute("SELECT * FROM Pizza WHERE  IdPizza= ?", (no,))
-    cur_data = c.fetchone()
-    c.close()
+def edit_pizza_form(no):
+    fields = ['Nombre', 'Tamano', 'Precio']
+    where = {'IdPizza': no}
+    cur_data = pizza.get(fields, where)  # get the current data for the item we are editing
     return template('edit_pizza', old=cur_data, no=no)
+    
 
 @post('/edit_pizza/<no:int>')
 def edit_pizza(no):
-
     if request.POST.save:
-
-        nombre = request.POST.nombre.strip()
-        tamano = request.POST.tamano.strip()
-        precio = request.POST.precio.strip()
-
-        conn = sqlite3.connect(DATABASE)
-        c = conn.cursor()
-        c.execute("UPDATE Pizza SET Nombre = ?,  Tamano= ?, Precio = ? WHERE IdPizza LIKE ?", (nombre,tamano,precio, no))
-        conn.commit()
-        c.close()
-
-        return redirect('/pizzas')
+            data = {
+                'Nombre': request.POST.nombre.strip(), 
+                'Tamano': request.POST.tamano.strip(),
+                'Precio': request.POST.precio.strip()
+            }
+            where = {'IdPizza': no}
+            
+            pizza.update(data, where)
+            
+    return redirect('/pizzas')
 
 @get('/clientes')
 def ver_clientes():
-    conn = sqlite3.connect(DATABASE)
-    c = conn.cursor()
-    c.execute("SELECT * from Cliente;")
-    result = c.fetchall()
-    c.close()
-    output = template('ver_clientes', rows=result)
-    return output
+    rows=cliente.select()
+    return template('ver_clientes', rows=cliente.select())
+    
 
 
 @get('/add_cliente')
@@ -117,78 +121,57 @@ def nuevo_cliente_form():
 @post('/add_cliente')
 def nuevo_cliente_save():
     if request.POST.save:
-        telefono = request.POST.telefono.strip()
-        nombre = request.POST.nombre.strip()
-        direccion = request.POST.direccion.strip()
-        c_postal = request.POST.c_postal.strip()
-        numeropedido = request.POST.numeropedido.strip()
-        conn = sqlite3.connect(DATABASE)
-        c = conn.cursor()
+        data = {
+            'Telefono': request.POST.telefono.strip(), 
+            'Nombre': request.POST.nombre.strip(),
+            'Direccion': request.POST.direccion.strip(),
+            'C_Postal': request.POST.c_postal.strip(),
+            'NumeroPedido': request.POST.numeropedido.strip()
+        }
 
-        c.execute("INSERT INTO Cliente (Telefono, Nombre, Direccion, C_Postal, NumeroPedido) VALUES (?,?,?,?,?)", (telefono, nombre, direccion,c_postal,numeropedido))
-        conn.commit()
-        c.close()
+        cliente.insert(data)
+
         return redirect('/clientes')
-
+        
 
 @get('/delete_cliente/<no:int>')
 def delete_cliente_form(no):
-    conn = sqlite3.connect('pizzeriapapajuan.db')
-    c = conn.cursor()
-    c.execute("SELECT Nombre FROM Cliente WHERE Telefono LIKE ?", (no,))
-    cur_data = c.fetchone()
-    c.close()
-
-    return template('delete_cliente', old=cur_data, no=no)
+    fields = ['Nombre', 'Direccion','C_Postal','NumeroPedido']
+    where = {'Telefono': no}
+    cur_data = cliente.get(fields,where)
+    return template('delete_cliente', old= cur_data, no = no)
 
 
 
 @post('/delete_cliente/<no:int>')
 def delete_cliente_item(no):
     if request.POST.delete:
-        conn = sqlite3.connect(DATABASE)
-        c = conn.cursor()
-        c.execute("DELETE FROM Cliente WHERE Telefono LIKE ?", (no,))
-        conn.commit()
-        c.close()
+            where = {'Telefono': no}
+            cliente.delete(where)
 
     return redirect('/clientes')
 
 
 @get('/pedidos')
 def ver_pedidos():
-    conn = sqlite3.connect(DATABASE)
-    c = conn.cursor()
-    c.execute("SELECT * from Pedido;")
-    result = c.fetchall()
-    c.close()
-    output = template('ver_pedidos', rows=result)
-    return output
-
+   rows = pedido.select()
+   return template('/pedidos', rows = pedido.select())
 
 
 
 @get('/delete_pedido/<no:int>')
 def delete_pedido_form(no):
-    conn = sqlite3.connect('pizzeriapapajuan.db')
-    c = conn.cursor()
-    c.execute("SELECT NumeroPedido FROM Pedido WHERE NumeroPedido LIKE ?", (no,))
-    cur_data = c.fetchone()
-    c.close()
-
-    return template('delete_pedido', old=cur_data, no=no)
-
+    fields = ['Cantidad', 'Nombre','Tamano']
+    where = {'NumeroPedido': no}
+    cur_data = cliente.get(fields,where)
+    return template('delete_pedido', old= cur_data, no = no)
 
 
 @post('/delete_pedido/<no:int>')
 def delete_pedido_item(no):
     if request.POST.delete:
-        conn = sqlite3.connect(DATABASE)
-        c = conn.cursor()
-        c.execute("DELETE FROM Pedido WHERE NumeroPedido LIKE ?", (no,))
-        conn.commit()
-        c.close()
-
+            where = {'NumeroPedido': no}
+            pedido.delete(where)
     return redirect('/pedidos')
 
 @get('/add_pedido')
