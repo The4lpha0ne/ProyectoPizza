@@ -180,7 +180,7 @@ main {
     margin-top: 20px;
     margin-bottom: 0px;
     margin-left: 20px;
-    margin-right:20px;
+    margin-right: 20px;
     padding: 0%;
 }
 
@@ -200,6 +200,10 @@ fieldset {
     border-color: gold;
     border-width: 5px;
     border-radius: 2.7em;
+}
+
+.menu_pizzas3 {
+    margin-left: 20px;
 }
 
 select {
@@ -225,6 +229,10 @@ label {
 }
 
 @media screen and (max-width: 768px) {
+    .menu_pizzas3 {
+        margin-left: 20px;
+    }
+
     select {
         background-color: wheat;
         margin-top: 0em;
@@ -265,7 +273,6 @@ label {
     margin-right: 0em;
     margin-bottom: 0.5em;
     padding: 0%;
-    
 }
 
 .container_titulo1 {
@@ -705,7 +712,163 @@ and (min-width: 961px) {
 /****************************************************************************************************/
 /****************************************************************************************************/
 
+.formulario_dos {
+    display: grid;
+    width: 100%;
+    height: auto;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 0em;
+    margin-right: 0em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    padding-left: 0em;
+    padding-right: 0em;
+}
 
+.la_cantidad {
+    border: 2px solid red;
+    border-radius: 1em;
+    display: inline-block;
+    text-align: left;
+    grid-column: 1;
+    grid-row: 1;
+    width: auto;
+    height: fit-content;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 1em;
+    margin-right: 0em;
+    padding: 0.5em;
+    text-decoration: underline;
+}
+
+#cantidad {
+    background-color: wheat;
+    border: 2px solid red;
+    border-radius: 1em;
+    display: inline-block;
+    text-align: left;
+    grid-column: 2;
+    grid-row: 1;
+    width: auto;
+    height: 3.5em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0.7em;
+    margin-right: 0em;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;  
+}
+
+.confirmacion {
+    color: gold;
+    background-color: red;
+    border: 2px solid blueviolet;
+    border-radius: 1em;
+    display: inline-block;
+    text-align: left;
+    grid-column: 3;
+    grid-row: 1;
+    width: fit-content;
+    height: 3em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0.7em;
+    margin-right: 0em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 1em;
+}
+
+.confirmacion:hover {
+    color: aqua;
+    background-color: green;    
+}
+
+@media screen and (max-width: 768px) {
+    .formulario_dos {
+        display: grid;
+        width: 100%;
+        height: auto;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: 0em;
+        margin-right: 0em;
+        padding-top: 0em;
+        padding-bottom: 0em;
+        padding-left: 0em;
+        padding-right: 0em;
+    }
+    
+    .la_cantidad {
+        border: 2px solid red;
+        border-radius: 1em;
+        display: inline-block;
+        text-align: left;
+        grid-column: 1;
+        grid-row: 1;
+        width: auto;
+        height: fit-content;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 1em;
+        margin-right: 0em;
+        padding: 0.5em;
+        text-decoration: underline;
+    }
+    
+    #cantidad {
+        background-color: wheat;
+        border: 2px solid red;
+        border-radius: 1em;
+        display: inline-block;
+        text-align: left;
+        grid-column: 2;
+        grid-row: 1;
+        width: 3.55em;
+        height: 3.5em;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0.7em;
+        margin-right: 0em;
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        padding-left: 0.4em;
+        padding-right: 0.4em;  
+    }
+    
+    .confirmacion {
+        color: gold;
+        background-color: red;
+        border: 2px solid blueviolet;
+        border-radius: 1em;
+        display: inline-block;
+        text-align: left;
+        grid-column: 3;
+        grid-row: 1;
+        width: fit-content;
+        height: 3em;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0.7em;
+        margin-right: 0em;
+        padding-top: 0em;
+        padding-bottom: 0em;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 1em;
+    }
+    
+    .confirmacion:hover {
+        color: aqua;
+        background-color: green;    
+    }    
+}
 
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -713,7 +876,7 @@ and (min-width: 961px) {
 /****************************************************************************************************/
 
 .carta {
-    margin-top: 0em;
+    margin-top: 0.8em;
     margin-bottom: 0em;
     margin-left: 0em;
     margin-right: 0em;
@@ -772,7 +935,7 @@ and (min-width: 961px) {
 
 @media screen and (max-width: 768px) {
     .carta {
-        margin-top: 0em;
+        margin-top: 0.8em;
         margin-bottom: 0em;
         margin-left: 0em;
         margin-right: 0em;
