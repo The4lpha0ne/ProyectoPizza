@@ -1,4 +1,5 @@
 import sys 
+import os
 import bottle
 
 sys.path.append('models')
@@ -21,21 +22,13 @@ factura = Factura(DATABASE)
 cliente = Cliente(DATABASE)
 
 
-@get("/static/<filepath:path>")
-def html(filepath):
-    return static_file(filepath, root = "static")
+
+@get('/pizzas')
+def ver_pizzas():
     
-@get('/')
-def index():
-    return template('index')
+    return template ('ver_pizzas', rows = pizza.select())
 
-
-@get('/pizza.ico')
-def icon():
-    return static_file('pizza.ico', root='static')
-
-
-
+    
 @get('/add_pizza')
 def nueva_pizza_form():
     return template('nueva_pizza')
@@ -57,10 +50,7 @@ def nueva_pizza_save():
      
         return redirect('/pizzas')
 
-@get('/pizzas')
-def ver_pizzas():
-    
-    return template ('ver_pizzas', rows = pizza.select())
+
 
 @get('/delete_pizza/<no:int>')
 def delete_pizza_form(no):
@@ -187,6 +177,31 @@ def nuevo_pedido_save():
 
     return redirect('/pedidos')
 
+
+
+@get('/edit_pedido/<no:int>')
+def edit_pedido_form(no):
+    fields = ['Cantidad','Nombre','Tamano']
+    where = {'NumeroPedido': no}
+    cur_data = pedido.get(fields, where)  # get the current data for the item we are editing
+    return template('edit_pedido', old=cur_data, no=no)
+
+@post('/edit_pedido/<no:int>')
+def edit_pedido(no):
+
+    if request.POST.save:
+            data = {
+                'Cantidad': request.POST.cantidad.strip(), 
+                'Nombre': request.POST.nombre.strip(),
+                'Tamano': request.POST.tamano.strip(),
+            }
+
+            where = {'NumeroPedido': no}
+            
+            pedido.update(data, where)
+            
+    return redirect('/pedidos')
+
 @get('/facturas')
 def ver_facturas():
     rows=cliente.select()
@@ -276,33 +291,30 @@ def edit_cliente(no):
             
     return redirect('/clientes')
 
-@get('/edit_pedido/<no:int>')
-def edit_pedido_form(no):
-    fields = ['Cantidad','Nombre','Tamano']
-    where = {'NumeroPedido': no}
-    cur_data = pedido.get(fields, where)  # get the current data for the item we are editing
-    return template('edit_pedido', old=cur_data, no=no)
+@get("/static/<filepath:path>")
+def html(filepath):
+    return static_file(filepath, root = "static")
+    
+@get('/')
+def index():
+    return template('index')
 
-@post('/edit_pedido/<no:int>')
-def edit_pedido(no):
 
-    if request.POST.save:
-            data = {
-                'Cantidad': request.POST.cantidad.strip(), 
-                'Nombre': request.POST.nombre.strip(),
-                'Tamano': request.POST.tamano.strip(),
-            }
-
-            where = {'NumeroPedido': no}
-            
-            pedido.update(data, where)
-            
-    return redirect('/pedidos')
+@get('/pizza.ico')
+def icon():
+    return static_file('pizza.ico', root='static')
 
 
 
 
 if __name__ == '__main__':
+    if not os.path.exists(DATABASE) or os.path.getsize(DATABASE) == 0:
+        
+        pizza.create(PIZZA_DEFINITION)
+        cliente.create(CLIENTE_DEFINITION)
+        factura.create(FACTURA_DEFINITION)
+        pedido.create(PEDIDO_DEFINITION)
+        
     run(host='localhost', port=8080, debug=True, reloader=True)
 
 
