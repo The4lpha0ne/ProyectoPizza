@@ -35,7 +35,10 @@
         <form class="formulario_uno" 
         action="http://www.iesanaluisabenitez.org/" 
         method="GET">
+        <!-- <form action="/action_page.php" method="get"></form> -->
             <fieldset class="menu_pizzas">
+                <legend class="legend1" id="legend1"></legend>
+
                 <div class="primera_parte">
                     <div class="container_titulo1">
                         <div class="pedido1">Pizzas</div>
@@ -46,7 +49,7 @@
                     </div>
 
                     <select name="escoger_pizzas" id="" 
-                    class="escoger_pizzas">
+                    class="escoger_pizzas" required>
                         <option value="barbacoa">
                             Barbacoa
                         </option>
@@ -89,10 +92,10 @@
                     </select>
 
                     <div class="menu_pizzas2">
-                        <legend class="pedido2">Tamaño</legend>
+                        <div class="pedido2">Tamaño</div>
                         <ul class="tamanio">
                             <li class="conatiner1">
-                                <input type="radio" name="el_tamanio" id="pequenia">
+                                <input type="radio" name="el_tamanio" id="pequenia" checked>
                                 <label for="pequenia" class="tamanio_pequenia">Pequeña: €6,99</label>
         
                                 <input type="radio" name="el_tamanio" id="mediana">
@@ -105,9 +108,7 @@
                     </div>
                 </div>
 
-                <form class="formulario_dos" 
-                action="./index.html" 
-                method="GET">
+                <div class="segunda_parte">
                     <label for="cantidad" class="la_cantidad">
                         Cantidad:
                     </label>
@@ -118,7 +119,7 @@
 
                     <input type="submit" value="Confirmar" 
                     class="confirmacion">
-                </form>
+                </div>
 
                 <!-- <div class="menu_pizzas2">
                     <legend class="pedido2">Tamaño</legend>
@@ -235,7 +236,7 @@
             </fieldset>
 
             <fieldset class="menu_pizzas3">
-                <legend class="pedido3">Entrega</legend>
+                <legend class="legend2" id="legend2">Entrega</legend>
 
                 <ul class="clientito">
                     <li class="conatiner2"> 
@@ -301,7 +302,7 @@
         
                         <input type="submit" 
                         value="Realizar Pedido" 
-                        class="realizar">
+                        class="realizar" formmethod="post">
                     </li>
                 </ul>
             </fieldset>

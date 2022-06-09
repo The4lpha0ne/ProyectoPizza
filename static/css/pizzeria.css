@@ -338,7 +338,7 @@ label {
     text-shadow: 2px 3px black;
 }
 
-.pedido3 {
+.legend2 {
     color: red;
     background-color: gold;
     border-radius: 2em;
@@ -483,7 +483,7 @@ label {
         text-shadow: 2px 3px black;
     }
 
-    .pedido3 {
+    .legend2 {
         color: red;
         background-color: gold;
         border-radius: 2em;
@@ -712,7 +712,7 @@ and (min-width: 961px) {
 /****************************************************************************************************/
 /****************************************************************************************************/
 
-.formulario_dos {
+.segunda_parte {
     display: grid;
     width: 100%;
     height: auto;
@@ -757,10 +757,7 @@ and (min-width: 961px) {
     margin-bottom: 0em;
     margin-left: 0.7em;
     margin-right: 0em;
-    padding-top: 0.4em;
-    padding-bottom: 0.4em;
-    padding-left: 0.4em;
-    padding-right: 0.4em;  
+    padding: 0.4em;  
 }
 
 .confirmacion {
@@ -782,6 +779,7 @@ and (min-width: 961px) {
     padding-bottom: 0em;
     padding-left: 5px;
     padding-right: 5px;
+    font-weight: bold;
     font-size: 1em;
 }
 
@@ -791,7 +789,7 @@ and (min-width: 961px) {
 }
 
 @media screen and (max-width: 768px) {
-    .formulario_dos {
+    .segunda_parte {
         display: grid;
         width: 100%;
         height: auto;
@@ -830,16 +828,13 @@ and (min-width: 961px) {
         text-align: left;
         grid-column: 2;
         grid-row: 1;
-        width: 3.55em;
-        height: 3.5em;
+        width: auto;
+        height: 3em;
         margin-top: 0em;
         margin-bottom: 0em;
         margin-left: 0.7em;
         margin-right: 0em;
-        padding-top: 0.4em;
-        padding-bottom: 0.4em;
-        padding-left: 0.4em;
-        padding-right: 0.4em;  
+        padding: 0.4em;
     }
     
     .confirmacion {
@@ -861,7 +856,8 @@ and (min-width: 961px) {
         padding-bottom: 0em;
         padding-left: 5px;
         padding-right: 5px;
-        font-size: 1em;
+        font-weight: normal;
+        font-size: 0.8em;
     }
     
     .confirmacion:hover {
