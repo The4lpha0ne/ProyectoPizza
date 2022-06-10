@@ -48,21 +48,17 @@ INSERT INTO `Pedido` VALUES (45673,1,'Margarita','Pequena'),(45673,1,'Marinera',
 
 
 
-
-
-
-
 DROP TABLE IF EXISTS `Pizza`;
 
 CREATE TABLE `Pizza` (
+  `IdPizza` INT NOT NULL,
   `Nombre` varchar(25) NOT NULL,
   `Tamano` varchar(10) NOT NULL,
   `Precio` float DEFAULT NULL,
-  PRIMARY KEY (`Nombre`,`Tamano`)
+  PRIMARY KEY (`IdPizza`,`Nombre`,`Tamano`)
 );
 
 
 
-INSERT INTO `Pizza` VALUES ('Barbacoa','Grande',15),('Barbacoa','Mediana',12),('Barbacoa','Pequena',7),('Margarita','Grande',15),('Margarita','Mediana',12),('Margarita','Pequena',7),('Marinera','Grande',15),('Marinera','Mediana',12),('Marinera','Pequena',7);
-
+INSERT INTO `Pizza` VALUES (11344,'Barbacoa','Grande',15),(24545,'Barbacoa','Mediana',12),(234334,'Barbacoa','Pequena',7),(33443,'Margarita','Grande',15),(343434,'Margarita','Mediana',12),(9848,'Margarita','Pequena',7),(1039,'Marinera','Grande',15),(1394,'Marinera','Mediana',12),(10234,'Marinera','Pequena',7)
 
