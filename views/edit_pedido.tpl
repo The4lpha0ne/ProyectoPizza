@@ -6,5 +6,4 @@
       <input type = "text" name = "tamano" value="{{old[2]}}" size="100" maxlength="100">
       <input type="submit" name="save" value="Editar pedido">
     </form>   
-</body>
-</html>
+% include('footer.tpl')

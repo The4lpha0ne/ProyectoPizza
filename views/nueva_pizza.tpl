@@ -11,6 +11,7 @@
 <p> Introduce el tamaño de la pizza</p>
 <input type="text" size="100" maxlength="100" name="tamano">
 <p> Introduce el precio de la pizza </p>
-<input type="text" size="100" maxlength="100" name="precio">
-<input type="submit" name="save" value="Añadir pizza">
+<input type="text" size="100" maxlength="100" name="precio"></br>
+</br><input type="submit" name="save" value="Añadir pizza">
 </form>
+% include('footer.tpl')

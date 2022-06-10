@@ -19,7 +19,7 @@
 
 <p> Introduce el tamaño de la pizza: </p>
 
-<input type="text" size="100" maxlength="100" name="tamano">
+<input type="text" size="100" maxlength="100" name="tamano"></br>
 
-<br><input type="submit" name="save" value="Añadir pedido">
+</br><input type="submit" name="save" value="Añadir pedido">
 </form>
