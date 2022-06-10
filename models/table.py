@@ -66,7 +66,7 @@ class Table(ABC):
         data_keys = list(data.keys())
         data_values = list(data.values())
         where_key = list(where.keys())[0] 
-        query = f"UPDATE {self._table_name} SET {', '.join([f'{key} = ?' for key in data_keys])} WHERE {where_key} LIKE ?"
+        query = f"UPDATE OR REPLACE {self._table_name} SET {', '.join([f'{key} = ?' for key in data_keys])} WHERE {where_key} LIKE ?"
         
         values = data_values + [where[where_key]]
         values = tuple(values)        

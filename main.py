@@ -148,7 +148,7 @@ def ver_pedidos():
 def delete_pedido_form(no):
     fields = ['Cantidad', 'Nombre','Tamano']
     where = {'NumeroPedido': no}
-    cur_data = cliente.get(fields,where)
+    cur_data = pedido.get(fields,where)
     return template('delete_pedido', old= cur_data, no = no)
 
 
@@ -204,9 +204,8 @@ def edit_pedido(no):
 
 @get('/facturas')
 def ver_facturas():
-    rows=cliente.select()
+    rows=factura.select()
     return template('ver_facturas', rows=factura.select())
-    
     
 
 @get('/add_factura')
@@ -241,14 +240,14 @@ def delete_factura_form(no):
 def delete_factura_item(no):
     if request.POST.delete:
             where = {'IdFactura': no}
-            pedido.delete(where)
+            factura.delete(where)
     return redirect('/facturas')
 
 @get('/edit_factura/<no:int>')
 def edit_factura_form(no):
     fields = ['Fecha', 'NumeroPedido']
     where = {'IdFactura': no}
-    cur_data = pizza.get(fields, where)  # get the current data for the item we are editing
+    cur_data = factura.get(fields, where)  # get the current data for the item we are editing
     return template('edit_factura', old=cur_data, no=no)
     
 
