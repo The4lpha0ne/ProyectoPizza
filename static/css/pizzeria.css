@@ -7,6 +7,10 @@
     sans-serif;
 }
 
+/* html, body {
+    min-height: 100vh;
+} */
+
 body {
     background-image: url(
         "../imagenes/Colours.png"
@@ -205,8 +209,8 @@ fieldset {
 }
 
 .menu_pizzas3 {
-    margin-left: 1em;
-    margin-right: 0.2em;
+    margin-left: 0em;
+    margin-right: 0em;
 }
 
 select {
@@ -233,8 +237,8 @@ label {
 
 @media screen and (max-width: 768px) {
     .menu_pizzas3 {
-        margin-left: 1em;
-        margin-right: 0.2em;
+        margin-left: 0em;
+        margin-right: 0em;
     }
 
     select {
@@ -789,7 +793,7 @@ and (min-width: 961px) {
 }
 
 .confirmacion:hover {
-    visibility: visible;
+    visibility: hidden;
     color: aqua;
     background-color: green;    
 }
@@ -868,7 +872,7 @@ and (min-width: 961px) {
     }
     
     .confirmacion:hover {
-        visibility: visible;
+        visibility: hidden;
         color: aqua;
         background-color: green;    
     }    
@@ -1171,6 +1175,8 @@ and (min-width: 961px) {
     );
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 @keyframes gradient {
@@ -1218,17 +1224,3 @@ and (min-width: 961px) {
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
-
-/* .datos {
-    margin-right: 10px;
-    margin-top: 10px;
-    background-color: wheat;
-    font-weight: bold;
-    font-size: 1em;
-    border-radius: 20px;
-    margin-bottom: 2%;
-}
-
-.n_pizzas, .precio_total {
-    margin-top: 15px;
-} */
