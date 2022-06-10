@@ -771,7 +771,9 @@ and (min-width: 961px) {
     margin-bottom: 0em;
     margin-left: 0.7em;
     margin-right: 0em;
-    padding: 0.4em;  
+    padding: 0.4em;
+    font-size: 1em;
+    font-weight: bold;  
 }
 
 .confirmacion {
@@ -851,6 +853,8 @@ and (min-width: 961px) {
         margin-left: 0.7em;
         margin-right: 0em;
         padding: 0.4em;
+        font-size: 0.8em;
+        font-weight: bold;
     }
     
     .confirmacion {
@@ -1059,6 +1063,8 @@ and (min-width: 961px) {
     padding-left: 0.4em;
     padding-right: 0.4em;
     height: 2em;
+    border-radius: 0.5em;
+    border: 2px solid blueviolet;
 }
 
 .movil {
@@ -1074,6 +1080,8 @@ and (min-width: 961px) {
     padding-left: 0.4em;
     padding-right: 0.4em;
     height: 2em;
+    border-radius: 0.5em;
+    border: 2px solid blueviolet;
 }
 
 @media screen and (max-width: 768px) {
@@ -1110,6 +1118,8 @@ and (min-width: 961px) {
         padding-left: 0.4em;
         padding-right: 0.4em;
         height: 2em;
+        border-radius: 0.5em;
+        border: 2px solid blueviolet;
     }
     
     .movil {
@@ -1126,6 +1136,8 @@ and (min-width: 961px) {
         padding-left: 0.4em;
         padding-right: 0.4em;
         height: 2em;
+        border-radius: 0.5em;
+        border: 2px solid blueviolet;
     }
 }
 
@@ -1143,6 +1155,12 @@ and (min-width: 961px) {
 #direccion {
     background-color: gold;
     width: 60%;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    border-radius: 0.5em;
+    border: 2px solid blueviolet;
 }
 
 .realizar {
