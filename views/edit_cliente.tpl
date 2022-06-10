@@ -7,5 +7,4 @@
       <input type = "text" name = "c_postal" value="{{old[3]}}" size="100" maxlength="100">
       <input type="submit" name="save" value="Editar cliente">
     </form>   
-</body>
-</html>
+% include('footer.tpl')

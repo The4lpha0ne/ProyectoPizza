@@ -14,8 +14,8 @@
 
 <p>Introduce el numero del pedido:</p>
 
-<input type="text" size="100" maxlength="100" name="numeropedido">
+<input type="text" size="100" maxlength="100" name="numeropedido"></br>
 
 
-<br><input type="submit" name="save" value="Añadir factura">
+</br><input type="submit" name="save" value="Añadir factura">
 </form>

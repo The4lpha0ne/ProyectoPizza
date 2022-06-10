@@ -5,5 +5,4 @@
       <input type = "text" name = "numeropedido" value="{{old[1]}}" size="100" maxlength="100">
       <input type="submit" name="save" value="Editar factura">
     </form>   
-</body>
-</html>
+% include('footer.tpl')

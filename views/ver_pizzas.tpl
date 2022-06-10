@@ -15,3 +15,4 @@
   </tr>
 %end
 </table>
+% include('footer.tpl')
