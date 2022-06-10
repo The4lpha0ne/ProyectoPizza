@@ -1101,7 +1101,7 @@ and (min-width: 961px) {
         list-style: none;
         background-color: wheat;
         border-radius: 1.6em;
-        font-size: 1.5em;
+        /* font-size: 1.5em; */
         padding: 1em;
         /* grid-template-columns: 1fr 1fr; */
     }
@@ -1119,6 +1119,7 @@ and (min-width: 961px) {
         grid-column: 1;
         grid-row: 1;
         text-align: left;
+        font-size: 1em; 
     }
     
     #cliente {
@@ -1131,6 +1132,7 @@ and (min-width: 961px) {
         height: 2em;
         border-radius: 0.5em;
         border: 2px solid blueviolet;
+        font-size: 1em;
     }
     
     .movil {
@@ -1149,6 +1151,7 @@ and (min-width: 961px) {
         height: 2em;
         border-radius: 0.5em;
         border: 2px solid blueviolet;
+        font-size: 1em; 
     }
 }
 
@@ -1172,6 +1175,7 @@ and (min-width: 961px) {
     padding-bottom: 0.2em;
     border-radius: 0.5em;
     border: 2px solid blueviolet;
+    font-size: 1em; 
 }
 
 .realizar {
