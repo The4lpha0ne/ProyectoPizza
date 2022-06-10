@@ -290,6 +290,28 @@ def edit_cliente(no):
             
     return redirect('/clientes')
 
+
+@get('/index')
+def insert_index_form():
+    return template('index.tpl')
+
+
+@post('/index')
+def insert_index():
+    if request.POST.save:
+            data = {
+                'Telefono': request.POST.telefono.strip(),
+                'Nombre': request.POST.nombre.strip(),
+                'Direccion': request.POST.direccion.strip()
+            }
+
+            cliente.insert(data)
+
+    return template('insert_data_index.tpl')
+
+
+
+
 @get("/static/<filepath:path>")
 def html(filepath):
     return static_file(filepath, root = "static")
@@ -315,7 +337,3 @@ if __name__ == '__main__':
         pedido.create(PEDIDO_DEFINITION)
         
     run(host='localhost', port=8080, debug=True, reloader=True)
-
-
-
-
