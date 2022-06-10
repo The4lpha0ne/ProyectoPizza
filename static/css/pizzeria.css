@@ -34,7 +34,7 @@ body {
     min-height: 10vh;
     max-height: auto;
     margin-top: 0em;
-    margin-bottom: 0.7em;
+    margin-bottom: 0.2em;
     margin-left: 0em;
     margin-right: 0em;
     padding-top: 1em;
@@ -163,7 +163,7 @@ html, body {
     text-align: center;
     text-shadow: 2px 3px aqua;
     font-size: 2em;
-    margin-bottom: 0.8em;
+    margin-bottom: 0.4em;
 }
 
 main {
@@ -215,6 +215,7 @@ fieldset {
 .menu_pizzas3 {
     margin-left: 0em;
     margin-right: 0em;
+    margin-bottom: 1.5em;
 }
 
 select {
@@ -243,6 +244,7 @@ label {
     .menu_pizzas3 {
         margin-left: 0em;
         margin-right: 0em;
+        margin-bottom: 1.5em;
     }
 
     select {
