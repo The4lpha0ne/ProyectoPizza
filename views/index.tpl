@@ -35,7 +35,10 @@
         <form class="formulario_uno" 
         action="http://www.iesanaluisabenitez.org/" 
         method="GET">
+        <!-- <form action="./action_page.php" method="get"></form> -->
             <fieldset class="menu_pizzas">
+                <legend class="legend1" id="legend1"></legend>
+
                 <div class="primera_parte">
                     <div class="container_titulo1">
                         <div class="pedido1">Pizzas</div>
@@ -46,7 +49,7 @@
                     </div>
 
                     <select name="escoger_pizzas" id="" 
-                    class="escoger_pizzas">
+                    class="escoger_pizzas" required>
                         <option value="barbacoa">
                             Barbacoa
                         </option>
@@ -89,10 +92,10 @@
                     </select>
 
                     <div class="menu_pizzas2">
-                        <legend class="pedido2">Tamaño</legend>
+                        <div class="pedido2">Tamaño</div>
                         <ul class="tamanio">
                             <li class="conatiner1">
-                                <input type="radio" name="el_tamanio" id="pequenia">
+                                <input type="radio" name="el_tamanio" id="pequenia" checked>
                                 <label for="pequenia" class="tamanio_pequenia">Pequeña: €6,99</label>
         
                                 <input type="radio" name="el_tamanio" id="mediana">
@@ -105,52 +108,19 @@
                     </div>
                 </div>
 
-                <!-- <div class="menu_pizzas2">
-                    <legend class="pedido2">Tamaño</legend>
-                    <ul class="tamanio">
-                        <li class="conatiner1">
-                            <input type="radio" name="el_tamanio" id="pequenia">
-                            <label for="pequenia" class="tamanio_pequenia">Pequeña: €6,99</label>
-    
-                            <input type="radio" name="el_tamanio" id="mediana">
-                            <label for="mediana" class="tamanio_mediana">Mediana: €11,99</label>
-                            
-                            <input type="radio" name="el_tamanio" id="grande">
-                            <label for="grande" class="tamanio_grande">Grande: €14,99</label>
-                        </li> 
-                    </ul>
-                </div> -->
+                <div class="segunda_parte">
+                    <label for="cantidad" class="la_cantidad">
+                        Cantidad:
+                    </label>
 
-                <!-- <div class="boton_javascript">
-                    <button id="btn"class="ordenar_pizza">
-                        Ordenar Pizza
-                    </button>
+                    <input type="number" id="cantidad" 
+                    name="input_cantidad" min="1" max="5" 
+                    value="1" required>
 
-                    <div class="datos">
-                        <p class="n_pizzas">
-                            Número de Pizzas: <span id="display">0</span>
-                        </p>
 
-                        <p class="precio_total">
-                            Precio Total: <span id="precio">0€</span>
-                        </p>
-                    </div>
-                    
-                
-                    <script type="text/javascript">
-                        var count = 0;
-                        var btn = document.getElementById("btn");
-                        var disp = document.getElementById("display");
-                        var disp_2 = document.getElementById("precio");
-                
-                        btn.onclick = function () {
-                            count++;
-                            count
-                            disp_2.innerHTML = 7
-                            disp.innerHTML = count;
-                        }
-                    </script>
-                </div> -->
+                    <input type="submit" value="Confirmar" 
+                    class="confirmacion">
+                </div>
 
                 <ul class="carta">
                     <li class="carta_pizzas">  
@@ -212,13 +182,14 @@
 
                     <li class="imagen_pizzas">
                         <img src="./static/imagenes/Pizzaa_carta.jpg" 
-                        alt="pizza_carta" class="pizza_carta">
+                        alt="pizza_carta" class="pizza_carta" 
+                        width="768" height="250">
                     </li>
                 </ul>
             </fieldset>
 
             <fieldset class="menu_pizzas3">
-                <legend class="pedido3">Entrega</legend>
+                <legend class="legend2" id="legend2">Entrega</legend>
 
                 <ul class="clientito">
                     <li class="conatiner2"> 
@@ -226,14 +197,14 @@
                             Cliente
                         </label>
                         <input type="text" name="client" id="cliente" 
-                        required minlength="3" maxlength="50">
+                        minlength="3" maxlength="50" required>
 
                         <label for="telefono" class="movil">
                             Teléfono
                         </label>
                         <input type="text" name="phone_number" 
-                        id="telefono" required minlength="9" 
-                        maxlength="9">
+                        id="telefono" minlength="9" 
+                        maxlength="9" required>
                     </li>
 
                     <li class="conatiner3">
@@ -243,52 +214,45 @@
 
                         <textarea name="the_address" 
                         id="direccion" cols="30" 
-                        rows="10"></textarea>
+                        rows="5" required></textarea>
                     </li>
 
-                    <li class="elegir_bebida">
-                        <label for="bebida" class="la_bebida">
-                            Escoger Bebida
-                        </label>
-
-                        <select name="escoger_bebida" id="bebida" 
-                        class="escoger_bebida">
-                            <option value="cocacola">
-                                Coca Cola
-                            </option>
-
-                            <option value="sprite">
-                                Sprite
-                            </option>
-
-                            <option value="Nestea_mango_pina">
-                                Nestea (Mango-Piña)
-                            </option>
-
-                            <option value="Nesta_limon">
-                                Nestea (Limón)
-                            </option>
-
-                            <option value="fanta_naranja">
-                                Fanta (Naranja)
-                            </option>
-
-                            <option value="botella_agua">
-                                Botella de Agua
-                            </option>
-
-                            <option value="ninguna">
-                                Ninguna
-                            </option>
-                        </select>
-        
-                        <input type="submit" 
-                        value="Realizar Pedido" 
-                        class="realizar">
+                    <li>
+                        <input type="submit" value="Realizar Pedido" 
+                        class="realizar" formmethod="post">
                     </li>
                 </ul>
             </fieldset>
         </form>
-    </main>   
+    </main>
+    
+    <footer class="redes_sociales">
+        <div class="foto1">
+            <a href="https://twitter.com/?lang=es" 
+            target="_blank" rel="noopener noreferrer">
+                <img src="./static/imagenes/twitter.png" 
+                alt="twitter" class="twitter" 
+                width="100" height="100">
+            </a>
+        </div>
+
+        <div class="foto2">
+            <a href="https://www.instagram.com/?hl=es" 
+            target="_blank" rel="noopener noreferrer">
+                <img src="./static/imagenes/instagram.jpg" 
+                alt="instagram" class="instagram" 
+                width="100" height="100">
+            </a>
+        </div>
+
+        <div class="foto3">
+            <a href="https://www.facebook.com/" 
+            target="_blank" rel="noopener noreferrer">
+                <img src="./static/imagenes/facebook.png" 
+                alt="facebook" class="facebook" 
+                width="100" height="100">
+            </a>            
+        </div>
+    </footer>
 </body>
 </html>
