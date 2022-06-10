@@ -23,8 +23,10 @@
 
 <p> Introduce el numero de pedido del cliente: </p>
 
-<input type="text" size="100" maxlength="100" name="numeropedido"><br>
+<input type="text" size="100" maxlength="100" name="numeropedido"></br>
 
 
-<br><input type="submit" name="save" value="Añadir cliente">
+</br><input type="submit" name="save" value="Añadir cliente">
 </form>
+% include('footer.tpl')
+

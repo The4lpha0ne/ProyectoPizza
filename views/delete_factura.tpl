@@ -7,5 +7,4 @@
       <input type="submit" name="delete" value="Borrar">
       <input type="submit" name="cancel" value="Cancelar">
     </form>   
-</body>
-</html>
+% include('footer.tpl')
