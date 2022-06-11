@@ -1,16 +1,8 @@
 bottle==0.12.21
-decorator==5.1.1
 dnspython==2.2.1
 email-validator==1.2.1
-greenlet==1.1.2
 idna==3.3
-infinity==1.5
-intervals==0.9.2
 MarkupSafe==2.1.1
-phonenumbers==8.12.50
 six==1.16.0
-SQLAlchemy==1.4.37
-SQLAlchemy-Utils==0.38.2
 validators==0.20.0
 WTForms==3.0.1
-WTForms-Alchemy==0.18.0
