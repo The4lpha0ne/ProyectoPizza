@@ -33,10 +33,8 @@
 
     <main>
         <form class="formulario_uno" 
-        action="./views/" 
+        action="/add_index" 
         method="GET">
-        <!-- <form action="./action_page.php" method="get"></form> -->
-        <!-- action="http://www.iesanaluisabenitez.org/" -->
             <fieldset class="menu_pizzas">
                 <legend class="legend1" id="legend1"></legend>
 
@@ -197,13 +195,12 @@
                         <label for="cliente" class="el_cliente">
                             Cliente
                         </label>
-                        <input type="text" name="client" id="cliente" 
-                        minlength="3" maxlength="50" required>
+                        <input type="text" name="client" id="cliente" minlength="3" maxlength="50" required>
 
                         <label for="telefono" class="movil">
                             Teléfono
                         </label>
-                        <input type="text" name="phone_number" 
+                        <input type="text" name="num_movil" 
                         id="telefono" minlength="9" 
                         maxlength="9" required>
                     </li>
@@ -230,8 +227,7 @@
                     </li>
 
                     <li>
-                        <input type="submit" value="Realizar Pedido" 
-                        class="realizar" formmethod="post">
+                        <input type="submit" value="Realizar Pedido" name="save" class="realizar" formmethod="post">
                     </li>
                 </ul>
             </fieldset>
