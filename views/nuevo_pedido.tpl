@@ -1,25 +1,71 @@
-
-% include('header.tpl', title = "Añadir pedido")
-
+% include('header.tpl', title = "Pizzeria Papa Juan")
+<h1>Pizzeria Papa Juan</h1>
+<p><b>Añadir un nuevo pedido:</b></p>
 <form action="/add_pedido" method="POST">
+    <fieldset>
+        <div>    
+            {{ form.numeropedido.label }}:
+            {{ form.numeropedido }}</br>
 
-<h1>Añade los datos del pedido</h1>
+            {{  form.cantidad.label }}
+            {{  form.cantidad }}</br>
 
-<p>Introduce el numero de pedido: </p>
 
-<input type="text" size="100" maxlength="100" name="numeropedido">
+            {{  form.nombre.label }}
 
-<p>Introduce la cantidad: </p>
+            {{  form.nombre }}</br>
 
-<input type="text" size="100" maxlength="100" name="cantidad">
+            {{ form.tamano.label }}
 
-<p>Introduce el nombre de la pizza:</p>
+            {{ form.tamano}}</br>
 
-<input type="text" size="100" maxlength="100" name="nombre">
 
-<p> Introduce el tamaño de la pizza: </p>
+             
 
-<input type="text" size="100" maxlength="100" name="tamano"></br>
+            %if form.numeropedido.errors:
+            <ul class="errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
 
-</br><input type="submit" name="save" value="Añadir pedido">
+            
+
+            %if form.cantidad.errors:
+            <ul class="errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+
+            %if form.nombre.errors:
+            <ul class="errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+            %if form.tamano.errors:
+            <ul class="errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+
+
+        </div>
+        <div>
+           </br> {{ form.save }}    
+        </div>
+    
+    </fieldset>
 </form>

@@ -24,11 +24,39 @@
 
             %if form.idpizza.errors:
             <ul class="errors">
-                %for error in form.pizza.errors:
+                %for error in form.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>
             %end
+
+
+
+            %if form.nombre.errors:
+            <ul class="errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+            %if form.tamano.errors:
+            <ul class="errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+            %if form.precio.errors:
+            <ul class="errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
         </div>
         <div>
            </br> {{ form.save }}    
