@@ -1,21 +1,53 @@
-% include('header.tpl', title = "Añadir factura")
-
+% include('header.tpl', title = "Pizzeria Papa Juan")
+<h1>Pizzeria Papa Juan</h1>
+<p><b>Añadir una nueva factura:</b></p>
 <form action="/add_factura" method="POST">
+    <fieldset>
+        <div>    
+            {{ form.idfactura.label }}:
+            {{ form.idfactura }}</br>
 
-<h1>Añade los datos de la factura</h1>
-
-<p>Introduce el id de la factura: </p>
-
-<input type="text" size="100" maxlength="100" name="idfactura">
-
-<p>Introduce la fecha: </p>
-
-<input type="text" size="100" maxlength="100" name="fecha">
-
-<p>Introduce el numero del pedido:</p>
-
-<input type="text" size="100" maxlength="100" name="numeropedido"></br>
+            {{  form.fecha.label }}:
+            {{  form.fecha }}</br>
 
 
-</br><input type="submit" name="save" value="Añadir factura">
+            {{  form.numeropedido.label }}
+
+            {{  form.numeropedido }}</br>
+
+
+
+            %if form.idfactura.errors:
+            <ul class="errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+
+            %if form.numeropedido.errors:
+            <ul class="errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+            %if form.fecha.errors:
+            <ul class="errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+        </div>
+        <div>
+           </br> {{ form.save }}    
+        </div>
+    
+    </fieldset>
 </form>

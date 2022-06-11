@@ -1,8 +1,45 @@
 % include('header.tpl', title = "Editar factura")
-<h1> Editar factura con ID {{no}} </h1>
+
+    <p>Editar factura con ID {{no}}:</p>
     <form action="/edit_factura/{{no}}" method="POST">
-      <input type="text" name="fecha" value="{{old[0]}}" size="100" maxlength="100">
-      <input type = "text" name = "numeropedido" value="{{old[1]}}" size="100" maxlength="100">
-      <input type="submit" name="save" value="Editar factura">
+      <fieldset>
+        <div>    
+            {{ form.fecha.label }}:
+            {{ form.fecha }}</br>
+
+
+            {{ form.numeropedido.label }}:
+            {{ form.numeropedido }}</br> 
+
+
+
+            
+                   
+
+            %if form.fecha.errors:
+            <ul class="errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+            %if form.numeropedido.errors:
+            <ul class = "errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+        </div>
+
+        <div>
+           </br> {{ form.save }}    
+        </div>
+    </fieldset>
     </form>   
-% include('footer.tpl')
+
+%include('footer.tpl')
