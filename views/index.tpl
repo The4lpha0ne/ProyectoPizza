@@ -195,14 +195,15 @@
                             <label for="cliente" class="el_cliente">
                                 Cliente
                             </label>
-                            <input type="text" name="client" id="cliente" minlength="3" 
+                            <input type="text" name="client" 
+                            id="cliente" minlength="3" 
                             maxlength="50" required>
 
                             <label for="telefono" class="movil">
                                 Teléfono
                             </label>
-                            <input type="text" name="num_movil" id="telefono" 
-                            minlength="9" maxlength="9" 
+                            <input type="text" name="num_movil" 
+                            id="telefono" minlength="9" maxlength="9" 
                             required>
                         </li>
 
@@ -229,7 +230,8 @@
 
 
                         <li>
-                            <input type="submit" value="Realizar Pedido" name="save" class="realizar" formmethod="post">
+                            <input type="submit" value="Realizar Pedido" 
+                            name="save" class="realizar" formmethod="post">
                         </li>
                     </ul>
                 </fieldset>
