@@ -1,9 +1,57 @@
 % include('header.tpl', title = "Editar pedido")
-<h1> Editar pedido número {{no}} </h1>
+
+    <p>Editar pedido con número de pedido {{no}}:</p>
     <form action="/edit_pedido/{{no}}" method="POST">
-      <input type="text" name="cantidad" value="{{old[0]}}" size="100" maxlength="100">
-      <input type = "text" name = "nombre" value="{{old[1]}}" size="100" maxlength="100">
-      <input type = "text" name = "tamano" value="{{old[2]}}" size="100" maxlength="100">
-      <input type="submit" name="save" value="Editar pedido">
+      <fieldset>
+        <div>    
+            {{ form.cantidad.label }}:
+            {{ form.cantidad }}</br>
+
+
+             {{ form.nombre.label }}:
+             {{ form.nombre }}</br>  
+
+             {{ form.tamano.label }}:
+             {{ form.tamano }}
+
+
+           
+
+            %if form.cantidad.errors:
+            <ul class="errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+            %if form.nombre.errors:
+            <ul class = "errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+
+            %if form.tamano.errors:
+            <ul class = "errors">
+                %for error in form.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+
+        </div>
+
+        <div>
+           </br> {{ form.save }}    
+        </div>
+    </fieldset>
     </form>   
+
 % include('footer.tpl')
