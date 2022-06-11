@@ -1,6 +1,7 @@
 import sys 
 import os
 import bottle
+from random import randint
 
 sys.path.append('models')
 
@@ -21,6 +22,8 @@ factura = Factura(DATABASE)
 
 cliente = Cliente(DATABASE)
 
+numeropedido = randint(1000,10000)
+
 
 
 @get('/pizzas')
@@ -38,17 +41,17 @@ def nueva_pizza_save():
     if request.POST.save:
         data = {
 
-            'idpizza' :request.POST.idpizza.strip(),
-            'nombre' : request.POST.nombre.strip(),
-            'tamano' :request.POST.tamano.strip(),
-            'precio' : request.POST.precio.strip()
+            'IdPizza' :request.POST.idpizza.strip(),
+            'Nombre' : request.POST.nombre.strip(),
+            'Tamano' :request.POST.tamano.strip(),
+            'Precio' : request.POST.precio.strip()
 
         }
 
         
         pizza.insert(data)
      
-        return redirect('/pizzas')
+    return redirect('/pizzas')
 
 
 
@@ -108,7 +111,7 @@ def nuevo_cliente_save():
     if request.POST.save:
         data = {
             'Telefono': request.POST.telefono.strip(), 
-            'Nombre': request.POST.nombre.strip(),
+            'nombre': request.POST.nombre.strip(),
             'Direccion': request.POST.direccion.strip(),
             'C_Postal': request.POST.c_postal.strip(),
             'NumeroPedido': request.POST.numeropedido.strip()
@@ -116,7 +119,7 @@ def nuevo_cliente_save():
 
         cliente.insert(data)
 
-        return redirect('/clientes')
+    return redirect('/clientes')
         
 
 @get('/delete_cliente/<no:int>')
@@ -291,34 +294,36 @@ def edit_cliente(no):
     return redirect('/clientes')
 
 
-@get('/index')
-def insert_index_form():
-    return template('index.tpl')
 
+@get('/add_index')
+def insert_form():
+    return template('index')
 
-@post('/index')
-def insert_index():
+@post('/add_index')
+def insert_index_save():
+
+    
+
     if request.POST.save:
             data = {
                 'Telefono': request.POST.telefono.strip(),
-                'Nombre': request.POST.nombre.strip(),
-                'Direccion': request.POST.direccion.strip()
+                'nombre': request.POST.nombre.strip(),
+                'Direccion': request.POST.direccion.strip(),
+                'C_Postal': request.POST.c_postal.strip(),
+                'NumeroPedido': numeropedido
             }
 
             cliente.insert(data)
-
-    return template('insert_data_index.tpl')
-
-
+    return redirect('/clientes')
 
 
 @get("/static/<filepath:path>")
 def html(filepath):
     return static_file(filepath, root = "static")
     
-@get('/')
+@get("/")
 def index():
-    return template('index')
+     return template('index')
 
 
 @get('/pizza.ico')

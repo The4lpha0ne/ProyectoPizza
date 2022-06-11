@@ -31,7 +31,7 @@ class Table(ABC):
         data_keys = list(data.keys())
         data_values = list(data.values())
         
-        query = f"INSERT INTO {self._table_name} ({', '.join(data_keys)}) VALUES ({', '.join(['?'] * len(data_values))})"
+        query = f"INSERT OR REPLACE INTO {self._table_name} ({', '.join(data_keys)}) VALUES ({', '.join(['?'] * len(data_values))})"
         try:
             conn = self._connect()
             cursor = conn.cursor()
