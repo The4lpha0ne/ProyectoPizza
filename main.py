@@ -1,8 +1,10 @@
 import sys 
 import os
 import bottle
+from random import randint
 
 sys.path.append('models')
+sys.path.append('forms')
 
 from models.cliente import Cliente
 from models.factura import Factura
@@ -11,6 +13,8 @@ from models.pizza import Pizza
 
 from bottle import route, run, template, request, get, post, redirect, static_file, error
 from config.config import DATABASE,PEDIDO_DEFINITION,PIZZA_DEFINITION,FACTURA_DEFINITION,CLIENTE_DEFINITION
+from forms.new_pizza import NewPizzaForm
+
 
 
 pizza = Pizza(DATABASE)
@@ -20,6 +24,8 @@ pedido = Pedido(DATABASE)
 factura = Factura(DATABASE)
 
 cliente = Cliente(DATABASE)
+
+numeropedido = randint(1000,10000)
 
 
 
@@ -31,24 +37,25 @@ def ver_pizzas():
     
 @get('/add_pizza')
 def nueva_pizza_form():
-    return template('nueva_pizza')
+    rows = pizza.select()
+    form = NewPizzaForm(request.POST)
+    return template('nueva_pizza', rows=pizza.select(), form=form)
 
 @post('/add_pizza')
 def nueva_pizza_save():
-    if request.POST.save:
-        data = {
-
-            'idpizza' :request.POST.idpizza.strip(),
-            'nombre' : request.POST.nombre.strip(),
-            'tamano' :request.POST.tamano.strip(),
-            'precio' : request.POST.precio.strip()
-
+    form = NewPizzaForm(request.POST) 
+    if form.save.data and form.validate():
+        form_data = {
+            'IdPizza' : request.POST.idpizza,
+            'Nombre': request.POST.nombre,
+            'Tamano': request.POST.tamano,
+            'Precio': request.POST.precio
         }
+        pizza.insert(form_data)
+        redirect('/pizzas')
 
-        
-        pizza.insert(data)
-     
-        return redirect('/pizzas')
+    rows=pizza.select()
+    return template('index', rows=pizza.select(), form=form)
 
 
 
@@ -108,7 +115,7 @@ def nuevo_cliente_save():
     if request.POST.save:
         data = {
             'Telefono': request.POST.telefono.strip(), 
-            'Nombre': request.POST.nombre.strip(),
+            'nombre': request.POST.nombre.strip(),
             'Direccion': request.POST.direccion.strip(),
             'C_Postal': request.POST.c_postal.strip(),
             'NumeroPedido': request.POST.numeropedido.strip()
@@ -116,7 +123,7 @@ def nuevo_cliente_save():
 
         cliente.insert(data)
 
-        return redirect('/clientes')
+    return redirect('/clientes')
         
 
 @get('/delete_cliente/<no:int>')
@@ -290,13 +297,37 @@ def edit_cliente(no):
             
     return redirect('/clientes')
 
+
+
+@get('/add_index')
+def insert_form():
+    return template('index')
+
+@post('/add_index')
+def insert_index_save():
+
+    
+
+    if request.POST.save:
+            data = {
+                'Telefono': request.POST.telefono.strip(),
+                'nombre': request.POST.nombre.strip(),
+                'Direccion': request.POST.direccion.strip(),
+                'C_Postal': request.POST.c_postal.strip(),
+                'NumeroPedido': numeropedido
+            }
+
+            cliente.insert(data)
+    return redirect('/clientes')
+
+
 @get("/static/<filepath:path>")
 def html(filepath):
     return static_file(filepath, root = "static")
     
-@get('/')
+@get("/")
 def index():
-    return template('index')
+     return template('index')
 
 
 @get('/pizza.ico')
@@ -315,7 +346,3 @@ if __name__ == '__main__':
         pedido.create(PEDIDO_DEFINITION)
         
     run(host='localhost', port=8080, debug=True, reloader=True)
-
-
-
-

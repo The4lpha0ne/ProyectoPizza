@@ -1,17 +1,38 @@
-% include('header.tpl', title = "Añadir pizzas")
-
-
-<h1>Añade una pizza</h1>
-<br>
+% include('header.tpl', title = "Pizzeria Papa Juan")
+<h1>Pizzeria Papa Juan</h1>
+<p><b>Añadir una nueva pizza:</b></p>
 <form action="/add_pizza" method="POST">
-<p>Introduce el ID de la pizza </p>
-<input type="text" size="100" maxlength="100" name="idpizza">
-<p>Introduce el nombre de la pizza </p>
-<input type="text" size="100" maxlength="100" name="nombre">
-<p> Introduce el tamaño de la pizza</p>
-<input type="text" size="100" maxlength="100" name="tamano">
-<p> Introduce el precio de la pizza </p>
-<input type="text" size="100" maxlength="100" name="precio"></br>
-</br><input type="submit" name="save" value="Añadir pizza">
+    <fieldset>
+        <div>    
+            {{ form.idpizza.label }}:
+            {{ form.idpizza }}</br>
+
+            {{  form.nombre.label }}
+            {{  form.nombre }}</br>
+
+
+            {{  form.tamano.label }}
+
+            {{  form.tamano }}</br>
+
+            {{ form.precio.label }}
+
+            {{ form.precio}}
+
+
+
+
+            %if form.idpizza.errors:
+            <ul class="errors">
+                %for error in form.pizza.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+        </div>
+        <div>
+           </br> {{ form.save }}    
+        </div>
+    
+    </fieldset>
 </form>
-% include('footer.tpl')
