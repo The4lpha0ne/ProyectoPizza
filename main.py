@@ -4,6 +4,7 @@ import bottle
 from random import randint
 
 sys.path.append('models')
+sys.path.append('forms')
 
 from models.cliente import Cliente
 from models.factura import Factura
@@ -12,6 +13,8 @@ from models.pizza import Pizza
 
 from bottle import route, run, template, request, get, post, redirect, static_file, error
 from config.config import DATABASE,PEDIDO_DEFINITION,PIZZA_DEFINITION,FACTURA_DEFINITION,CLIENTE_DEFINITION
+from forms.new_pizza import NewPizzaForm
+
 
 
 pizza = Pizza(DATABASE)
@@ -34,24 +37,25 @@ def ver_pizzas():
     
 @get('/add_pizza')
 def nueva_pizza_form():
-    return template('nueva_pizza')
+    rows = pizza.select()
+    form = NewPizzaForm(request.POST)
+    return template('nueva_pizza', rows=pizza.select(), form=form)
 
 @post('/add_pizza')
 def nueva_pizza_save():
-    if request.POST.save:
-        data = {
-
-            'IdPizza' :request.POST.idpizza.strip(),
-            'Nombre' : request.POST.nombre.strip(),
-            'Tamano' :request.POST.tamano.strip(),
-            'Precio' : request.POST.precio.strip()
-
+    form = NewPizzaForm(request.POST) 
+    if form.save.data and form.validate():
+        form_data = {
+            'IdPizza' : request.POST.idpizza,
+            'Nombre': request.POST.nombre,
+            'Tamano': request.POST.tamano,
+            'Precio': request.POST.precio
         }
+        pizza.insert(form_data)
+        redirect('/pizzas')
 
-        
-        pizza.insert(data)
-     
-    return redirect('/pizzas')
+    rows=pizza.select()
+    return template('index', rows=pizza.select(), form=form)
 
 
 
