@@ -1101,7 +1101,7 @@ and (min-width: 961px) {
         list-style: none;
         background-color: wheat;
         border-radius: 1.6em;
-        font-size: 1.5em;
+        /* font-size: 1.5em; */
         padding: 1em;
         /* grid-template-columns: 1fr 1fr; */
     }
@@ -1119,6 +1119,7 @@ and (min-width: 961px) {
         grid-column: 1;
         grid-row: 1;
         text-align: left;
+        font-size: 1em; 
     }
     
     #cliente {
@@ -1131,6 +1132,7 @@ and (min-width: 961px) {
         height: 2em;
         border-radius: 0.5em;
         border: 2px solid blueviolet;
+        font-size: 1em;
     }
     
     .movil {
@@ -1149,6 +1151,7 @@ and (min-width: 961px) {
         height: 2em;
         border-radius: 0.5em;
         border: 2px solid blueviolet;
+        font-size: 1em; 
     }
 }
 
@@ -1172,6 +1175,7 @@ and (min-width: 961px) {
     padding-bottom: 0.2em;
     border-radius: 0.5em;
     border: 2px solid blueviolet;
+    font-size: 1em; 
 }
 
 .realizar {
@@ -1194,6 +1198,94 @@ and (min-width: 961px) {
     color: aqua;
     background-color: green;
 }
+
+/****************************************************************************************************/
+/****************************************************************************************************/
+
+.container4 {
+    background-color: wheat;
+    list-style: none;
+    display: grid;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    padding: 0em;
+    width: 100%;
+    height: auto;
+}
+
+.codigo_postal {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.5em;
+    width: fit-content;
+    height: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 0.2em;
+    padding: 0em;    
+}
+
+#insertar_codigo {
+    background-color: gold;
+    border: 2px solid blueviolet;
+    border-radius: 0.5em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    font-size: 1.2em;
+    width: 50.5%;
+    height: auto;
+    grid-column: 2;
+    grid-row: 1; 
+}
+
+@media screen and (max-width: 768px) {
+    .container4 {
+        background-color: wheat;
+        list-style: none;
+        display: grid;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        padding: 0em;
+        width: 100%;
+        height: auto;
+    }
+    
+    .codigo_postal {
+        grid-column: 1;
+        grid-row: 1;
+        font-size: 1em;
+        width: fit-content;
+        height: auto;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0em;
+        margin-right: 0.2em;
+        padding: 0em;    
+    }
+    
+    #insertar_codigo {
+        background-color: gold;
+        border: 2px solid blueviolet;
+        border-radius: 0.5em;
+        padding-left: 0.4em;
+        padding-right: 0.4em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        font-size: 1em;
+        width: 45%;
+        height: auto;
+        grid-column: 2;
+        grid-row: 1; 
+    }
+}
+
 
 /****************************************************************************************************/
 /****************************************************************************************************/
