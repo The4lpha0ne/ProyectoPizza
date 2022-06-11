@@ -1,10 +1,11 @@
-from wtforms import Form, StringField, SubmitField, validators,IntegerField
+from ast import In
+from wtforms import Form, StringField, SubmitField, validators,FloatField,IntegerField
 
 class NewPizzaForm(Form):
     
-    idpizza = StringField('IdPizza', [validators.DataRequired()], render_kw={"size" : "70", "maxlength" : "6"})
+    idpizza = IntegerField('IdPizza', [validators.DataRequired(),validators.NumberRange(min = 1,max = 99999)], render_kw={"size" : "70", "maxlength" : "6"})
     nombre = StringField('Nombre', [validators.DataRequired()], render_kw={"size" : "70", "maxlength" : "20"})
     tamano = StringField('Tamaño', [validators.DataRequired()], render_kw={"size" : "70", "maxlength" : "15"})
-    precio = IntegerField('Precio', [validators.DataRequired(), validators.NumberRange(min = 1,max = 20)], render_kw={"size" : "70", "maxlength" : "2"})
+    precio = IntegerField('Precio', [validators.DataRequired(), validators.NumberRange(min = 7,max = 17 )], render_kw={"size" : "70", "maxlength" : "2"})
     save = SubmitField('Guardar')
     cancel = SubmitField('Cancelar')

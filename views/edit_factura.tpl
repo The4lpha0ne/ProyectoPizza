@@ -4,11 +4,11 @@
     <form action="/edit_factura/{{no}}" method="POST">
       <fieldset>
         <div>    
-            {{ form.fecha.label }}:
+            {{ form.fecha.label }}
             {{ form.fecha }}</br>
 
 
-            {{ form.numeropedido.label }}:
+            {{ form.numeropedido.label }}
             {{ form.numeropedido }}</br> 
 
 

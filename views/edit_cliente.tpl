@@ -4,20 +4,20 @@
       <fieldset>
         <div>    
 
-            {{ form.telefono.label }}:
+            {{ form.telefono.label }}
  
             {{ form.telefono }} </br>
 
 
-            {{ form.nombre.label }}:
+            {{ form.nombre.label }}
 
             {{  form.nombre }} </br>  
 
-            {{ form.direccion.label }}:
+            {{ form.direccion.label }}
             {{ form.direccion }} </br>
 
 
-            {{ form.c_postal.label }}:
+            {{ form.c_postal.label }}
             {{ form.c_postal }}
 
            
