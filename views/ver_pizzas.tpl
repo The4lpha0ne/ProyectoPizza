@@ -4,7 +4,7 @@
 <form action="/pizzas" method="POST">
     <fieldset>
         <div>    
-            {{ form.idpizza.label }}:
+            {{ form.idpizza.label }}
             {{ form.idpizza }}</br>
 
             {{  form.nombre.label }}

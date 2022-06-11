@@ -5,7 +5,7 @@
 <form action="/clientes" method="POST">
     <fieldset>
         <div>    
-            {{ form.telefono.label }}:
+            {{ form.telefono.label }}
             {{ form.telefono }}</br>
 
             {{  form.nombre.label }}

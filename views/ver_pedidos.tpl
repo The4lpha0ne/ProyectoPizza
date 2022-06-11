@@ -4,7 +4,7 @@
 <form action="/pedidos" method="POST">
     <fieldset>
         <div>    
-            {{ form.numeropedido.label }}:
+            {{ form.numeropedido.label }}
             {{ form.numeropedido }}</br>
 
             {{  form.cantidad.label }}

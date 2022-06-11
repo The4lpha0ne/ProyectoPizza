@@ -5,10 +5,10 @@
 <form action="/facturas" method="POST">
     <fieldset>
         <div>    
-            {{ form.idfactura.label }}:
+            {{ form.idfactura.label }}
             {{ form.idfactura }}</br>
 
-            {{  form.fecha.label }}:
+            {{  form.fecha.label }}
             {{  form.fecha }}</br>
 
 
