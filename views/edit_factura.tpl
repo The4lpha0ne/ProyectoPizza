@@ -12,10 +12,6 @@
             {{ form.numeropedido }}</br> 
 
 
-
-            
-                   
-
             %if form.fecha.errors:
             <ul class="errors">
                 %for error in form.errors:
