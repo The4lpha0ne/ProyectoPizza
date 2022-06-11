@@ -1008,7 +1008,7 @@ label {
 
 .clientito {
     background-color: wheat;
-    border-radius: 1.6em;
+    border-radius: 2.4em;
     display: grid;
     text-align: center;
     list-style: none;
@@ -1091,7 +1091,7 @@ label {
 @media screen and (max-width: 768px) {
     .clientito {
         background-color: wheat;
-        border-radius: 1.6em;
+        border-radius: 2.4em;
         display: grid;
         text-align: center;
         list-style: none;
