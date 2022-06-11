@@ -1039,99 +1039,139 @@ and (min-width: 961px) {
 /****************************************************************************************************/
 
 .clientito {
-    display: grid;
-    list-style: none;
     background-color: wheat;
     border-radius: 1.6em;
-    font-size: 1.5em;
-    padding: 1em;
+    display: grid;
     text-align: center;
-    /* align-items: center;
-    justify-content: center; */
-    /* grid-template-columns: 1fr 1fr; */
+    list-style: none;
+    width: 100%;
+    height: auto;
+    margin: 0em;
+    padding: 1em;
 }
 
 .clientito li {
-    padding: 0em;
+    text-align: center;
     margin-top: 0em;
     margin-bottom: 1em;
     margin-left: 0em;
     margin-right: 0em;
-    text-align: center;    
+    padding: 0em;     
 }
 
 .el_cliente {
-    grid-column: 1 / 4;
+    grid-column: 1;
     grid-row: 1;
+    width: fit-content;
+    height: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 0.2em;
+    padding: 0em;
+    font-size: 1.5em;
 }
 
 #cliente {
-    grid-column: 2 / 4;
-    grid-row: 1;
-    margin-right: 10%;
-    width: 25%;
     background-color: gold;
+    border: 2px solid blueviolet;
+    border-radius: 0.5em;
+    grid-column: 2;
+    grid-row: 1;
+    width: 25%;
+    height: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 10%;
     padding-left: 0.4em;
     padding-right: 0.4em;
-    height: 2em;
-    border-radius: 0.5em;
-    border: 2px solid blueviolet;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    font-size: 1.2em;
 }
 
 .movil {
-    grid-column: 3 / 4;
+    grid-column: 3;
     grid-row: 1;
+    width: fit-content;
+    height: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 0.2em;
+    padding: 0em;
+    font-size: 1.5em;
 }
 
 #telefono {
-    grid-column: 4 / 4;
+    background-color: gold;
+    border: 2px solid blueviolet;
+    border-radius: 0.5em;
+    grid-column: 4;
     grid-row: 1;
     width: 25%;
-    background-color: gold;
+    height: auto;
+    margin: 0em;
     padding-left: 0.4em;
     padding-right: 0.4em;
-    height: 2em;
-    border-radius: 0.5em;
-    border: 2px solid blueviolet;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    font-size: 1.2em;
 }
 
 @media screen and (max-width: 768px) {
     .clientito {
-        display: grid;
-        list-style: none;
         background-color: wheat;
         border-radius: 1.6em;
-        /* font-size: 1.5em; */
+        display: grid;
+        text-align: center;
+        list-style: none;
+        width: 100%;
+        height: auto;
+        margin: 0em;
         padding: 1em;
-        /* grid-template-columns: 1fr 1fr; */
     }
     
     .clientito li {
-        padding: 0em;
+        text-align: center; 
         margin-top: 0em;
         margin-bottom: 1em;
         margin-left: 0em;
         margin-right: 0em;
-        text-align: center;    
+        padding: 0em;   
     }
     
     .el_cliente {
         grid-column: 1;
         grid-row: 1;
         text-align: left;
+        width: fit-content;
+        height: auto;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0em;
+        margin-right: 0em;
+        padding: 0em;
         font-size: 1em; 
     }
     
     #cliente {
+        background-color: gold;
+        border: 2px solid blueviolet;
+        border-radius: 0.5em;
         grid-column: 1;
         grid-row: 2;
-        width: 100%;
-        background-color: gold;
+        width: 90%;
+        height: auto;
+        margin-top: 0em;
+        margin-bottom: 1em;
+        margin-left: 0em;
+        margin-right: 0em;
         padding-left: 0.4em;
         padding-right: 0.4em;
-        height: 2em;
-        border-radius: 0.5em;
-        border: 2px solid blueviolet;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
         font-size: 1em;
     }
     
@@ -1139,44 +1179,131 @@ and (min-width: 961px) {
         grid-column: 1;
         grid-row: 3;
         text-align: left;
+        width: fit-content;
+        height: auto;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0em;
+        margin-right: 0em;
+        padding: 0em;
+        font-size: 1em;
     }
     
     #telefono {
+        background-color: gold;
+        border: 2px solid blueviolet;
+        border-radius: 0.5em;
         grid-column: 1;
         grid-row: 4;
-        width: 100%;
-        background-color: gold;
+        width: 90%;
+        height: auto;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0em;
+        margin-right: 0em;
         padding-left: 0.4em;
         padding-right: 0.4em;
-        height: 2em;
-        border-radius: 0.5em;
-        border: 2px solid blueviolet;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
         font-size: 1em; 
     }
 }
 
 /****************************************************************************************************/
 /****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
 
-/* .container3 {
-
+.container3 {
+    background-color: wheat;
+    display: grid;
+    list-style: none;
+    width: 100%;
+    height: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    padding: 0em;
 }
 
-.address {
-
-} */
+.la_direccion {
+    grid-column: 1;
+    grid-row: 1;
+    width: fit-content;
+    height: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 0.2em;
+    padding: 0em;
+    font-size: 1.5em;
+}
 
 #direccion {
     background-color: gold;
+    border: 2px solid blueviolet;
+    border-radius: 0.5em;
+    grid-column: 2;
+    grid-row: 1;
     width: 60%;
+    height: auto;
+    margin: 0em;
     padding-left: 0.4em;
     padding-right: 0.4em;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
-    border-radius: 0.5em;
-    border: 2px solid blueviolet;
-    font-size: 1em; 
+    font-size: 1.2em; 
 }
+
+@media screen and (max-width: 768px) {
+    .container3 {
+        background-color: wheat;
+        list-style: none;
+        display: grid;
+        margin-top: 0em;
+        margin-bottom: 0.8em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        padding: 0em;
+        width: 100%;
+        height: auto;
+    }
+    
+    .la_direccion {
+        grid-column: 1;
+        grid-row: 1;
+        font-size: 1em;
+        width: fit-content;
+        height: auto;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0em;
+        margin-right: 0.2em;
+        padding: 0em;
+    }
+    
+    #direccion {
+        background-color: gold;
+        border: 2px solid blueviolet;
+        border-radius: 0.5em;
+        grid-column: 2;
+        grid-row: 1;
+        width: 60%;
+        height: auto;
+        margin: 0em;
+        padding-left: 0.4em;
+        padding-right: 0.4em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        font-size: 1em; 
+    }
+}
+
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
 
 .realizar {
     color: gold;
@@ -1199,6 +1326,8 @@ and (min-width: 961px) {
     background-color: green;
 }
 
+/****************************************************************************************************/
+/****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
 
@@ -1232,15 +1361,15 @@ and (min-width: 961px) {
     background-color: gold;
     border: 2px solid blueviolet;
     border-radius: 0.5em;
+    grid-column: 2;
+    grid-row: 1;
+    width: 50.5%;
+    height: auto;
     padding-left: 0.4em;
     padding-right: 0.4em;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
-    font-size: 1.2em;
-    width: 50.5%;
-    height: auto;
-    grid-column: 2;
-    grid-row: 1; 
+    font-size: 1.2em; 
 }
 
 @media screen and (max-width: 768px) {
@@ -1274,18 +1403,17 @@ and (min-width: 961px) {
         background-color: gold;
         border: 2px solid blueviolet;
         border-radius: 0.5em;
+        grid-column: 2;
+        grid-row: 1;
+        width: 45%;
+        height: auto;
         padding-left: 0.4em;
         padding-right: 0.4em;
         padding-top: 0.2em;
         padding-bottom: 0.2em;
         font-size: 1em;
-        width: 45%;
-        height: auto;
-        grid-column: 2;
-        grid-row: 1; 
     }
 }
-
 
 /****************************************************************************************************/
 /****************************************************************************************************/
