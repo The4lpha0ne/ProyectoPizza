@@ -1,13 +1,4 @@
 from wtforms import Form, StringField, SubmitField, validators,IntegerField
-import sys
-sys.path.append('models')
-sys.path.append('config')
-
-from models.pizza import Pizza
-from config.config import DATABASE
-
-pizza = Pizza(DATABASE)
-
 
 class NewPizzaForm(Form):
 
@@ -18,3 +9,4 @@ class NewPizzaForm(Form):
 
     save = SubmitField('Guardar')
     cancel = SubmitField('Cancelar')
+ 
