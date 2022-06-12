@@ -33,13 +33,6 @@ factura = Factura(DATABASE)
 cliente = Cliente(DATABASE)
 
 
-
-
-@get('/pizzas')
-def ver_pizzas():
-    
-    return template ('ver_pizzas', rows = pizza.select())
-
     
 @get('/pizzas')
 def nueva_pizza_form():
@@ -85,12 +78,10 @@ def delete_pizza_item(no):
 
 @get('/edit_pizza/<no:int>')
 def edit_pizza_form(no):
-    # Obtenemos la tarea a editar
     fields = ['Nombre', 'Tamano','Precio']
     where = {'IdPizza': no}
     cur_data = pizza.get(fields, where)  
     
-    # Creamos formulario y le pasamos los valores actuales de la tarea
     form = EditPizzaForm(request.POST)
 
     form.nombre.data = cur_data[0]
@@ -115,12 +106,6 @@ def edit_pizza(no):
         pizza.update(data, where)
         
     return redirect('/pizzas')
-
-@get('/clientes')
-def ver_clientes():
-    rows=cliente.select()
-    return template('ver_clientes', rows=cliente.select())
-    
 
 
 @get('/clientes')
@@ -163,13 +148,6 @@ def delete_cliente_item(no):
             cliente.delete(where)
 
     return redirect('/clientes')
-
-
-@get('/pedidos')
-def ver_pedidos():
-   rows = pedido.select()
-   return template('ver_pedidos', rows = pedido.select())
-
 
 
 @get('/delete_pedido/<no:int>')
@@ -246,11 +224,6 @@ def edit_pedido(no):
 
     
 
-@get('/facturas')
-def ver_facturas():
-    rows=factura.select()
-    return template('ver_facturas', rows=factura.select())
-    
 
 @get('/facturas')
 def nueva_factura_form():
@@ -265,7 +238,7 @@ def nueva_factura_save():
         form_data = {
             'IdFactura' : request.POST.idfactura,
             'Fecha': request.POST.fecha,
-            'NumeroPedido': request.POST.numeropedido,
+            'NumeroPedido': request.POST.numeropedido
         }
         factura.insert(form_data)
         redirect('/facturas')

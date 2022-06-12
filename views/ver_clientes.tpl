@@ -30,7 +30,7 @@
 
             %if form.telefono.errors:
             <ul class="errors">
-                %for error in form.errors:
+                %for error in form.telefono.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>
@@ -38,7 +38,7 @@
 
             %if form.nombre.errors:
             <ul class="errors">
-                %for error in form.errors:
+                %for error in form.nombre.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>
@@ -47,7 +47,7 @@
 
             %if form.direccion.errors:
             <ul class="errors">
-                %for error in form.errors:
+                %for error in form.direccion.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>
