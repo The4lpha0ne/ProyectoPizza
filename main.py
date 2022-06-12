@@ -336,9 +336,6 @@ def edit_cliente(no):
         
     return redirect('/clientes')
 
-@get('/add_index')
-def insert_form():
-    return template('index')
 
 @post('/add_index')
 def insert_index_save():
