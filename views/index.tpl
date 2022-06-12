@@ -185,26 +185,25 @@
                 </ul>
             </fieldset>
 
-            <form action = "/add_index" method = "POST"
-            class="form_real_1">
+            <form action = "/add_index" method = "POST" class="form_real_1">
                 <fieldset class="menu_pizzas3">
                     <legend class="legend2" id="legend2">Entrega</legend>
 
                     <ul class="clientito">
-                        <li class="conatiner2"> 
+                        <li class="conatiner2">
+                            <label for="telefono" class="movil">
+                                Telefono
+                            </label>
+                            <input type="text" name="telefono" 
+                            id="telefono" minlength="9" maxlength="9" 
+                            required>
+
                             <label for="cliente" class="el_cliente">
                                 Cliente
                             </label>
-                            <input type="text" name="client" 
+                            <input type="text" name="nombre" 
                             id="cliente" minlength="3" 
                             maxlength="50" required>
-
-                            <label for="telefono" class="movil">
-                                Teléfono
-                            </label>
-                            <input type="text" name="num_movil" 
-                            id="telefono" minlength="9" maxlength="9" 
-                            required>
                         </li>
 
                         <li class="conatiner3">
@@ -212,7 +211,7 @@
                                 Dirección
                             </label>
 
-                            <textarea name="el_address" 
+                            <textarea name="direccion" 
                             id="direccion" cols="30" 
                             rows="3" required></textarea>
                         </li>
@@ -223,7 +222,7 @@
                                 Codigo Postal
                             </label>
                             
-                            <input type="text" name="el_c_postal"
+                            <input type="text" name="c_postal"
                             id="insertar_codigo" minlength="5" 
                             maxlength="5" required>
                         </li>

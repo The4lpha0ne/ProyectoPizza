@@ -20,7 +20,7 @@
 
             %if form.idfactura.errors:
             <ul class="errors">
-                %for error in form.errors:
+                %for error in form.idfactura.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>
@@ -30,7 +30,7 @@
 
             %if form.numeropedido.errors:
             <ul class="errors">
-                %for error in form.errors:
+                %for error in form.numeropedido.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>
@@ -39,7 +39,7 @@
 
             %if form.fecha.errors:
             <ul class="errors">
-                %for error in form.errors:
+                %for error in form.fecha.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>

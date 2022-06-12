@@ -24,7 +24,7 @@
 
             %if form.numeropedido.errors:
             <ul class="errors">
-                %for error in form.errors:
+                %for error in form.numeropedido.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>
@@ -34,7 +34,7 @@
 
             %if form.cantidad.errors:
             <ul class="errors">
-                %for error in form.errors:
+                %for error in form.cantidad.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>
@@ -44,7 +44,7 @@
 
             %if form.nombre.errors:
             <ul class="errors">
-                %for error in form.errors:
+                %for error in form.nombre.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>
@@ -53,7 +53,7 @@
 
             %if form.tamano.errors:
             <ul class="errors">
-                %for error in form.errors:
+                %for error in form.tamano.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>
