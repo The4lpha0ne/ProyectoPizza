@@ -32,7 +32,6 @@ factura = Factura(DATABASE)
 
 cliente = Cliente(DATABASE)
 
-numeropedido = randint(1000,10000)
 
 
 
@@ -367,6 +366,7 @@ def insert_form():
 
 @post('/add_index')
 def insert_index_save():
+    numeropedido = randint(1000,10000)
 
     if request.POST.save:
             data = {
