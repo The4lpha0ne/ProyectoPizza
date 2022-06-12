@@ -191,12 +191,11 @@ def nuevo_pedido_save():
 
 @get('/edit_pedido/<no:int>')
 def edit_pedido_form(no):
-    # Obtenemos la tarea a editar
+
     fields = ['Cantidad', 'nombre','Tamano']
     where = {'NumeroPedido': no}
     cur_data = pedido.get(fields, where)  
     
-    # Creamos formulario y le pasamos los valores actuales de la tarea
     form = EditPedidoForm(request.POST)
 
     form.cantidad.data = cur_data[0]
@@ -227,12 +226,14 @@ def edit_pedido(no):
 
 @get('/facturas')
 def nueva_factura_form():
+
     rows = factura.select()
     form = NewFacturaForm(request.POST)
     return template('ver_facturas', rows=factura.select(), form=form)
 
 @post('/facturas')
 def nueva_factura_save():
+
     form = NewFacturaForm(request.POST) 
     if form.save.data and form.validate():
         form_data = {
@@ -249,6 +250,7 @@ def nueva_factura_save():
 
 @get('/delete_factura/<no:int>')
 def delete_factura_form(no):
+
     fields = ['Fecha','NumeroPedido']
     where = {'IdFactura': no}
     cur_data = factura.get(fields,where)
@@ -259,6 +261,7 @@ def delete_factura_form(no):
 
 @post('/delete_factura/<no:int>')
 def delete_factura_item(no):
+    
     if request.POST.delete:
             where = {'IdFactura': no}
             factura.delete(where)
