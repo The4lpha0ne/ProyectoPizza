@@ -18,7 +18,7 @@ from models.factura import Factura
 from models.pedido import Pedido
 from models.pizza import Pizza
 
-from bottle import route, run, template, request, get, post, redirect, static_file, error
+from bottle import route, run, template, request, get, post, redirect, static_file, error, auth_basic
 from config.config import DATABASE,PEDIDO_DEFINITION,PIZZA_DEFINITION,FACTURA_DEFINITION,CLIENTE_DEFINITION
 from forms.new_pizza import NewPizzaForm
 
@@ -32,9 +32,14 @@ factura = Factura(DATABASE)
 
 cliente = Cliente(DATABASE)
 
+def is_authenticated_user(user, password):
+    if user == "aramis" and password=="daw1234":
+        return True
+    return False
 
     
 @get('/pizzas')
+@auth_basic(is_authenticated_user)
 def nueva_pizza_form():
     rows = pizza.select()
     form = NewPizzaForm(request.POST)
@@ -109,6 +114,7 @@ def edit_pizza(no):
 
 
 @get('/clientes')
+@auth_basic(is_authenticated_user)
 def nuevo_cliente_form():
     rows = cliente.select()
     form = NewClienteForm(request.POST)
@@ -166,6 +172,7 @@ def delete_pedido_item(no):
     return redirect('/pedidos')
 
 @get('/pedidos')
+@auth_basic(is_authenticated_user)
 def nuevo_pedido_form():
     rows = pedido.select()
     form = NewPedidoForm(request.POST)
@@ -225,6 +232,7 @@ def edit_pedido(no):
 
 
 @get('/facturas')
+@auth_basic(is_authenticated_user)
 def nueva_factura_form():
 
     rows = factura.select()
