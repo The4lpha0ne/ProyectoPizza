@@ -354,6 +354,7 @@ def insert_index_save():
     return template('pedidorealizado')
 
 
+
 @get("/static/<filepath:path>")
 def html(filepath):
     return static_file(filepath, root = "static")
@@ -362,7 +363,10 @@ def html(filepath):
 def index():
      return template('index')
 
-
+@error(404)
+def error404(error):
+    return static_file('404.html', root='static')
+    
 @get('/pizza.ico')
 def icon():
     return static_file('pizza.ico', root='static')
