@@ -7,24 +7,19 @@
             {{ form.cantidad.label }}
             {{ form.cantidad }}</br>
 
-
-             {{ form.nombre.label }}
-             {{ form.nombre }}</br>  
-
-             {{ form.tamano.label }}
-             {{ form.tamano }}
-
-
-           
-
-            %if form.cantidad.errors:
+              %if form.cantidad.errors:
             <ul class="errors">
                 %for error in form.cantidad.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>
             %end
+        </div>
 
+        <div>
+
+             {{ form.nombre.label }}
+             {{ form.nombre }}</br>  
 
             %if form.nombre.errors:
             <ul class = "errors">
@@ -35,19 +30,18 @@
             %end
 
 
-
+        </div>
+             {{ form.tamano.label }}
+             {{ form.tamano }}
+    
             %if form.tamano.errors:
-            <ul class = "errors">
-                %for error in form.tamano.errors:
+            <ul class="errors">
+                %for error in form.cantidad.errors:
                     <li>{{ error }}</li>
                 %end
             </ul>
             %end
-
-
-
         </div>
-
         <div>
            </br> {{ form.save }}    
         </div>

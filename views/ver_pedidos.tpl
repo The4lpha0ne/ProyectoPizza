@@ -5,22 +5,7 @@
     <fieldset>
         <div>    
             {{ form.numeropedido.label }}
-            {{ form.numeropedido }}</br>
-
-            {{  form.cantidad.label }}
-            {{  form.cantidad }}</br>
-
-
-            {{  form.nombre.label }}
-
-            {{  form.nombre }}</br>
-
-            {{ form.tamano.label }}
-
-            {{ form.tamano}}</br>
-
-
-             
+            {{ form.numeropedido }}
 
             %if form.numeropedido.errors:
             <ul class="errors">
@@ -30,7 +15,13 @@
             </ul>
             %end
 
-            
+        </div>
+
+        <div>
+
+            {{  form.cantidad.label }}
+            {{  form.cantidad }}
+
 
             %if form.cantidad.errors:
             <ul class="errors">
@@ -40,6 +31,13 @@
             </ul>
             %end
 
+        </div>
+        
+        <div>
+
+            {{  form.nombre.label }}
+
+            {{  form.nombre }}
 
 
             %if form.nombre.errors:
@@ -49,6 +47,13 @@
                 %end
             </ul>
             %end
+        </div>
+
+        <div>
+
+            {{ form.tamano.label }}
+
+            {{ form.tamano}}</br>
 
 
             %if form.tamano.errors:
@@ -59,10 +64,9 @@
             </ul>
             %end
 
+        </div>  
 
-
-
-        </div>
+        
         <div>
            </br> {{ form.save }}    
         </div>

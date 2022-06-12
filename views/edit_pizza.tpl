@@ -5,18 +5,8 @@
       <fieldset>
         <div>    
             {{ form.nombre.label }}
-            {{ form.nombre }}</br>
-
-
-             {{ form.tamano.label }}
-             {{ form.tamano }}</br>  
-
-             {{ form.precio.label }}
-             {{ form.precio }}
-
-
-           
-
+            {{ form.nombre }}
+            
             %if form.nombre.errors:
             <ul class="errors">
                 %for error in form.nombre.errors:
@@ -24,7 +14,11 @@
                 %end
             </ul>
             %end
+        </div>
 
+        <div>
+             {{ form.tamano.label }}
+             {{ form.tamano }}
 
             %if form.tamano.errors:
             <ul class = "errors">
@@ -33,8 +27,11 @@
                 %end
             </ul>
             %end
+        </div>
 
-
+        <div>
+             {{ form.precio.label }}
+             {{ form.precio }}
 
             %if form.precio.errors:
             <ul class = "errors">
@@ -43,9 +40,6 @@
                 %end
             </ul>
             %end
-
-
-
         </div>
 
         <div>

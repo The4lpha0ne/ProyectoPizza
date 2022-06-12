@@ -7,20 +7,6 @@
             {{ form.idpizza.label }}
             {{ form.idpizza }}</br>
 
-            {{  form.nombre.label }}
-            {{  form.nombre }}</br>
-
-
-            {{  form.tamano.label }}
-
-            {{  form.tamano }}</br>
-
-            {{ form.precio.label }}
-
-            {{ form.precio}}
-
-
-
 
             %if form.idpizza.errors:
             <ul class="errors">
@@ -29,7 +15,12 @@
                 %end
             </ul>
             %end
+        </div>
 
+        <div>
+
+            {{  form.nombre.label }}
+            {{  form.nombre }}
 
 
             %if form.nombre.errors:
@@ -41,6 +32,14 @@
             %end
 
 
+        </div>
+
+        <div>
+
+            {{  form.tamano.label }}
+
+            {{  form.tamano }}</br>
+
             %if form.tamano.errors:
             <ul class="errors">
                 %for error in form.tamano.errors:
@@ -48,6 +47,13 @@
                 %end
             </ul>
             %end
+        </div>
+
+        <div>
+            {{ form.precio.label }}
+
+            {{ form.precio}}
+
 
             %if form.precio.errors:
             <ul class="errors">
@@ -56,12 +62,11 @@
                 %end
             </ul>
             %end
+        </div>
 
-        </div>
         <div>
-           </br> {{ form.save }}    
+            {{ form.save }}    
         </div>
-    
     </fieldset>
 </form>
 

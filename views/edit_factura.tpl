@@ -7,11 +7,6 @@
             {{ form.fecha.label }}
             {{ form.fecha }}</br>
 
-
-            {{ form.numeropedido.label }}
-            {{ form.numeropedido }}</br> 
-
-
             %if form.fecha.errors:
             <ul class="errors">
                 %for error in form.fecha.errors:
@@ -19,7 +14,11 @@
                 %end
             </ul>
             %end
+        </div>
 
+        <div>
+            {{ form.numeropedido.label }}
+            {{ form.numeropedido }}</br> 
 
             %if form.numeropedido.errors:
             <ul class = "errors">
@@ -27,11 +26,8 @@
                     <li>{{ error }}</li>
                 %end
             </ul>
-            %end
-
-
+            %end            
         </div>
-
         <div>
            </br> {{ form.save }}    
         </div>
