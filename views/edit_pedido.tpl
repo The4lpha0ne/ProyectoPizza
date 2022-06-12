@@ -4,14 +4,14 @@
     <form action="/edit_pedido/{{no}}" method="POST">
       <fieldset>
         <div>    
-            {{ form.cantidad.label }}:
+            {{ form.cantidad.label }}
             {{ form.cantidad }}</br>
 
 
-             {{ form.nombre.label }}:
+             {{ form.nombre.label }}
              {{ form.nombre }}</br>  
 
-             {{ form.tamano.label }}:
+             {{ form.tamano.label }}
              {{ form.tamano }}
 
 

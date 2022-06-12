@@ -4,14 +4,14 @@
     <form action="/edit_pizza/{{no}}" method="POST">
       <fieldset>
         <div>    
-            {{ form.nombre.label }}:
+            {{ form.nombre.label }}
             {{ form.nombre }}</br>
 
 
-             {{ form.tamano.label }}:
+             {{ form.tamano.label }}
              {{ form.tamano }}</br>  
 
-             {{ form.precio.label }}:
+             {{ form.precio.label }}
              {{ form.precio }}
 
 

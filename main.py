@@ -32,7 +32,6 @@ factura = Factura(DATABASE)
 
 cliente = Cliente(DATABASE)
 
-numeropedido = randint(1000,10000)
 
 
 
@@ -42,13 +41,13 @@ def ver_pizzas():
     return template ('ver_pizzas', rows = pizza.select())
 
     
-@get('/add_pizza')
+@get('/pizzas')
 def nueva_pizza_form():
     rows = pizza.select()
     form = NewPizzaForm(request.POST)
-    return template('nueva_pizza', rows=pizza.select(), form=form)
+    return template('ver_pizzas', rows=pizza.select(), form=form)
 
-@post('/add_pizza')
+@post('/pizzas')
 def nueva_pizza_save():
     form = NewPizzaForm(request.POST) 
     if form.save.data and form.validate():
@@ -124,13 +123,13 @@ def ver_clientes():
     
 
 
-@get('/add_cliente')
+@get('/clientes')
 def nuevo_cliente_form():
     rows = cliente.select()
     form = NewClienteForm(request.POST)
-    return template('nuevo_cliente', rows=cliente.select(), form=form)
+    return template('ver_clientes', rows=cliente.select(), form=form)
 
-@post('/add_cliente')
+@post('/clientes')
 def nuevo_cliente_save():
     form = NewClienteForm(request.POST) 
     if form.save.data and form.validate():
@@ -188,13 +187,13 @@ def delete_pedido_item(no):
             pedido.delete(where)
     return redirect('/pedidos')
 
-@get('/add_pedido')
+@get('/pedidos')
 def nuevo_pedido_form():
     rows = pedido.select()
     form = NewPedidoForm(request.POST)
-    return template('nuevo_pedido', rows=pedido.select(), form=form)
+    return template('ver_pedidos', rows=pedido.select(), form=form)
 
-@post('/add_pedido')
+@post('/pedidos')
 def nuevo_pedido_save():
     form = NewPedidoForm(request.POST) 
     if form.save.data and form.validate():
@@ -253,13 +252,13 @@ def ver_facturas():
     return template('ver_facturas', rows=factura.select())
     
 
-@get('/add_factura')
+@get('/facturas')
 def nueva_factura_form():
     rows = factura.select()
     form = NewFacturaForm(request.POST)
-    return template('nueva_factura', rows=factura.select(), form=form)
+    return template('ver_facturas', rows=factura.select(), form=form)
 
-@post('/add_factura')
+@post('/facturas')
 def nueva_factura_save():
     form = NewFacturaForm(request.POST) 
     if form.save.data and form.validate():
@@ -367,6 +366,7 @@ def insert_form():
 
 @post('/add_index')
 def insert_index_save():
+    numeropedido = randint(1000,10000)
 
     if request.POST.save:
             data = {

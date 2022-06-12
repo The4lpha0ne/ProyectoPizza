@@ -1,5 +1,4 @@
 from wtforms import Form, StringField, SubmitField, validators,DateField,IntegerField
-from datetime import date
 
 class NewFacturaForm(Form):
     

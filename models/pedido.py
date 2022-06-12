@@ -1,4 +1,3 @@
-import sqlite3
 from table import Table
 
 TABLE_NAME = 'pedido'
