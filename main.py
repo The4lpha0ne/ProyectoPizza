@@ -365,7 +365,10 @@ def html(filepath):
 def index():
      return template('index')
 
-
+@error(404)
+def error404(error):
+    return static_file('404.html', root='static')
+    
 @get('/pizza.ico')
 def icon():
     return static_file('pizza.ico', root='static')
