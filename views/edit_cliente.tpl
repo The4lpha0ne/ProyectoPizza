@@ -1,10 +1,65 @@
-% include('header.tpl', title = "Editar datos del cliente")
-<h1> Editar cliente con número de pedido {{no}} </h1>
+% include('header.tpl', title = "Editar cliente")
+    <p>Editar cliente número de pedido {{no}}:</p>
     <form action="/edit_cliente/{{no}}" method="POST">
-      <input type="text" name="telefono" value="{{old[0]}}" size="100" maxlength="100">
-      <input type = "text" name = "nombre" value="{{old[1]}}" size="100" maxlength="100">
-      <input type = "text" name = "direccion" value="{{old[2]}}" size="100" maxlength="100">
-      <input type = "text" name = "c_postal" value="{{old[3]}}" size="100" maxlength="100">
-      <input type="submit" name="save" value="Editar cliente">
+      <fieldset>
+        <div>    
+
+            {{ form.telefono.label }}
+ 
+            {{ form.telefono }} </br>
+
+
+            {{ form.nombre.label }}
+
+            {{  form.nombre }} </br>  
+
+            {{ form.direccion.label }}
+            {{ form.direccion }} </br>
+
+
+            {{ form.c_postal.label }}
+            {{ form.c_postal }}
+
+           
+
+            %if form.telefono.errors:
+            <ul class="errors">
+                %for error in form.telefono.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+            %if form.nombre.errors:
+            <ul class="errors">
+                %for error in form.nombre.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+            %if form.direccion.errors:
+            <ul class="errors">
+                %for error in form.direccion.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+
+
+
+
+
+        </div>
+
+        <div>
+           </br> {{ form.save }}    
+        </div>
+    </fieldset>
     </form>   
+
 % include('footer.tpl')

@@ -32,10 +32,7 @@
     </div>
 
     <main>
-        <form class="formulario_uno" 
-        action="/index" 
-        method="POST">
-        <!-- <form action="./action_page.php" method="get"></form> -->
+        <div class="formulario_uno">
             <fieldset class="menu_pizzas">
                 <legend class="legend1" id="legend1"></legend>
 
@@ -114,7 +111,7 @@
                     </label>
 
                     <input type="number" id="cantidad" 
-                    name="input_cantidad" min="1" max="5" 
+                    name="input_cantidad" min="1" max="10" 
                     value="1" required>
 
 
@@ -188,43 +185,57 @@
                 </ul>
             </fieldset>
 
-            <fieldset class="menu_pizzas3">
-                <legend class="legend2" id="legend2">Entrega</legend>
+            <form action = "/add_index" method = "POST" class="form_real_1">
+                <fieldset class="menu_pizzas3">
+                    <legend class="legend2" id="legend2">Entrega</legend>
 
-                <ul class="clientito">
-                    <li class="conatiner2"> 
-                        <label for="cliente" class="el_cliente">
-                            Cliente
-                        </label>
-                        <input type="text" name="nombre" id="cliente" 
-                        minlength="3" maxlength="50" required>
+                    <ul class="clientito">
+                        <li class="conatiner2">
+                            <label for="telefono" class="movil">
+                                Telefono
+                            </label>
+                            <input type="text" name="telefono" 
+                            id="telefono" minlength="9" maxlength="9" 
+                            required>
 
-                        <label for="telefono" class="movil" name>
-                            Teléfono
-                        </label>
-                        <input type="text" name="telefono" 
-                        id="telefono" minlength="9" 
-                        maxlength="9" required>
-                    </li>
+                            <label for="cliente" class="el_cliente">
+                                Cliente
+                            </label>
+                            <input type="text" name="nombre" 
+                            id="cliente" minlength="3" 
+                            maxlength="50" required>
+                        </li>
 
-                    <li class="conatiner3">
-                        <label for="direccion" class="address">
-                            Dirección
-                        </label>
+                        <li class="conatiner3">
+                            <label for="direccion" class="la_direccion">
+                                Dirección
+                            </label>
 
-                        <textarea name="direccion" 
-                        id="direccion" cols="30" 
-                        rows="5" required></textarea>
-                    </li>
+                            <textarea name="direccion" 
+                            id="direccion" cols="30" 
+                            rows="3" required></textarea>
+                        </li>
 
-                    <li>
+                        <li>
+                            <label for="insertar_codigo" 
+                            class="codigo_postal">
+                                Codigo Postal
+                            </label>
+                            
+                            <input type="text" name="c_postal"
+                            id="insertar_codigo" minlength="5" 
+                            maxlength="5" required>
+                        </li>
 
-                        <input type="submit" value="Realizar Pedido" 
-                        class="realizar" formmethod="post">
-                    </li>
-                </ul>
-            </fieldset>
-        </form>
+
+                        <li>
+                            <input type="submit" value="Realizar Pedido" 
+                            name="save" class="realizar" formmethod="post">
+                        </li>
+                    </ul>
+                </fieldset>
+            </form>
+        </div>
     </main>
     
     <footer class="redes_sociales">
