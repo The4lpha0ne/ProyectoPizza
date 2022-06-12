@@ -1,12 +1,57 @@
 % include('header.tpl', title = "Editar pizza")
-<h1> Editar pizza con ID {{no}} </h1>
+
+    <p>Editar pizza con ID {{no}}:</p>
     <form action="/edit_pizza/{{no}}" method="POST">
-      <p>Nombre de la pizza </p>
-      <input type="text" name="nombre" value="{{old[0]}}" size="100" maxlength="100">
-      <p> Tama&ntildeo de la pizza </p>
-      <input type="text" name="tamano" value="{{old[1]}}" size="100" maxlength="100">
-      <p> Precio </p>
-      <input type = "text" name = "precio" value="{{old[2]}}" size="100" maxlength="100"></br>
-      </br><input type="submit" name="save" value="Editar pizza">
+      <fieldset>
+        <div>    
+            {{ form.nombre.label }}
+            {{ form.nombre }}</br>
+
+
+             {{ form.tamano.label }}
+             {{ form.tamano }}</br>  
+
+             {{ form.precio.label }}
+             {{ form.precio }}
+
+
+           
+
+            %if form.nombre.errors:
+            <ul class="errors">
+                %for error in form.nombre.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+            %if form.tamano.errors:
+            <ul class = "errors">
+                %for error in form.tamano.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+
+            %if form.precio.errors:
+            <ul class = "errors">
+                %for error in form.precio.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+
+
+
+        </div>
+
+        <div>
+           </br> {{ form.save }}    
+        </div>
+    </fieldset>
     </form>   
+
 % include('footer.tpl')
