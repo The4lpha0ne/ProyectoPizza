@@ -354,7 +354,7 @@ def insert_index_save():
             }
 
             cliente.insert(data)
-    return redirect('/clientes')
+    return template('pedido_realizado')
 
 
 @get("/static/<filepath:path>")
