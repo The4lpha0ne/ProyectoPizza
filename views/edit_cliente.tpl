@@ -5,22 +5,8 @@
         <div>    
 
             {{ form.telefono.label }}
- 
-            {{ form.telefono }} </br>
-
-
-            {{ form.nombre.label }}
-
-            {{  form.nombre }} </br>  
-
-            {{ form.direccion.label }}
-            {{ form.direccion }} </br>
-
-
-            {{ form.c_postal.label }}
-            {{ form.c_postal }}
-
-           
+            
+            {{ form.telefono }}
 
             %if form.telefono.errors:
             <ul class="errors">
@@ -29,7 +15,12 @@
                 %end
             </ul>
             %end
+        </div>
 
+        <div>
+            {{ form.nombre.label }}
+
+            {{  form.nombre }} 
 
             %if form.nombre.errors:
             <ul class="errors">
@@ -38,7 +29,10 @@
                 %end
             </ul>
             %end
-
+        </div>
+        <div>
+            {{ form.direccion.label }}
+            {{ form.direccion }} </br>
 
             %if form.direccion.errors:
             <ul class="errors">
@@ -47,19 +41,24 @@
                 %end
             </ul>
             %end
-
-
-
-
-
-
-
         </div>
-
         <div>
-           </br> {{ form.save }}    
+
+            {{ form.c_postal.label }}
+            {{ form.c_postal }}
+
+
+            %if form.c_postal.errors:
+            <ul class="errors">
+                %for error in form.c_postal.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+        </div>
+        <div>
+            {{ form.save }}    
         </div>
     </fieldset>
     </form>   
-
 % include('footer.tpl')

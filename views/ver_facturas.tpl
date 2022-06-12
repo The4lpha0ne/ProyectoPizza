@@ -6,16 +6,7 @@
     <fieldset>
         <div>    
             {{ form.idfactura.label }}
-            {{ form.idfactura }}</br>
-
-            {{  form.fecha.label }}
-            {{  form.fecha }}</br>
-
-
-            {{  form.numeropedido.label }}
-
-            {{  form.numeropedido }}</br>
-
+            {{ form.idfactura }}
 
 
             %if form.idfactura.errors:
@@ -25,16 +16,11 @@
                 %end
             </ul>
             %end
+        </div>
 
-
-
-            %if form.numeropedido.errors:
-            <ul class="errors">
-                %for error in form.numeropedido.errors:
-                    <li>{{ error }}</li>
-                %end
-            </ul>
-            %end
+        <div>
+            {{  form.fecha.label }}
+            {{  form.fecha }}
 
 
             %if form.fecha.errors:
@@ -44,10 +30,25 @@
                 %end
             </ul>
             %end
-
         </div>
         <div>
-           </br> {{ form.save }}    
+
+            {{  form.numeropedido.label }}
+
+            {{  form.numeropedido }}
+
+
+            %if form.numeropedido.errors:
+            <ul class="errors">
+                %for error in form.numeropedido.errors:
+                    <li>{{ error }}</li>
+                %end
+            </ul>
+            %end
+        </div>
+
+        <div>
+           {{ form.save }}    
         </div>
     
     </fieldset>
