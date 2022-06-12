@@ -7,10 +7,6 @@
     sans-serif;
 }
 
-/* html, body {
-    min-height: 100vh;
-} */
-
 body {
     background-image: url(
         "../imagenes/Colours.png"
@@ -21,7 +17,6 @@ body {
     height: auto;
     margin: 0 auto;
     padding: 0%;
-    /* font-weight: 300; */
     font-family: "Signika Negative", 
     sans-serif;
     z-index: -1;
@@ -171,7 +166,6 @@ main {
         "../imagenes/fondo_pizza.jpeg"
     );
     background-size: 500px;
-    /* text-align: center; */
     width: 100%;
     height: auto;
     padding-bottom: 1%;
@@ -184,7 +178,6 @@ main {
 
 .formulario_uno {
     display: inline-block;
-    /* text-align: center; */
     width: 100%;
     height: auto;
     margin-top: 20px;
@@ -196,7 +189,6 @@ main {
 
 fieldset {
     display: inline-block;
-    /* text-align: center; */
     width: 100%;
     height: auto;
     margin-top: 0px;
@@ -277,9 +269,6 @@ label {
 
 .primera_parte {
     display: grid;
-    /* grid-template-columns: 
-    20% 20% auto;
-    grid-template-rows: auto; */
     width: 100%;
     height: auto;
     margin-top: 0em;
@@ -306,7 +295,6 @@ label {
     padding-bottom: 0em;
     padding-left: 0em;
     padding-right: 0em;
-    
 }
 
 .pedido1 {
@@ -433,7 +421,6 @@ label {
         margin-right: 0em;
         margin-bottom: 0.5em;
         padding: 0%;
-        
     }
     
     .container_titulo1 {
@@ -453,7 +440,6 @@ label {
         padding-bottom: 0em;
         padding-left: 0em;
         padding-right: 0em;
-        
     }
     
     .pedido1 {
@@ -577,11 +563,8 @@ label {
 
 /****************************************************************************************************/
 /****************************************************************************************************/
-
-/* @media only screen and (max-width: 1920px) 
-and (min-width: 961px) {
-   
-} */
+/****************************************************************************************************/
+/****************************************************************************************************/
 
 .tamanio {
     border: 2px solid red;
@@ -662,8 +645,6 @@ and (min-width: 961px) {
         width: 96%;
         height: auto;
         margin-right: 10em;
-        /* grid-template-columns: auto auto auto;
-        grid-template-rows: auto auto auto; */
     }
     
     #pequena {
@@ -914,7 +895,6 @@ and (min-width: 961px) {
     padding-left: 1.5em;
     padding-right: 1.5em;
     background-color: wheat;
-    /* border-radius: 1.6em; */
     border-top-left-radius: 2em;
     border-top-right-radius: 2em;
     border-bottom-left-radius: 2.7em;
@@ -940,17 +920,11 @@ and (min-width: 961px) {
 }
 
 .pizza_carta {
-    /* width: 300px; */
     max-width: 45%;
     min-width: 22em;
     height: auto;
     border-radius: 2em;
     text-align: center;
-}
-
-.carta li {
-    padding: 0em;
-    margin: 0em;
 }
 
 .imagen_pizzas {
@@ -999,7 +973,6 @@ and (min-width: 961px) {
     }
     
     .pizza_carta {
-        /* width: 300px; */
         max-width: 45%;
         min-width: 12em;
         height: auto;
@@ -1014,11 +987,6 @@ and (min-width: 961px) {
         padding-right: 0em;
         margin: 0em;
     }
-
-    /* .carta li {
-        padding: 0em;
-        margin: 0em;
-    } */
     
     .imagen_pizzas {
         max-width: 100%;
@@ -1039,99 +1007,139 @@ and (min-width: 961px) {
 /****************************************************************************************************/
 
 .clientito {
-    display: grid;
-    list-style: none;
     background-color: wheat;
-    border-radius: 1.6em;
-    font-size: 1.5em;
-    padding: 1em;
+    border-radius: 2.4em;
+    display: grid;
     text-align: center;
-    /* align-items: center;
-    justify-content: center; */
-    /* grid-template-columns: 1fr 1fr; */
+    list-style: none;
+    width: 100%;
+    height: auto;
+    margin: 0em;
+    padding: 1em;
 }
 
 .clientito li {
-    padding: 0em;
+    text-align: center;
     margin-top: 0em;
     margin-bottom: 1em;
     margin-left: 0em;
     margin-right: 0em;
-    text-align: center;    
+    padding: 0em;     
 }
 
 .el_cliente {
-    grid-column: 1 / 4;
+    grid-column: 1;
     grid-row: 1;
+    width: fit-content;
+    height: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 0.2em;
+    padding: 0em;
+    font-size: 1.5em;
 }
 
 #cliente {
-    grid-column: 2 / 4;
-    grid-row: 1;
-    margin-right: 10%;
-    width: 25%;
     background-color: gold;
+    border: 2px solid blueviolet;
+    border-radius: 0.5em;
+    grid-column: 2;
+    grid-row: 1;
+    width: 25%;
+    height: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 10%;
     padding-left: 0.4em;
     padding-right: 0.4em;
-    height: 2em;
-    border-radius: 0.5em;
-    border: 2px solid blueviolet;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    font-size: 1.2em;
 }
 
 .movil {
-    grid-column: 3 / 4;
+    grid-column: 3;
     grid-row: 1;
+    width: fit-content;
+    height: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 0.2em;
+    padding: 0em;
+    font-size: 1.5em;
 }
 
 #telefono {
-    grid-column: 4 / 4;
+    background-color: gold;
+    border: 2px solid blueviolet;
+    border-radius: 0.5em;
+    grid-column: 4;
     grid-row: 1;
     width: 25%;
-    background-color: gold;
+    height: auto;
+    margin: 0em;
     padding-left: 0.4em;
     padding-right: 0.4em;
-    height: 2em;
-    border-radius: 0.5em;
-    border: 2px solid blueviolet;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    font-size: 1.2em;
 }
 
 @media screen and (max-width: 768px) {
     .clientito {
-        display: grid;
-        list-style: none;
         background-color: wheat;
-        border-radius: 1.6em;
-        /* font-size: 1.5em; */
+        border-radius: 2.4em;
+        display: grid;
+        text-align: center;
+        list-style: none;
+        width: 100%;
+        height: auto;
+        margin: 0em;
         padding: 1em;
-        /* grid-template-columns: 1fr 1fr; */
     }
     
     .clientito li {
-        padding: 0em;
+        text-align: center; 
         margin-top: 0em;
         margin-bottom: 1em;
         margin-left: 0em;
         margin-right: 0em;
-        text-align: center;    
+        padding: 0em;   
     }
     
     .el_cliente {
         grid-column: 1;
         grid-row: 1;
         text-align: left;
+        width: fit-content;
+        height: auto;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0em;
+        margin-right: 0em;
+        padding: 0em;
         font-size: 1em; 
     }
     
     #cliente {
+        background-color: gold;
+        border: 2px solid blueviolet;
+        border-radius: 0.5em;
         grid-column: 1;
         grid-row: 2;
-        width: 100%;
-        background-color: gold;
+        width: 90%;
+        height: auto;
+        margin-top: 0em;
+        margin-bottom: 1em;
+        margin-left: 0em;
+        margin-right: 0em;
         padding-left: 0.4em;
         padding-right: 0.4em;
-        height: 2em;
-        border-radius: 0.5em;
-        border: 2px solid blueviolet;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
         font-size: 1em;
     }
     
@@ -1139,66 +1147,129 @@ and (min-width: 961px) {
         grid-column: 1;
         grid-row: 3;
         text-align: left;
+        width: fit-content;
+        height: auto;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0em;
+        margin-right: 0em;
+        padding: 0em;
+        font-size: 1em;
     }
     
     #telefono {
+        background-color: gold;
+        border: 2px solid blueviolet;
+        border-radius: 0.5em;
         grid-column: 1;
         grid-row: 4;
-        width: 100%;
-        background-color: gold;
+        width: 90%;
+        height: auto;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0em;
+        margin-right: 0em;
         padding-left: 0.4em;
         padding-right: 0.4em;
-        height: 2em;
-        border-radius: 0.5em;
-        border: 2px solid blueviolet;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
         font-size: 1em; 
     }
 }
 
 /****************************************************************************************************/
 /****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
 
-/* .container3 {
-
+.container3 {
+    background-color: wheat;
+    display: grid;
+    list-style: none;
+    width: 100%;
+    height: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    padding: 0em;
 }
 
-.address {
-
-} */
+.la_direccion {
+    grid-column: 1;
+    grid-row: 1;
+    width: fit-content;
+    height: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 0.2em;
+    padding: 0em;
+    font-size: 1.5em;
+}
 
 #direccion {
     background-color: gold;
+    border: 2px solid blueviolet;
+    border-radius: 0.5em;
+    grid-column: 2;
+    grid-row: 1;
     width: 60%;
+    height: auto;
+    margin: 0em;
     padding-left: 0.4em;
     padding-right: 0.4em;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
-    border-radius: 0.5em;
-    border: 2px solid blueviolet;
-    font-size: 1em; 
+    font-size: 1.2em; 
 }
 
-.realizar {
-    color: gold;
-    background-color: red;
-    width: fit-content;
-    height: 2em;
-    font-size: 1em;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    border-radius: 1em;
-    border: 2px solid blueviolet;
-    display: inline-block;
-    margin: 0 auto;
+@media screen and (max-width: 768px) {
+    .container3 {
+        background-color: wheat;
+        list-style: none;
+        display: grid;
+        margin-top: 0em;
+        margin-bottom: 0.8em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        padding: 0em;
+        width: 100%;
+        height: auto;
+    }
+    
+    .la_direccion {
+        grid-column: 1;
+        grid-row: 1;
+        font-size: 1em;
+        width: fit-content;
+        height: auto;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 0em;
+        margin-right: 0.2em;
+        padding: 0em;
+    }
+    
+    #direccion {
+        background-color: gold;
+        border: 2px solid blueviolet;
+        border-radius: 0.5em;
+        grid-column: 2;
+        grid-row: 1;
+        width: 60%;
+        height: auto;
+        margin: 0em;
+        padding-left: 0.4em;
+        padding-right: 0.4em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        font-size: 1em; 
+    }
 }
 
-.realizar:hover {
-    color: aqua;
-    background-color: green;
-}
-
+/****************************************************************************************************/
+/****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
 
@@ -1232,15 +1303,15 @@ and (min-width: 961px) {
     background-color: gold;
     border: 2px solid blueviolet;
     border-radius: 0.5em;
+    grid-column: 2;
+    grid-row: 1;
+    width: 50.5%;
+    height: auto;
     padding-left: 0.4em;
     padding-right: 0.4em;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
-    font-size: 1.2em;
-    width: 50.5%;
-    height: auto;
-    grid-column: 2;
-    grid-row: 1; 
+    font-size: 1.2em; 
 }
 
 @media screen and (max-width: 768px) {
@@ -1274,18 +1345,43 @@ and (min-width: 961px) {
         background-color: gold;
         border: 2px solid blueviolet;
         border-radius: 0.5em;
+        grid-column: 2;
+        grid-row: 1;
+        width: 45%;
+        height: auto;
         padding-left: 0.4em;
         padding-right: 0.4em;
         padding-top: 0.2em;
         padding-bottom: 0.2em;
         font-size: 1em;
-        width: 45%;
-        height: auto;
-        grid-column: 2;
-        grid-row: 1; 
     }
 }
 
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+/****************************************************************************************************/
+
+.realizar {
+    color: gold;
+    background-color: red;
+    width: fit-content;
+    height: 2em;
+    font-size: 1em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 1em;
+    border: 2px solid blueviolet;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.realizar:hover {
+    color: aqua;
+    background-color: green;
+}
 
 /****************************************************************************************************/
 /****************************************************************************************************/
@@ -1326,7 +1422,7 @@ and (min-width: 961px) {
 }
 
 .twitter {
-    border-radius: 2.5em;
+    border-radius: 2em;
 }
 
 .foto2 {
@@ -1335,7 +1431,7 @@ and (min-width: 961px) {
 }
 
 .instagram {
-    border-radius: 2.5em;
+    border-radius: 2em;
 }
 
 .foto3 {
@@ -1344,9 +1440,10 @@ and (min-width: 961px) {
 }
 
 .facebook {
-    border-radius: 2.5em;
+    border-radius: 2em;
 }
 
+/****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
 /****************************************************************************************************/
