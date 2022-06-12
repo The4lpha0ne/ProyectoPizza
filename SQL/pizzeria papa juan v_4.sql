@@ -30,9 +30,10 @@ Create table Factura(
 
 
 Create table Pizza(
+    IdPizza int not null,
     Nombre varchar(25),
     Tamano varchar(10),
-    Precio float(4), 
+    Precio float(4),
     PRIMARY KEY(Nombre, Tamano)
 
 );
@@ -41,19 +42,19 @@ alter table Cliente add foreign key(NumeroPedido) references Pedido(NumeroPedido
 alter table Pedido add foreign key(Nombre, Tamano) REFERENCES Pizza(Nombre, Tamano);
 alter table Factura add foreign key(NumeroPedido) REFERENCES Pedido(NumeroPedido);
 
-insert into Pizza(Nombre,Tamano, Precio) values
-("Margarita", "Mediana", 12.30),
-("Margarita", "Pequena", 7.57),
-("Margarita", "Grande", 15.41),
-("Marinera", "Mediana", 12.99),
-("Marinera", "Pequena", 5.98),
-("Marinera", "Grande", 13.60),
-("Barbacoa", "Grande", 16.21),
-("Barbacoa", "Mediana", 14.03),
-("Barbacoa", "Pequena", 6.21),
-("Cuatro quesos", "Grande", 15.50),
-("Cuatro quesos", "Mediana", 10.87),
-("Cuatro quesos", "Pequena", 8.88);
+insert into Pizza(IdPizza,Nombre,Tamano, Precio) values
+(74532,"Margarita", "Mediana", 12.30),
+(96743,"Margarita", "Pequena", 7.57),
+(10384,"Margarita", "Grande", 15.41),
+(48502,"Marinera", "Mediana", 12.99),
+(26495,"Marinera", "Pequena", 5.98),
+(23946,"Marinera", "Grande", 13.60),
+(39846,"Barbacoa", "Grande", 16.21),
+(20384,"Barbacoa", "Mediana", 14.03),
+(37545,"Barbacoa", "Pequena", 6.21),
+(03846,"Cuatro quesos", "Grande", 15.50),
+(89364,"Cuatro quesos", "Mediana", 10.87),
+(72548,"Cuatro quesos", "Pequena", 8.88);
 
 insert into Pedido(NumeroPedido,Cantidad,Nombre,Tamano) values 
 (54321, 2, "Margarita", "Mediana"),
@@ -96,14 +97,14 @@ insert into Factura(IdFactura, Fecha, NumeroPedido) values
 
 /*1.Queremos que nos muestre la información de todas las pizzas que sean de tamaño grande.*/
 select * from Pizza where Tamano = "Grande";
-+---------------+--------+--------+
-| Nombre        | Tamano | Precio |
-+---------------+--------+--------+
-| Barbacoa      | Grande |  16.21 |
-| Cuatro quesos | Grande |   15.5 |
-| Margarita     | Grande |  15.41 |
-| Marinera      | Grande |   13.6 |
-+---------------+--------+--------+
++---------+---------------+--------+--------+
+| IdPizza | Nombre        | Tamano | Precio |
++---------+---------------+--------+--------+
+|   39846 | Barbacoa      | Grande |  16.21 |
+|    3846 | Cuatro quesos | Grande |   15.5 |
+|   10384 | Margarita     | Grande |  15.41 |
+|   23946 | Marinera      | Grande |   13.6 |
++---------+---------------+--------+--------+
 
 /*2.Queremos que nos muestre la información de los clientes cuyo nombre termine en 'o'.*/
 select * from Cliente where Nombre like "%o";
@@ -118,22 +119,22 @@ select * from Cliente where Nombre like "%o";
 /*3.Queremos ordenar las pizzas según su Precio*/
 select * from Pizza
 order by Precio desc;
-+---------------+---------+--------+
-| Nombre        | Tamano  | Precio |
-+---------------+---------+--------+
-| Barbacoa      | Grande  |  16.21 |
-| Cuatro quesos | Grande  |   15.5 |
-| Margarita     | Grande  |  15.41 |
-| Barbacoa      | Mediana |  14.03 |
-| Marinera      | Grande  |   13.6 |
-| Marinera      | Mediana |  12.99 |
-| Margarita     | Mediana |   12.3 |
-| Cuatro quesos | Mediana |  10.87 |
-| Cuatro quesos | Pequena |   8.88 |
-| Margarita     | Pequena |   7.57 |
-| Barbacoa      | Pequena |   6.21 |
-| Marinera      | Pequena |   5.98 |
-+---------------+---------+--------+
++---------+---------------+---------+--------+
+| IdPizza | Nombre        | Tamano  | Precio |
++---------+---------------+---------+--------+
+|   39846 | Barbacoa      | Grande  |  16.21 |
+|    3846 | Cuatro quesos | Grande  |   15.5 |
+|   10384 | Margarita     | Grande  |  15.41 |
+|   20384 | Barbacoa      | Mediana |  14.03 |
+|   23946 | Marinera      | Grande  |   13.6 |
+|   48502 | Marinera      | Mediana |  12.99 |
+|   74532 | Margarita     | Mediana |   12.3 |
+|   89364 | Cuatro quesos | Mediana |  10.87 |
+|   72548 | Cuatro quesos | Pequena |   8.88 |
+|   96743 | Margarita     | Pequena |   7.57 |
+|   37545 | Barbacoa      | Pequena |   6.21 |
+|   26495 | Marinera      | Pequena |   5.98 |
++---------+---------------+---------+--------+
 
 /*4.Queremos saber el numero del pedido de los clientes que han pedido una pizza pequeña sin que sus números se repitan*/
 select distinct(NumeroPedido) from Pedido
@@ -357,7 +358,7 @@ BEGIN
         set NEW.Cantidad = 20;
     END IF;
 END;
-delimiter ;
+
 
 
 insert into Pedido(NumeroPedido,Cantidad,Nombre,Tamano) values 
