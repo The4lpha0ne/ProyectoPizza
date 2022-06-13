@@ -1,3 +1,3 @@
 %include('header.tpl',title = 'Clientes')
-<p> Pedido realizado con éxito <p>
+<h1> Pedido realizado con éxito <h1>
 %include('footer.tpl')
